@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imu.mzgymszy.originaldata.mapper.PictureMapper">
+	
+	<!--mybatis ehcache缓存配置,以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 -->
+	 
+	<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/> 
+	 
+	<!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+
+	<sql id="pictureAttributes">
+		P_ID,
+		P_TP,
+		P_PATH,
+		P_CC,
+		P_TT,
+		P_COLUMN
+	</sql>
+
+	<resultMap id="pictureMap" type="com.imu.mzgymszy.originaldata.model.PictureEntity">
+		<id property="id" column="P_ID"/>
+		<result property="pTp" column="P_TP"/>
+		<result property="pPath" column="P_PATH"/>
+		<result property="pCc" column="P_CC"/>
+		<result property="pTt" column="P_TT"/>
+		<result property="pColumn" column="P_COLUMN"/>
+	</resultMap>
+	
+	<select id="findByTp" resultMap="pictureMap" flushCache="true" useCache="true">
+		SELECT t.* FROM tb_picture t
+		WHERE t.p_tp = #{pTp}
+		ORDER BY t.p_id
+	</select>
+	
+	<insert id="insert" parameterType="com.imu.mzgymszy.originaldata.model.PictureEntity" useGeneratedKeys="true" keyProperty="id">
+     	insert into tb_picture(
+     		P_ID,
+			P_TP,
+			P_PATH<if test="pCc neq null">,
+			P_CC</if><if test="pTt neq null">,
+			P_TT</if><if test="pColumn neq null">,
+			P_COLUMN</if>
+     	)values (
+     		#{id,jdbcType=NUMERIC},
+			#{pTp},
+			#{pPath}<if test="pCc neq null">,
+			#{pCc}</if><if test="pTt neq null">,
+			#{pTt}</if><if test="pColumn neq null">,
+			#{pColumn}</if>
+     	)
+    </insert>
+    
+    <update id="update" parameterType="com.imu.mzgymszy.originaldata.model.PictureEntity" flushCache="true">
+		update tb_picture
+		<set>
+			<if test="pTp != null and pTp != ''">
+				P_TP = #{pTp},
+			</if>
+			<if test="pPath != null and pPath != ''">
+				P_PATH = #{pPath},
+			</if>
+			<if test="pCc != null and pCc != ''">
+				P_CC = #{pCc},
+			</if>
+			<if test="pTt != null and pTt != ''">
+				P_TT = #{pTt},
+			</if>
+			<if test="pColumn != null and pColumn != ''">
+				P_COLUMN = #{pColumn},
+			</if>
+		</set>
+		where p_id = ${id}
+	</update>
+    
+</mapper>

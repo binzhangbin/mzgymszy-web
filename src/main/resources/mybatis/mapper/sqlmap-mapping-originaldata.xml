@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imu.mzgymszy.originaldata.mapper.OriginaldataMapper">
+
+	<!--mybatis ehcache缓存配置,以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 -->
+
+	<cache type="org.mybatis.caches.ehcache.LoggingEhcache" />
+
+	<!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+
+	<sql id="typeAttributes">
+		GYP_ID,
+		GYP_BM,
+		GYP_MC_ZM,
+		GYP_MC_YM,
+		GYP_SCD_DW,
+		GYP_SCD_SCRXM,
+		GYP_SCD_DQ,
+		GYP_SCD_LXFS,
+		GYP_SCD_SCDZ,
+		GYP_SCD_SJND,
+		GYP_SCD_SYNX,
+		GYP_CYZ_SF,
+		GYP_CYZ_MZ,
+		GYP_CYZ_XB,
+		GYP_LYD,
+		GYP_ZS_ZSFS,
+		GYP_ZS_ZTA,
+		GYP_ZS_MS,
+		GYP_ZS_GJZP,
+		GYP_GGXT_ZTGG,
+		GYP_GGXT_JBGG,
+		GYP_DST_TP,
+		GYP_DST_SST,
+		GYP_CCX,
+		GYP_ZZGJ_CGGJ,
+		GYP_ZZGJ_ZYGJ,
+		GYP_ZZCL_CZ,
+		GYP_ZZCL_CLMC,
+		GYP_SYGN_SYCH,
+		GYP_SYGN_SYSP,
+		GYP_SYGN_SYYP,
+		GYP_ZZLC_ZZSP,
+		GYP_ZZLC_ZZYP,
+		GYP_SYCS_CSSP,
+		GYP_SYCS_CSYP,
+		GYP_DYR_XM,
+		GYP_DYR_LXFS,
+		GYP_DYR_DW,
+		GYP_DYR_WZZLR,
+		GYP_DYR_TPCLR,
+		GYP_DYR_SPCLR,
+		GYP_DYR_TBSJ,
+		GYP_BZ,
+		GYP_FOLD_ID,
+		GYP_DEL_FLAG,
+		GYP_CREATE_TIME,
+		GYP_UPDATE_TIME
+	</sql>
+
+	<resultMap id="originaldataMap"
+		type="com.imu.mzgymszy.originaldata.model.OriginaldataEntity">
+		<id property="id" column="GYP_ID" />
+		<result column="GYP_BM" property="gypBm" />
+		<result column="GYP_MC_ZM" property="gypMcZm" />
+		<result column="GYP_MC_YM" property="gypMcYm" />
+		<result column="GYP_SCD_DW" property="gypScdDw" />
+		<result column="GYP_SCD_SCRXM" property="gypScdScrxm" />
+		<result column="GYP_SCD_DQ" property="gypScdDq" />
+		<result column="GYP_SCD_LXFS" property="gypScdLxfs" />
+		<result column="GYP_SCD_SCDZ" property="gypScdScdz" />
+		<result column="GYP_SCD_SJND" property="gypScdSjnd" />
+		<result column="GYP_SCD_SYNX" property="gypScdSynx" />
+		<result column="GYP_CYZ_SF" property="gypCyzSf" />
+		<result column="GYP_CYZ_MZ" property="gypCyzMz" />
+		<result column="GYP_CYZ_XB" property="gypCyzXb" />
+		<result column="GYP_LYD" property="gypLyd" />
+		<result column="GYP_ZS_ZSFS" property="gypZsZsfs" />
+		<result column="GYP_ZS_ZTA" property="gypZsZta" />
+		<result column="GYP_ZS_MS" property="gypZsMs" />
+		<result column="GYP_ZS_GJZP" property="gypZsGjzp" />
+		<result column="GYP_GGXT_ZTGG" property="gypGgxtZtgg" />
+		<result column="GYP_GGXT_JBGG" property="gypGgxtJbgg" />
+		<result column="GYP_DST_TP" property="gypDstTp" />
+		<result column="GYP_DST_SST" property="gypDstSst" />
+		<result column="GYP_CCX" property="gypCcx" />
+		<result column="GYP_ZZGJ_CGGJ" property="gypZzgjCggj" />
+		<result column="GYP_ZZGJ_ZYGJ" property="gypZzgjZygj" />
+		<result column="GYP_ZZCL_CZ" property="gypZzclCz" />
+		<result column="GYP_ZZCL_CLMC" property="gypZzclClmc" />
+		<result column="GYP_SYGN_SYCH" property="gypSygnSych" />
+		<result column="GYP_SYGN_SYSP" property="gypSygnSysp" />
+		<result column="GYP_SYGN_SYYP" property="gypSygnSyyp" />
+		<result column="GYP_ZZLC_ZZSP" property="gypZzlcZzsp" />
+		<result column="GYP_ZZLC_ZZYP" property="gypZzlcZzyp" />
+		<result column="GYP_SYCS_CSSP" property="gypSycsCssp" />
+		<result column="GYP_SYCS_CSYP" property="gypSycsCsyp" />
+		<result column="GYP_DYR_XM" property="gypDyrXm" />
+		<result column="GYP_DYR_LXFS" property="gypDyrLxfs" />
+		<result column="GYP_DYR_DW" property="gypDyrDw" />
+		<result column="GYP_DYR_WZZLR" property="gypDyrWzzlr" />
+		<result column="GYP_DYR_TPCLR" property="gypDyrTpclr" />
+		<result column="GYP_DYR_SPCLR" property="gypDyrSpclr" />
+		<result column="GYP_DYR_TBSJ" property="gypDyrTbsj" />
+		<result column="GYP_BZ" property="gypBz" />
+		<result column="GYP_FOLD_ID" property="gypFoldId" />
+		<result column="GYP_DEL_FLAG" property="gypDelFlag" />
+		<result column="GYP_CREATE_TIME" property="gypCreateTime" />
+		<result column="GYP_UPDATE_TIME" property="gypUpdateTime" />
+		<association property="gypCcr" column="GYP_CCX"
+			javaType="com.imu.mzgymszy.smriti.model.CcrEntity" select="getCcrById">
+		</association>
+	</resultMap>
+
+	<resultMap id="ccrMap" type="com.imu.mzgymszy.smriti.model.CcrEntity">
+		<id property="id" column="C_ID" />
+		<result property="cXm" column="C_XM" />
+		<result property="cLxfs" column="C_LXFS" />
+		<result property="cLxdz" column="C_LXDZ" />
+		<result property="cSc" column="C_SC" />
+		<association property="cScr" column="C_SC"
+			javaType="com.imu.mzgymszy.smriti.model.CcrEntity" select="getCcrById">
+		</association>
+	</resultMap>
+
+	<insert id="insert"
+		parameterType="com.imu.mzgymszy.originaldata.model.OriginaldataEntity"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into tb_gyp (
+		GYP_ID,
+		GYP_BM,
+		GYP_MC_ZM,
+		<if test="gypMcYm neq null">
+			GYP_MC_YM,
+		</if>
+		GYP_SCD_DW,
+		GYP_SCD_SCRXM,
+		GYP_SCD_DQ,
+		GYP_SCD_LXFS,
+		GYP_SCD_SCDZ,
+		GYP_SCD_SJND,
+		GYP_SCD_SYNX,
+		GYP_CYZ_SF,
+		GYP_CYZ_MZ,
+		GYP_CYZ_XB,
+		GYP_LYD,
+		GYP_ZS_ZSFS,
+		GYP_ZS_ZTA,
+		GYP_ZS_MS,
+		GYP_ZS_GJZP,
+		GYP_GGXT_ZTGG,
+		GYP_GGXT_JBGG,
+		GYP_DST_TP,
+		GYP_DST_SST,
+		<if test="gypCcx neq null">
+			GYP_CCX,
+		</if>
+		GYP_ZZGJ_CGGJ,
+		GYP_ZZGJ_ZYGJ,
+		GYP_ZZCL_CZ,
+		GYP_ZZCL_CLMC,
+		GYP_SYGN_SYCH,
+		GYP_SYGN_SYSP,
+		GYP_SYGN_SYYP,
+		GYP_ZZLC_ZZSP,
+		GYP_ZZLC_ZZYP,
+		GYP_SYCS_CSSP,
+		GYP_SYCS_CSYP,
+		GYP_DYR_XM,
+		GYP_DYR_LXFS,
+		GYP_DYR_DW,
+		GYP_DYR_WZZLR,
+		GYP_DYR_TPCLR,
+		GYP_DYR_SPCLR,
+		GYP_DYR_TBSJ,
+		<if test="gypBz neq null">
+			GYP_BZ,
+		</if>
+		GYP_FOLD_ID,
+		GYP_CREATE_TIME,
+		GYP_UPDATE_TIME
+		)
+		values (
+		#{id,jdbcType=NUMERIC},
+		#{gypBm},
+		#{gypMcZm},
+		<if test="gypMcYm neq null">
+			#{gypMcYm},
+		</if>
+		#{gypScdDw},
+		#{gypScdScrxm},
+		#{gypScdDq},
+		#{gypScdLxfs},
+		#{gypScdScdz},
+		#{gypScdSjnd},
+		#{gypScdSynx},
+		#{gypCyzSf},
+		#{gypCyzMz},
+		#{gypCyzXb},
+		#{gypLyd},
+		#{gypZsZsfs},
+		#{gypZsZta},
+		#{gypZsMs},
+		#{gypZsGjzp},
+		#{gypGgxtZtgg},
+		#{gypGgxtJbgg},
+		#{gypDstTp},
+		#{gypDstSst},
+		<if test="gypCcx neq null">
+			#{gypCcx},
+		</if>
+		#{gypZzgjCggj},
+		#{gypZzgjZygj},
+		#{gypZzclCz},
+		#{gypZzclClmc},
+		#{gypSygnSych},
+		#{gypSygnSysp},
+		#{gypSygnSyyp},
+		#{gypZzlcZzsp},
+		#{gypZzlcZzyp},
+		#{gypSycsCssp},
+		#{gypSycsCsyp},
+		#{gypDyrXm},
+		#{gypDyrLxfs},
+		#{gypDyrDw},
+		#{gypDyrWzzlr},
+		#{gypDyrTpclr},
+		#{gypDyrSpclr},
+		#{gypDyrTbsj},
+		<if test="gypBz neq null">
+			#{gypBz},
+		</if>
+		#{gypFoldId},
+		now(),
+		now()
+		)
+	</insert>
+
+	<select id="queryListByPage" parameterType="map" resultMap="originaldataMap"
+		flushCache="true" useCache="true">
+		SELECT *
+		FROM tb_gyp
+		<where>
+			<if test="gypId != null and gypId != ''">
+				GYP_ID in (${gypId})
+			</if>
+			<if test="foldId != null and foldId != ''">
+				GYP_FOLD_ID=#{foldId}
+			</if>
+		</where>
+	</select>
+
+	<select id="findById" parameterType="long" resultMap="originaldataMap"
+		useCache="false">
+		SELECT *
+		FROM tb_gyp t
+		where t.gyp_id = ${id}
+	</select>
+
+	<select id="getCcrById" parameterType="long" resultMap="ccrMap">
+		select * from tb_ccr where c_id = #{id}
+	</select>
+
+	<delete id="deleteBatchById" parameterType="list">
+		<![CDATA[  
+       delete from tb_gyp where gyp_id in  
+    	]]>
+		<foreach collection="list" item="id" open="(" separator=","
+			close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<update id="update"
+		parameterType="com.imu.mzgymszy.originaldata.model.OriginaldataEntity">
+		update tb_gyp set
+		GYP_BM = #{gypBm},
+		GYP_MC_ZM = #{gypMcZm},
+		GYP_MC_YM = #{gypMcYm},
+		GYP_SCD_DW = #{gypScdDw},
+		GYP_SCD_SCRXM = #{gypScdScrxm},
+		GYP_SCD_DQ = #{gypScdDq},
+		GYP_SCD_LXFS = #{gypScdLxfs},
+		GYP_SCD_SCDZ = #{gypScdScdz},
+		GYP_SCD_SJND = #{gypScdSjnd},
+		GYP_SCD_SYNX = #{gypScdSynx},
+		GYP_CYZ_SF = #{gypCyzSf},
+		GYP_CYZ_MZ = #{gypCyzMz},
+		GYP_CYZ_XB = #{gypCyzXb},
+		GYP_LYD = #{gypLyd},
+		GYP_ZS_ZSFS = #{gypZsZsfs},
+		GYP_ZS_ZTA = #{gypZsZta},
+		GYP_ZS_MS = #{gypZsMs},
+		GYP_ZS_GJZP = #{gypZsGjzp},
+		GYP_GGXT_ZTGG = #{gypGgxtZtgg},
+		GYP_GGXT_JBGG = #{gypGgxtJbgg},
+		GYP_DST_TP = #{gypDstTp},
+		GYP_DST_SST = #{gypDstSst},
+		GYP_CCX = #{gypCcx},
+		GYP_ZZGJ_CGGJ = #{gypZzgjCggj},
+		GYP_ZZGJ_ZYGJ = #{gypZzgjZygj},
+		GYP_ZZCL_CZ = #{gypZzclCz},
+		GYP_ZZCL_CLMC = #{gypZzclClmc},
+		GYP_SYGN_SYCH = #{gypSygnSych},
+		GYP_SYGN_SYSP = #{gypSygnSysp},
+		GYP_SYGN_SYYP = #{gypSygnSyyp},
+		GYP_ZZLC_ZZSP = #{gypZzlcZzsp},
+		GYP_ZZLC_ZZYP = #{gypZzlcZzyp},
+		GYP_SYCS_CSSP = #{gypSycsCssp},
+		GYP_SYCS_CSYP = #{gypSycsCsyp},
+		GYP_DYR_XM = #{gypDyrXm},
+		GYP_DYR_LXFS = #{gypDyrLxfs},
+		GYP_DYR_DW = #{gypDyrDw},
+		GYP_DYR_WZZLR = #{gypDyrWzzlr},
+		GYP_DYR_TPCLR = #{gypDyrTpclr},
+		GYP_DYR_SPCLR = #{gypDyrSpclr},
+		GYP_DYR_TBSJ = #{gypDyrTbsj},
+		GYP_BZ = #{gypBz},
+		GYP_FOLD_ID = #{gypFoldId},
+		GYP_UPDATE_TIME = #{gypUpdateTime}
+		where gyp_id = ${id}
+	</update>
+
+</mapper>

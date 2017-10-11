@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imu.mzgymszy.smriti.mapper.QyGzsMapper">
+	
+	<!-- 通用查询结果列-->
+    <sql id="Base_Column_List">
+    	qy_gzs_id as qyGzsId,qy_gzs_lx as qyGzsLx,qy_gzs_mc as qyGzsMc,qy_gzs_bgdh as qyGzsBgdh,qy_gzs_yx as qyGzsYx,qy_gzs_txdz as qyGzsTxdz,qy_gzs_jlnf as qyGzsJlnf,qy_gzs_zgrs as qyGzsZgrs,qy_gzs_zyjsryrs as qyGzsZyjsryrs,qy_gzs_wy_zy as qyGzsWyZy,qy_gzs_zycp as qyGzsZycp,qy_gzs_cpzycl as qyGzsCpzycl,qy_gzs_cply as qyGzsCply,qy_gzs_szdqthsl as qyGzsSzdqthsl,qy_gzs_jgsd as qyGzsJgsd,qy_gzs_jjxy as qyGzsJjxy,qy_gzs_scgm as qyGzsScgm,qy_gzs_cpxsfs as qyGzsCpxsfs,qy_gzs_cpfwjzys as qyGzsCpfwjzys,qy_gzs_qyjj as qyGzsQyjj
+    </sql>
+
+</mapper>

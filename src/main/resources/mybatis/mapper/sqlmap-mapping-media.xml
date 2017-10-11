@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imu.mzgymszy.originaldata.mapper.MediaMapper">
+	
+	<!--mybatis ehcache缓存配置,以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 -->
+	 
+	<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/> 
+	 
+	<!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+
+	<sql id="mediaAttributes">
+		M_ID,
+		M_LX,
+		M_YSPM,
+		M_JLSJ,
+		M_JLR,
+		M_SCFR,
+		M_CFDD,
+		M_SC,
+		M_ZTJL,
+		M_PATH,
+		M_COLUMN
+	</sql>
+
+	<resultMap id="mediaMap" type="com.imu.mzgymszy.originaldata.model.MediaEntity">
+		<id property="id" column="M_ID"/>
+		<result property="mLx" column="M_LX"/>
+		<result property="mYspm" column="M_YSPM"/>
+		<result property="mJlsj" column="M_JLSJ"/>
+		<result property="mJlr" column="M_JLR"/>
+		<result property="mScfr" column="M_SCFR"/>
+		<result property="mCfdd" column="M_CFDD"/>
+		<result property="mSc" column="M_SC"/>
+		<result property="mZtjl" column="M_ZTJL"/>
+		<result property="mPath" column="M_PATH"/>
+		<result property="mColumn" column="M_COLUMN"/>
+	</resultMap>
+	
+	<select id="findByYspm" resultMap="mediaMap" flushCache="true" useCache="true">
+		SELECT t.* FROM tb_media t
+		WHERE t.M_YSPM = #{mYspm}
+		ORDER BY t.m_id
+	</select>
+	
+	<insert id="insert" parameterType="com.imu.mzgymszy.originaldata.model.MediaEntity" useGeneratedKeys="true" keyProperty="id">
+     	insert into tb_media(
+     		M_ID,
+			M_LX,
+			M_YSPM,
+			M_JLSJ,
+			M_JLR,
+			M_SCFR,
+			M_CFDD,
+			M_SC,
+			M_ZTJL,
+			M_PATH<if test="mColumn neq null">,
+			M_COLUMN</if>
+     	)values (
+     		#{id,jdbcType=NUMERIC},
+			#{mLx},
+			#{mYspm},
+			#{mJlsj},
+			#{mJlr},
+			#{mScfr},
+			#{mCfdd},
+			#{mSc},
+			#{mZtjl},
+			#{mPath}<if test="mColumn neq null">,
+			#{mColumn}</if>
+     	)
+    </insert>
+    
+    <update id="update" parameterType="com.imu.mzgymszy.originaldata.model.MediaEntity" flushCache="true">
+		update tb_media
+		<set>
+			<if test="mLx != null and mLx != ''">
+				M_LX = #{mLx},
+			</if>
+			<if test="mYspm != null and mYspm != ''">
+				M_YSPM = #{mYspm},
+			</if>
+			<if test="mJlsj != null">
+				M_JLSJ = #{mJlsj},
+			</if>
+			<if test="mJlr != null and mJlr != ''">
+				M_JLR = #{mJlr},
+			</if>
+			<if test="mScfr != null and mScfr != ''">
+				M_SCFR = #{mScfr},
+			</if>
+			<if test="mCfdd != null and mCfdd != ''">
+				M_CFDD = #{mCfdd},
+			</if>
+			<if test="mSc != null and mSc != ''">
+				M_SC = #{mSc},
+			</if>
+			<if test="mZtjl != null and mZtjl != ''">
+				M_ZTJL = #{mZtjl},
+			</if>
+			<if test="mPath != null and mPath != ''">
+				M_PATH = #{mPath},
+			</if>
+			<if test="mColumn != null and mColumn != ''">
+				M_COLUMN = #{mColumn},
+			</if>
+		</set>
+		where m_id = ${id}
+	</update>
+    
+</mapper>

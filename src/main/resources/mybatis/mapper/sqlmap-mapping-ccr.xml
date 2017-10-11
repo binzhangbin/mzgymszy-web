@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imu.mzgymszy.smriti.mapper.CcrMapper">
+	
+	<!-- 通用查询结果列-->
+    <sql id="Base_Column_List">
+    	c_id as cId,c_Xm as cXm,c_xb as cXb,c_mz as cMz,c_csny as cCsny,c_whcd as cWhcd,c_jg as cJg,c_lxfs as cLxfs,c_lxdz as cLxdz,c_tssy as cTssy,c_cyqsn as cCyqsn,c_sc as cSc,c_sfzh as cSfzh,c_zsfjh as cZsfjh,c_wx as cWx,c_qq as cQq,c_dzxx as cDzxx,c_yb as cYb,c_zy as cZy,c_gzdz as cGzdz,c_xytjd as cXytjd,c_fyrd as cFyrd,c_zydbzp as cZydbzp,c_hjqk as cHjqk,c_bz as cBz,c_grjl as cGrjl,c_zp as cZp,c_ccrs as cCcrs,c_qygzs as cQygzs,c_scgx as cScgx,c_xtqsnf as cXtqsnf,c_lxfs_ls as cLxfsLs,c_lxdz_ls as cLxdzLs,c_xtxm as cXtxm,c_lxfs_xt as cLxfsXt,c_lxdz_xt as cLxdzXt
+    </sql>
+
+</mapper>

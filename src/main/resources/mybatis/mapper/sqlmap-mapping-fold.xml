@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imu.mzgymszy.foldertree.mapper.FoldMapper">
+	
+	<!--mybatis ehcache缓存配置,以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 -->
+	 
+	<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/> 
+	 
+	<!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+
+	<sql id="foldAttributes">
+		f_id,
+		f_parent_id,
+		f_name,
+		f_fullpath,
+		f_depth,
+		f_del_flag,
+		f_create_time,
+		f_update_time,
+		f_is_leaf
+	</sql>
+
+	<resultMap id="foldMap" type="com.imu.mzgymszy.foldertree.model.FoldEntity">
+		<id property="id" column="f_id"/>
+		<result property="parentId" column="f_parent_id"/>
+		<result property="name" column="f_name"/>
+		<result property="fullPath" column="f_fullpath"/>
+		<result property="depth" column="f_depth"/>
+		<result property="delFlag" column="f_del_flag"/>
+		<result property="createTime" column="f_create_time"/>
+		<result property="updateTime" column="f_update_time"/>
+		<result property="isLeaf" column="f_is_leaf"/>
+	</resultMap>
+	
+	<select id="findRootFold" resultMap="foldMap" flushCache="true" useCache="true">
+		SELECT f.* FROM tb_fold f
+		WHERE f.f_parent_id is null AND f.f_del_flag = 0 AND f.f_depth = 0
+		ORDER BY f.f_id
+	</select>
+	
+	<select id="findSubFold" parameterType="long" resultMap="foldMap" flushCache="true" useCache="true">
+		SELECT f.* FROM tb_fold f
+		WHERE f.f_parent_id = ${parentId} AND f.f_del_flag = 0 
+		ORDER BY f.f_id
+	</select>
+	
+	<select id="findById" parameterType="long" resultMap="foldMap" flushCache="true" useCache="true">
+		SELECT f.* FROM tb_fold f
+		WHERE f.f_id = ${id} AND f.f_del_flag = 0 
+		ORDER BY f.f_id
+	</select>
+	
+	<insert id="insert" parameterType="com.imu.mzgymszy.foldertree.model.FoldEntity" useGeneratedKeys="true" keyProperty="id">
+     	insert into tb_fold(
+     		f_id<if test="parentId neq null">,
+			f_parent_id</if>,
+			f_name,
+			f_fullpath,
+			f_depth,
+			f_del_flag<if test="createTime neq null">,
+			f_create_time</if><if test="updateTime neq null">,
+			f_update_time</if>,
+			f_is_leaf
+     	)values (
+     		#{id,jdbcType=NUMERIC}<if test="parentId neq null">,
+			#{parentId}</if>,
+			#{name},
+			#{fullPath},
+			#{depth},
+			#{delFlag}<if test="createTime neq null">,
+			#{createTime}</if><if test="updateTime neq null">,
+			#{updateTime}</if>,
+			<choose>
+				<when test="isLeaf ==false ">
+					0
+				</when>
+				<otherwise>
+					1  
+            	</otherwise>
+			</choose>
+     	)
+    </insert>
+    
+    <update id="update" parameterType="com.imu.mzgymszy.foldertree.model.FoldEntity" flushCache="true">
+		update tb_fold
+		<set>
+			<if test="parentId != null and parentId != ''">
+				f_parent_id = #{parentId},
+			</if>
+			<if test="name != null and name != ''">
+				f_name = #{name},
+			</if>
+			<if test="fullPath != null and fullPath != ''">
+				f_fullpath = #{fullPath},
+			</if>
+			<if test="depth != null and depth != ''">
+				f_depth = #{depth},
+			</if>
+			<if test="delFlag != null and delFlag != ''">
+				f_del_flag = #{delFlag},
+			</if>
+			<if test="createTime != null">
+				f_create_time = #{createTime},
+			</if>
+			<if test="updateTime != null">
+				f_update_time = #{updateTime},
+			</if>
+			<if test="isLeaf != null">
+				<choose>
+					<when test="isLeaf ==true ">
+						f_is_leaf = 1,
+					</when>
+					<otherwise>
+						f_is_leaf = 0,  
+	            	</otherwise>
+				</choose>
+			</if>
+		</set>
+		where f_id = ${id}
+	</update>
+	
+	<delete id="deleteById" parameterType="long">
+       delete from tb_fold where f_id = ${id}  
+	</delete>
+	
+</mapper>
