@@ -29,6 +29,7 @@
 		GYP_ZS_ZTA,
 		GYP_ZS_MS,
 		GYP_ZS_GJZP,
+		GYP_ZS_GJZPJB,
 		GYP_GGXT_ZTGG,
 		GYP_GGXT_JBGG,
 		GYP_DST_TP,
@@ -80,6 +81,7 @@
 		<result column="GYP_ZS_ZTA" property="gypZsZta" />
 		<result column="GYP_ZS_MS" property="gypZsMs" />
 		<result column="GYP_ZS_GJZP" property="gypZsGjzp" />
+		<result column="GYP_ZS_GJZPJB" property="gypZsGjzpjb" />
 		<result column="GYP_GGXT_ZTGG" property="gypGgxtZtgg" />
 		<result column="GYP_GGXT_JBGG" property="gypGgxtJbgg" />
 		<result column="GYP_DST_TP" property="gypDstTp" />
@@ -149,6 +151,7 @@
 		GYP_ZS_ZTA,
 		GYP_ZS_MS,
 		GYP_ZS_GJZP,
+		GYP_ZS_GJZPJB,
 		GYP_GGXT_ZTGG,
 		GYP_GGXT_JBGG,
 		GYP_DST_TP,
@@ -203,6 +206,7 @@
 		#{gypZsZta},
 		#{gypZsMs},
 		#{gypZsGjzp},
+		#{gypZsGjzpjb},
 		#{gypGgxtZtgg},
 		#{gypGgxtJbgg},
 		#{gypDstTp},
@@ -293,6 +297,7 @@
 		GYP_ZS_ZTA = #{gypZsZta},
 		GYP_ZS_MS = #{gypZsMs},
 		GYP_ZS_GJZP = #{gypZsGjzp},
+		GYP_ZS_GJZPJB = #{gypZsGjzpjb},
 		GYP_GGXT_ZTGG = #{gypGgxtZtgg},
 		GYP_GGXT_JBGG = #{gypGgxtJbgg},
 		GYP_DST_TP = #{gypDstTp},

@@ -465,11 +465,23 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypZsGjzp">装饰工具照片(完整)</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypZsGjzp">装饰工具照(完整)</label>
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypZsGjzp" id="gypZsGjzp" type="text" 
-					value="${originaldataEntity.gypZsGjzp }" placeholder="装饰工具照片..." required/>
+					value="${originaldataEntity.gypZsGjzp }" placeholder="装饰工具照片(完整)..." required/>
+					<span class="input-group-addon">
+						<i class="fa fa-file-image-o bigger-110"></i>
+					</span>
+				</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2 no-padding-right" for="gypZsGjzpjb">装饰工具照(局部)</label>
+				<div class="col-sm-9">
+				<div class="input-group">
+					<input class="form-control picture-upload" name="gypZsGjzpjb" id="gypZsGjzpjb" type="text" 
+					value="${originaldataEntity.gypZsGjzpjb }" placeholder="装饰工具照片(局部)..." required/>
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>

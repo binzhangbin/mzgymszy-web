@@ -110,9 +110,14 @@ public class OriginaldataEntity extends BaseEntity {
 	private String gypZsMs;
 
 	/**
-	 * @Fields gypZsGjzp : 装饰工具照片
+	 * @Fields gypZsGjzp : 装饰工具照片(完整)
 	 */
 	private String gypZsGjzp;
+	
+	/**
+	 * gypZsGjzpjb:装饰工具照片(局部)
+	 */
+	private String gypZsGjzpjb;
 
 	/**
 	 * @Fields gypGgxtZtgg : 总体规格
@@ -140,12 +145,12 @@ public class OriginaldataEntity extends BaseEntity {
 	private long gypCcx;
 
 	/**
-	 * @Fields gypZzgjCggj :制作工具-常规工具
+	 * @Fields gypZzgjCggj :制作工具-常规工具(改为：手工工具)
 	 */
 	private String gypZzgjCggj;
 
 	/**
-	 * @Fields gypZzgjZygj : 制作工具-专用工具
+	 * @Fields gypZzgjZygj : 制作工具-专用工具(改为：半手工工具)
 	 */
 	private String gypZzgjZygj;
 
@@ -155,7 +160,7 @@ public class OriginaldataEntity extends BaseEntity {
 	private String gypZzclCz;
 
 	/**
-	 * @Fields gypZzclClmc : 制作材料名称
+	 * @Fields gypZzclClmc : 制作材料名称(给为：制作材料照片)
 	 */
 	private String gypZzclClmc;
 
@@ -393,6 +398,14 @@ public class OriginaldataEntity extends BaseEntity {
 
 	public void setGypZsGjzp(String gypZsGjzp) {
 		this.gypZsGjzp = gypZsGjzp;
+	}
+
+	public String getGypZsGjzpjb() {
+		return gypZsGjzpjb;
+	}
+
+	public void setGypZsGjzpjb(String gypZsGjzpjb) {
+		this.gypZsGjzpjb = gypZsGjzpjb;
 	}
 
 	public String getGypGgxtZtgg() {

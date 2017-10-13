@@ -127,13 +127,15 @@ function showAudio(mYspm){
 						<dd>${originaldataEntity.gypCyzXb}</dd>
 						<dt>来源地:</dt>
 						<dd>${originaldataEntity.gypLyd}</dd>
+						
+						<!-- 7-装饰情况及其简要描述===Start=== -->
 						<dt>装饰方式:</dt>
 						<dd>${originaldataEntity.gypZsZsfs}</dd>
 						<dt>装饰-主图案:</dt>
 						<dd>${originaldataEntity.gypZsZta}</dd>
 						<dt>装饰描述: </dt>
 						<dd>${originaldataEntity.gypZsMs}</dd>
-						<dt>装饰工具照片:</dt>
+						<dt>装饰工具照片(完整):</dt>
 						<c:forEach var="gypZsGjzp" items="${ fn:split(originaldataEntity.gypZsGjzp, ',') }">
 							<dd>
 								<img src="${ctx}/media/showThumbnail.html?pTp=${gypZsGjzp}">
@@ -144,8 +146,21 @@ function showAudio(mYspm){
 									<i class="fa fa-save align-top bigger-250"></i>
 								</button>
 							</dd>
-							
 						</c:forEach>
+						<dt>装饰工具照片(局部):</dt>
+						<c:forEach var="gypZsGjzp" items="${ fn:split(originaldataEntity.gypZsGjzpjb, ',') }">
+							<dd>
+								<img src="${ctx}/media/showThumbnail.html?pTp=${gypZsGjzpjb}">
+								<button class="btn btn-info btn-grey" onclick="javascript:showPicture('${gypZsGjzpjb}')">
+									<i class="fa fa-arrows-alt align-top bigger-250"></i>
+								</button>
+								<button class="btn btn-info btn-grey" onclick="location ='${ctx}/media/download.html?pTp=${gypZsGjzpjb}'">
+									<i class="fa fa-save align-top bigger-250"></i>
+								</button>
+							</dd>
+						</c:forEach>
+						<!-- 7-装饰情况及其简要描述===End=== -->
+						
 						<dt>总体规格:</dt>
 						<c:forEach var="gypGgxtZtgg" items="${ fn:split(originaldataEntity.gypGgxtZtgg, ',') }">
 							<dd>
