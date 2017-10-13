@@ -208,10 +208,22 @@ function showAudio(mYspm){
 								</button>
 							</dd>
 						</c:forEach>
+						<!-- 12-制作材料===Start=== -->
 						<dt>制作材料材质:</dt>
 						<dd>${originaldataEntity.gypZzclCz}</dd>
-						<dt>制作材料名称:</dt>
-						<dd>${originaldataEntity.gypZzclClmc}</dd>
+						<dt>制作材料照片:</dt>
+						<c:forEach var="gypZzclClmc" items="${ fn:split(originaldataEntity.gypZzclClmc, ',') }">
+							<dd>
+								<img src="${ctx}/media/showThumbnail.html?pTp=${gypZzclClmc}">
+								<button class="btn btn-info btn-grey" onclick="javascript:showPicture('${gypZzclClmc}')">
+									<i class="fa fa-arrows-alt align-top bigger-250"></i>
+								</button>
+								<button class="btn btn-info btn-grey" onclick="location ='${ctx}/media/download.html?pTp=${gypZzclClmc}'">
+									<i class="fa fa-save align-top bigger-250"></i>
+								</button>
+							</dd>
+						</c:forEach>
+						<!-- 12-制作材料===End=== -->
 						<dt>使用场合:</dt>
 						<dd>${originaldataEntity.gypSygnSych}</dd>
 						<dt>使用视频:</dt>

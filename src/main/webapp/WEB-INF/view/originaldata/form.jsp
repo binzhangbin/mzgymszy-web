@@ -607,12 +607,24 @@
 				</div>
 				</div>
 			</div>
-			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypZzclClmc">制作材料名称</label>
+			<%-- <div class="form-group">
+				<label class="control-label col-sm-2 no-padding-right" for="gypZzclClmc">制作材料照片</label>
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypZzclClmc" id="gypZzclClmc" type="text"
 						value="${originaldataEntity.gypZzclClmc }" placeholder="制作材料名称 ..." maxlength="50" required/>
+				</div>
+				</div>
+			</div> --%>
+			<div class="form-group">
+				<label class="control-label col-sm-2 no-padding-right" for="gypZzclClmc">制作材料照片</label>
+				<div class="col-sm-9">
+				<div class="input-group">
+					<input class="form-control picture-upload" name="gypZzclClmc" id="gypZzclClmc" type="text" 
+					value="${originaldataEntity.gypZzclClmc }" placeholder="制作材料名称 ..." required/>
+					<span class="input-group-addon">
+						<i class="fa fa-file-image-o bigger-110"></i>
+					</span>
 				</div>
 				</div>
 			</div>
