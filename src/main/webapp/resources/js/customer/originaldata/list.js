@@ -46,12 +46,18 @@ var dtGridColumns = [{
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs|md'
 },{
-    id : 'gypScdSjnd',
+    /*id : 'gypScdSjnd',
     title : '收集年代',
     type:'date', 
     format:'yyyy-MM-dd',
     otype:'string', 
     oformat:'yyyy-MM-dd',
+    columnClass : 'text-center',
+    headerClass : 'dlshouwen-grid-header',
+    hideType : 'sm|xs|md'*/
+	id : 'gypScdDq',
+    title : '归属人地区',
+    type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs|md'

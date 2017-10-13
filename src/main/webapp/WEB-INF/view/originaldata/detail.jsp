@@ -148,7 +148,7 @@ function showAudio(mYspm){
 							</dd>
 						</c:forEach>
 						<dt>装饰工具照片(局部):</dt>
-						<c:forEach var="gypZsGjzp" items="${ fn:split(originaldataEntity.gypZsGjzpjb, ',') }">
+						<c:forEach var="gypZsGjzpjb" items="${ fn:split(originaldataEntity.gypZsGjzpjb, ',') }">
 							<dd>
 								<img src="${ctx}/media/showThumbnail.html?pTp=${gypZsGjzpjb}">
 								<button class="btn btn-info btn-grey" onclick="javascript:showPicture('${gypZsGjzpjb}')">
@@ -185,6 +185,8 @@ function showAudio(mYspm){
 								</button>
 							</dd>
 						</c:forEach>
+						
+						<!-- 9-多视角图形图像===Start=== -->
 						<dt>多视图-图片:</dt>
 						<c:forEach var="gypDstTp" items="${ fn:split(originaldataEntity.gypDstTp, ',') }">
 							<dd>
@@ -197,18 +199,20 @@ function showAudio(mYspm){
 								</button>
 							</dd>
 						</c:forEach>
-						<dt>多视图-三视图:</dt>
+						<dt>多视图-三视图(视频):</dt>
 						<c:forEach var="gypDstSst" items="${ fn:split(originaldataEntity.gypDstSst, ',') }">
 							<dd>
-								<img src="${ctx}/media/showThumbnail.html?pTp=${gypDstSst}">
-								<button class="btn btn-info btn-grey" onclick="javascript:showPicture('${gypDstSst}')">
-									<i class="fa fa-arrows-alt align-top bigger-250"></i>
-								</button>
-								<button class="btn btn-info btn-grey" onclick="location ='${ctx}/media/download.html?pTp=${gypDstSst}'">
-									<i class="fa fa-save align-top bigger-250"></i>
+								<li>
+									<i class="fa fa-film bigger-110 green"></i>
+									${gypDstSst}
+								</li>
+								<button class="btn btn-info btn-grey" onclick="javascript:showVideo('${gypDstSst}')">
+									<i class="fa fa-play align-top bigger-250"></i>
 								</button>
 							</dd>
 						</c:forEach>
+						<!-- 9-多视角图形图像===End=== -->
+						
 						<!-- 11-制作工具===Start=== -->
 						<dt>制作工具-手工工具:</dt>
 						<c:forEach var="gypZzgjCggj" items="${ fn:split(originaldataEntity.gypZzgjCggj, ',') }">

@@ -367,6 +367,7 @@
 			</div>
 			<!-- 5-样品曾使用者===End=== -->
 			
+			<!-- 6-样品来源与收藏地===Start=== -->
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right" for="gypLyd">来源地</label>
 				<div class="col-sm-9">
@@ -379,6 +380,7 @@
 				</div>
 				</div>
 			</div>
+			<!-- 6-样品来源与收藏地===End=== -->
 			
 			<!-- 7-装饰情况及其简要描述===Start=== -->
 			<div class="form-group">
@@ -514,6 +516,8 @@
 				</div>
 				</div>
 			</div>
+			
+			<!-- 9-多视角图形图像===Start=== -->
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right" for="gypDstTp">多视图-图片 </label>
 				<div class="col-sm-9">
@@ -527,17 +531,18 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypDstSst">多视图-三视图 </label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypDstSst">多视图-三视图(视频)</label>
 				<div class="col-sm-9">
 				<div class="input-group">
-					<input class="form-control picture-upload" name="gypDstSst" id="gypDstSst" type="text" 
-					value="${originaldataEntity.gypDstSst }" placeholder="多视图-三视图..." required/>
+					<input class="form-control media-upload" name="gypDstSst" id="gypDstSst" type="text" 
+					value="${originaldataEntity.gypDstSst }" placeholder="多视图-三视图(视频) ..." required/>
 					<span class="input-group-addon">
-						<i class="fa fa-file-image-o bigger-110"></i>
+						<i class="fa fa-file-video-o bigger-110"></i>
 					</span>
 				</div>
 				</div>
 			</div>
+			<!-- 9-多视角图形图像===End=== -->
 			
 			<!-- 10-技艺传承人===Start=== -->
 			<%-- <div class="form-group">

@@ -135,7 +135,7 @@ public class OriginaldataEntity extends BaseEntity {
 	private String gypDstTp;
 
 	/**
-	 * @Fields gypDstSst : 多视图-三视图
+	 * @Fields gypDstSst : 多视图-三视图(改为：存储视频)
 	 */
 	private String gypDstSst;
 
