@@ -379,6 +379,8 @@
 				</div>
 				</div>
 			</div>
+			
+			<!-- 7-装饰情况及其简要描述===Start=== -->
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right" for="gypZsZsfs">装饰方式</label>
 				<div class="col-sm-9">
@@ -463,7 +465,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypZsGjzp">装饰工具照片</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypZsGjzp">装饰工具照片(完整)</label>
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypZsGjzp" id="gypZsGjzp" type="text" 
@@ -474,6 +476,8 @@
 				</div>
 				</div>
 			</div>
+			<!-- 7-装饰情况及其简要描述===End=== -->
+			
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right" for="gypGgxtZtgg">总体规格</label>
 				<div class="col-sm-9">
@@ -544,21 +548,34 @@
 			<!-- 10-技艺传承人===End=== -->
 			
 			<!-- 11-制作工具===Start=== -->
-			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypZzgjCggj">制作工具-常规工具</label>
+			<%-- <div class="form-group">
+				<label class="control-label col-sm-2 no-padding-right" for="gypZzgjCggj">制作工具-手工工具</label>
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypZzgjCggj" id="gypZzgjCggj" type="text"
 						value="${originaldataEntity.gypZzgjCggj }" placeholder="制作工具-常规工具 ..." required/>
 				</div>
 				</div>
-			</div>
+			</div> --%>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypZzgjZygj">制作工具-专用工具</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypZzgjCggj">制作工具-手工工具</label>
+				<div class="col-sm-9">
+				<div class="input-group">
+					<input class="form-control picture-upload" name="gypZzgjCggj" id="gypZzgjCggj" type="text" 
+					value="${originaldataEntity.gypZzgjCggj }" placeholder="制作工具-手工工具..." required/>
+					<span class="input-group-addon">
+						<i class="fa fa-file-image-o bigger-110"></i>
+					</span>
+				</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-2 no-padding-right" for="gypZzgjZygj">制作工具-半手工工具</label>
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypZzgjZygj" id="gypZzgjZygj" type="text" 
-					value="${originaldataEntity.gypZzgjZygj }" placeholder="制作工具-专用工具..." required/>
+					value="${originaldataEntity.gypZzgjZygj }" placeholder="制作工具-半手工工具..." required/>
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
@@ -607,15 +624,6 @@
 				</div>
 				</div>
 			</div>
-			<%-- <div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypZzclClmc">制作材料照片</label>
-				<div class="col-sm-9">
-				<div class="clearfix">
-					<input class="form-control" name="gypZzclClmc" id="gypZzclClmc" type="text"
-						value="${originaldataEntity.gypZzclClmc }" placeholder="制作材料名称 ..." maxlength="50" required/>
-				</div>
-				</div>
-			</div> --%>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right" for="gypZzclClmc">制作材料照片</label>
 				<div class="col-sm-9">

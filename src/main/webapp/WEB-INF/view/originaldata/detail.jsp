@@ -194,9 +194,20 @@ function showAudio(mYspm){
 								</button>
 							</dd>
 						</c:forEach>
-						<dt>制作工具-常规工具:</dt>
-						<dd>${originaldataEntity.gypZzgjCggj}</dd>
-						<dt>制作工具-专用工具:</dt>
+						<!-- 11-制作工具===Start=== -->
+						<dt>制作工具-手工工具:</dt>
+						<c:forEach var="gypZzgjCggj" items="${ fn:split(originaldataEntity.gypZzgjCggj, ',') }">
+							<dd>
+								<img src="${ctx}/media/showThumbnail.html?pTp=${gypZzgjCggj}">
+								<button class="btn btn-info btn-grey" onclick="javascript:showPicture('${gypZzgjCggj}')">
+									<i class="fa fa-arrows-alt align-top bigger-250"></i>
+								</button>
+								<button class="btn btn-info btn-grey" onclick="location ='${ctx}/media/download.html?pTp=${gypZzgjCggj}'">
+									<i class="fa fa-save align-top bigger-250"></i>
+								</button>
+							</dd>
+						</c:forEach>
+						<dt>制作工具-半手工工具:</dt>
 						<c:forEach var="gypZzgjZygj" items="${ fn:split(originaldataEntity.gypZzgjZygj, ',') }">
 							<dd>
 								<img src="${ctx}/media/showThumbnail.html?pTp=${gypZzgjZygj}">
@@ -208,6 +219,8 @@ function showAudio(mYspm){
 								</button>
 							</dd>
 						</c:forEach>
+						<!-- 11-制作工具===End=== -->
+						
 						<!-- 12-制作材料===Start=== -->
 						<dt>制作材料材质:</dt>
 						<dd>${originaldataEntity.gypZzclCz}</dd>
