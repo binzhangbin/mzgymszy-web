@@ -269,7 +269,7 @@
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypScdLxfs" id="gypScdLxfs" type="text"
-						value="${originaldataEntity.gypScdLxfs }" placeholder="联系方式..." maxlength="20" required/>
+						value="${originaldataEntity.gypScdLxfs }" placeholder="联系方式..." maxlength="20" />
 				</div>
 				</div>
 			</div>
@@ -290,7 +290,7 @@
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypScdScdz" id="gypScdScdz" type="text"
-						value="${originaldataEntity.gypScdScdz }" placeholder="收藏地址..." maxlength="20" required/>
+						value="${originaldataEntity.gypScdScdz }" placeholder="收藏地址..." maxlength="20" />
 				</div>
 				</div>
 			</div>			
@@ -346,7 +346,7 @@
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypCyzMz" id="gypCyzMz" type="text"
-						value="${originaldataEntity.gypCyzMz }" placeholder="曾用者民族..."  maxlength="4" required/>
+						value="${originaldataEntity.gypCyzMz }" placeholder="曾用者民族..."  maxlength="4" />
 				</div>
 				</div>
 			</div>
@@ -355,11 +355,11 @@
 				<div class="col-sm-9">
 					<div class="radio">
 					<label>
-						<input class="ace" name="gypCyzXb" id="gypCyzXb" type="radio" value="男" ${originaldataEntity.gypCyzXb eq "男"?"checked":""} required/>
+						<input class="ace" name="gypCyzXb" id="gypCyzXb" type="radio" value="男" ${originaldataEntity.gypCyzXb eq "男"?"checked":""} />
 						<span class="lbl">男</span>
 					</label>					
 					<label>
-						<input class="ace" name="gypCyzXb" id="gypCyzXb" type="radio" value="女" ${originaldataEntity.gypCyzXb eq "女"?"checked":""} required/>
+						<input class="ace" name="gypCyzXb" id="gypCyzXb" type="radio" value="女" ${originaldataEntity.gypCyzXb eq "女"?"checked":""} />
 						<span class="lbl">女</span>
 					</label>
 					</div>
@@ -471,7 +471,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypZsGjzp" id="gypZsGjzp" type="text" 
-					value="${originaldataEntity.gypZsGjzp }" placeholder="装饰工具照片(完整)..." required/>
+					value="${originaldataEntity.gypZsGjzp }" placeholder="装饰工具照片(完整)..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
@@ -483,7 +483,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypZsGjzpjb" id="gypZsGjzpjb" type="text" 
-					value="${originaldataEntity.gypZsGjzpjb }" placeholder="装饰工具照片(局部)..." required/>
+					value="${originaldataEntity.gypZsGjzpjb }" placeholder="装饰工具照片(局部)..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
@@ -497,7 +497,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypGgxtZtgg" id="gypGgxtZtgg" type="text" 
-					value="${originaldataEntity.gypGgxtZtgg }" placeholder="总体规格..." required/>
+					value="${originaldataEntity.gypGgxtZtgg }" placeholder="总体规格..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
@@ -509,7 +509,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypGgxtJbgg" id="gypGgxtJbgg" type="text" 
-					value="${originaldataEntity.gypGgxtJbgg }" placeholder="局部规格..." required/>
+					value="${originaldataEntity.gypGgxtJbgg }" placeholder="局部规格..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
@@ -523,7 +523,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypDstTp" id="gypDstTp" type="text" 
-					value="${originaldataEntity.gypDstTp }" placeholder="多视图-图片 ..." required/>
+					value="${originaldataEntity.gypDstTp }" placeholder="多视图-图片 ..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
@@ -535,7 +535,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control media-upload" name="gypDstSst" id="gypDstSst" type="text" 
-					value="${originaldataEntity.gypDstSst }" placeholder="多视图-三视图(视频) ..." required/>
+					value="${originaldataEntity.gypDstSst }" placeholder="多视图-三视图(视频) ..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-video-o bigger-110"></i>
 					</span>
@@ -579,7 +579,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypZzgjCggj" id="gypZzgjCggj" type="text" 
-					value="${originaldataEntity.gypZzgjCggj }" placeholder="制作工具-手工工具..." required/>
+					value="${originaldataEntity.gypZzgjCggj }" placeholder="制作工具-手工工具..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
@@ -592,7 +592,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypZzgjZygj" id="gypZzgjZygj" type="text" 
-					value="${originaldataEntity.gypZzgjZygj }" placeholder="制作工具-半手工工具..." required/>
+					value="${originaldataEntity.gypZzgjZygj }" placeholder="制作工具-半手工工具..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
@@ -646,7 +646,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="gypZzclClmc" id="gypZzclClmc" type="text" 
-					value="${originaldataEntity.gypZzclClmc }" placeholder="制作材料名称 ..." required/>
+					value="${originaldataEntity.gypZzclClmc }" placeholder="制作材料名称 ..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
@@ -688,7 +688,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control media-upload" name="gypSygnSysp" id="gypSygnSysp" type="text" 
-					value="${originaldataEntity.gypSygnSysp }" placeholder="使用视频 ..." required/>
+					value="${originaldataEntity.gypSygnSysp }" placeholder="使用视频 ..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-video-o bigger-110"></i>
 					</span>
@@ -700,7 +700,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control media-upload" name="gypSygnSyyp" id="gypSygnSyyp" type="text" 
-					value="${originaldataEntity.gypSygnSyyp }" placeholder="使用音频 ..." required/>
+					value="${originaldataEntity.gypSygnSyyp }" placeholder="使用音频 ..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-video-o bigger-110"></i>
 					</span>
@@ -714,7 +714,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control media-upload" name="gypZzlcZzsp" id="gypZzlcZzsp" type="text"
-					 value="${originaldataEntity.gypZzlcZzsp }" placeholder="制作流程-制作视频 ..." required/>
+					 value="${originaldataEntity.gypZzlcZzsp }" placeholder="制作流程-制作视频 ..." />
 					 <span class="input-group-addon">
 						<i class="fa fa-file-video-o bigger-110"></i>
 					</span>
@@ -726,7 +726,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control media-upload" name="gypZzlcZzyp" id="gypZzlcZzyp" type="text"
-					 value="${originaldataEntity.gypZzlcZzyp }" placeholder="制作流程-制作音频 ..." required/>
+					 value="${originaldataEntity.gypZzlcZzyp }" placeholder="制作流程-制作音频 ..." />
 					 <span class="input-group-addon">
 						<i class="fa fa-file-video-o bigger-110"></i>
 					</span>
@@ -738,7 +738,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control media-upload" name="gypSycsCssp" id="gypSycsCssp" type="text" 
-					value="${originaldataEntity.gypSycsCssp }" placeholder="传说视频..." required/>
+					value="${originaldataEntity.gypSycsCssp }" placeholder="传说视频..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-video-o bigger-110"></i>
 					</span>
@@ -750,7 +750,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control media-upload" name="gypSycsCsyp" id="gypSycsCsyp" type="text"
-					 value="${originaldataEntity.gypSycsCsyp }" placeholder="传说音频..." required/>
+					 value="${originaldataEntity.gypSycsCsyp }" placeholder="传说音频..." />
 					 <span class="input-group-addon">
 						<i class="fa fa-file-video-o bigger-110"></i>
 					</span>
@@ -771,7 +771,7 @@
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypDyrLxfs" id="gypDyrLxfs" type="text"
-						value="${originaldataEntity.gypDyrLxfs }" placeholder="调研人联系方式..." maxlength="10" required/>
+						value="${originaldataEntity.gypDyrLxfs }" placeholder="调研人联系方式..." maxlength="10" />
 				</div>
 				</div>
 			</div>
@@ -780,7 +780,7 @@
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypDyrDw" id="gypDyrDw" type="text"
-						value="${originaldataEntity.gypDyrDw }" placeholder="调研人单位..." maxlength="20" required/>
+						value="${originaldataEntity.gypDyrDw }" placeholder="调研人单位..." maxlength="20" />
 				</div>
 				</div>
 			</div>
@@ -818,7 +818,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control form_datetime" name="gypDyrTbsj" id="gypDyrTbsj" type="text" placeholder="填表时间..."
-						value="<fmt:formatDate value="${originaldataEntity.gypDyrTbsj}" type="date"/>" required/>
+						value="<fmt:formatDate value="${originaldataEntity.gypDyrTbsj}" type="date"/>" />
 					<span class="input-group-addon">
 						<i class="fa fa-calendar bigger-110"></i>
 					</span>
