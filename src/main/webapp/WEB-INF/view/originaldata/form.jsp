@@ -818,7 +818,7 @@
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control form_datetime" name="gypDyrTbsj" id="gypDyrTbsj" type="text" placeholder="填表时间..."
-						value="<fmt:formatDate value="${originaldataEntity.gypDyrTbsj}" type="date"/>" />
+						value="<fmt:formatDate value="${originaldataEntity.gypDyrTbsj}" type="date"/>" required/>
 					<span class="input-group-addon">
 						<i class="fa fa-calendar bigger-110"></i>
 					</span>

@@ -477,17 +477,16 @@
 		      <div class="clearfix">
 		         <select class="form-control" id="cQygzs" name="cQygzs"
 						style="width: 100%">
-						<%-- <c:if test="${empty ccrEntity}">
-							<option value="0" selected="selected">企业/工作室</option>
-						</c:if>  --%>
+						<c:if test="${empty ccrEntity}">
+							<option value="" selected="selected">企业/工作室</option>
+						</c:if> 
 						<c:forEach var="item" items="${qyGzsList }">
-							<option value="0" selected="selected">企业/工作室</option>
 							<option value="${item.id }"
 								<c:if test="${ccrEntity.cQygzs eq item.id}">selected="selected"</c:if>>${item.qyGzsMc }</option>
 						</c:forEach>
-						<%-- <c:if test="${ccrEntity.cQygzs eq 0}">
-							<option value="0" selected="selected">企业/工作室</option>
-						</c:if> --%>
+						<c:if test="${ccrEntity.cQygzs eq 0}">
+							<option value="" selected="selected">企业/工作室</option>
+						</c:if>
 					</select>
 		      </div>
 		      </div>
