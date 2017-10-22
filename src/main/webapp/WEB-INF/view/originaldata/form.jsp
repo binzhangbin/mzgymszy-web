@@ -351,7 +351,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="#">曾用者性别</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypCyzXb">曾用者性别</label>
 				<div class="col-sm-9">
 					<div class="radio">
 					<label>
