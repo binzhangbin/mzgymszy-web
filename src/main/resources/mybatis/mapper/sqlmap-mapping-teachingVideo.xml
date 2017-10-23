@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imu.mzgymszy.teaching.mapper.TeachingVideoMapper">
+
+	<!-- 通用查询结果列-->
+    <sql id="Base_Column_List">
+    	jx_id as id,
+    	jx_lx as jxLx,
+    	jx_jsxm as jxJsxm,
+    	jx_jsxb as jxJsxb,
+    	jx_jsmz as jxJsmz,
+    	jx_csny as jxCsny,
+    	jx_whcd as jxWhcd,
+    	jx_jg as jxJg,
+    	jx_lxdh as jxLxdh,
+    	jx_xstx as jxXstx,
+    	jx_txdz as jxTxdz,
+    	jx_zp as jxZp,
+    	jx_kcmc as jxKcmc,
+    	jx_yz as jxYz,    	
+    	jx_grjl as jxGrjl,
+    	jx_cjzp as jxCjzp,
+    	jx_zjsl as jxZjsl,
+    	jx_zsc as jxZsc,
+    	jx_sp as jxSp,
+    	jx_kj as jxKj,
+    	jx_bz as jxBz
+    </sql>
+
+</mapper>
