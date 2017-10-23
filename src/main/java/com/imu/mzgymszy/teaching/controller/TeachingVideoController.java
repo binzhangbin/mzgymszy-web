@@ -59,13 +59,12 @@ public class TeachingVideoController extends BaseController {
 	private MediaService mediaService;
 	@Autowired
 	private GridFsTemplate gridFsTemplate;
-	
+
 	@RequestMapping("listUI.html")
 	public String listUI(Model model, HttpServletRequest request) {
-		try
-		{
+		try {
 			PageUtil page = new PageUtil();
-			if(request.getParameterMap().containsKey("page")){
+			if (request.getParameterMap().containsKey("page")) {
 				page.setPageNum(Integer.valueOf(request.getParameter("page")));
 				page.setPageSize(Integer.valueOf(request.getParameter("rows")));
 				page.setOrderByColumn(request.getParameter("sidx"));
@@ -73,27 +72,28 @@ public class TeachingVideoController extends BaseController {
 			}
 			model.addAttribute("page", page);
 			return Common.BACKGROUND_PATH + "/teaching/list";
-		}catch(Exception e)
-		{
+		} catch (Exception e) {
 			throw new AjaxException(e);
 		}
 	}
-	
+
 	/**
 	 * ajax分页动态加载模式
-	 * @param dtGridPager Pager对象
+	 * 
+	 * @param dtGridPager
+	 *            Pager对象
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/list.html", method = RequestMethod.POST)
 	@ResponseBody
-	public Object list(String gridPager, HttpServletResponse response) throws Exception{
+	public Object list(String gridPager, HttpServletResponse response) throws Exception {
 		Map<String, Object> parameters = null;
-		//1、映射Pager对象
+		// 1、映射Pager对象
 		Pager pager = JSON.parseObject(gridPager, Pager.class);
-		//2、设置查询参数
+		// 2、设置查询参数
 		parameters = pager.getParameters();
-		//设置分页，page里面包含了分页信息
-		Page<Object> page = PageHelper.startPage(pager.getNowPage(),pager.getPageSize(), "jx_id DESC");
+		// 设置分页，page里面包含了分页信息
+		Page<Object> page = PageHelper.startPage(pager.getNowPage(), pager.getPageSize(), "jx_id DESC");
 		List<TeachingVideoEntity> list = teachingVideoService.queryListByPage(parameters);
 		parameters.clear();
 		parameters.put("isSuccess", Boolean.TRUE);
@@ -102,263 +102,242 @@ public class TeachingVideoController extends BaseController {
 		parameters.put("pageCount", page.getPages());
 		parameters.put("recordCount", page.getTotal());
 		parameters.put("startRecord", page.getStartRow());
-		//列表展示数据
+		// 列表展示数据
 		parameters.put("exhibitDatas", list);
 		return parameters;
 	}
-	
-	
+
 	@RequestMapping("addUI.html")
 	public String addUI(Model model, HttpServletRequest request) {
-		try
-		{
+		try {
 			List<TeachingVideoEntity> teachingVideoList = teachingVideoService.queryListByPage(null);
-			model.addAttribute("teachingVideoList",teachingVideoList);
+			model.addAttribute("teachingVideoList", teachingVideoList);
 			return Common.BACKGROUND_PATH + "/teaching/form";
-		}catch(Exception e)
-		{
+		} catch (Exception e) {
 			throw new SystemException(e);
 		}
 	}
-	
+
 	@RequestMapping("add.html")
 	@ResponseBody
-	public Object add(TeachingVideoEntity teachingVideoEntity) throws AjaxException
-	{
+	public Object add(TeachingVideoEntity teachingVideoEntity) throws AjaxException {
 		Map<String, Object> map = new HashMap<String, Object>();
-		try
-		{
+		try {
 			boolean result = teachingVideoService.insert(teachingVideoEntity);
-			if(result)
-			{
+			if (result) {
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
 				map.put("message", "添加成功");
-			}else
-			{
+			} else {
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
 				map.put("message", "添加失败");
 			}
-		}catch(ServiceException e)
-		{
+		} catch (ServiceException e) {
 			throw new AjaxException(e);
 		}
 		return map;
 	}
-	
-	
+
 	@RequestMapping("pictureuploadUI.html")
 	public String pictureuploadUI() {
 		return Common.BACKGROUND_PATH + "/teaching/pictureupload";
 	}
-	
+
 	@RequestMapping("pictureupload.html")
 	@ResponseBody
-	public Object pictureupload(HttpServletRequest request,HttpServletResponse response) {
+	public Object pictureupload(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		StringBuilder result = new StringBuilder();
-		try{
-	        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());  
-	        if(multipartResolver.isMultipart(request)){
-	            MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest)request;  
-	            int count = Integer.parseInt(request.getParameter("count"));
-	            if(count<=0)
-	            	throw new Exception("无上传文件");
-	            for(int i=1;i<=count;i++){
-	            	MultipartFile file = multiRequest.getFile("file_"+i);
-	            	GridFSFile inputFile = gridFsTemplate.store(file.getInputStream(), file.getOriginalFilename());
-	            	String reg = ".+(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.BMP|.bmp|.PNG|.png)$";
-	                Pattern pattern = Pattern.compile(reg);
-	                Matcher matcher = pattern.matcher(file.getOriginalFilename());
-	                if(matcher.matches()){
-	                	File pic = new File(System.getProperty("java.io.tmpdir")+"/"+file.getOriginalFilename());
-		            	file.transferTo(pic);
-		            	Thumbnails.of(pic).forceSize(100,100).toFile(pic);
-		            	gridFsTemplate.store(new FileInputStream(pic), "thumbnail-"+inputFile.getId());
-	                }
-	            	String path = inputFile.getId().toString();
-	                String pTp = multiRequest.getParameter("pTp_"+i);
-	                PictureEntity picture = pictureService.findByTp(pTp);
-                    if(picture==null){
-                    	picture = new PictureEntity();
-                    	picture.setpTp(multiRequest.getParameter("pTp_"+i));
-                        picture.setpPath(path);
-                        picture.setpCc(multiRequest.getParameter("pCc_"+i));
-                        picture.setpTt(multiRequest.getParameter("pTt_"+i));
-                    	pictureService.insert(picture);
-                    }else{
-                        picture.setpPath(path);
-                        picture.setpCc(multiRequest.getParameter("pCc_"+i));
-                        picture.setpTt(multiRequest.getParameter("pTt_"+i));
-                    	pictureService.update(picture);
-                    }
-                    result.append(",").append(pTp);
-	            }
-	        }
-	        map.put("success", true);
-	        map.put("result", result.deleteCharAt(0).toString());
-		}catch(Exception e){
+		try {
+			CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(
+					request.getSession().getServletContext());
+			if (multipartResolver.isMultipart(request)) {
+				MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest) request;
+				int count = Integer.parseInt(request.getParameter("count"));
+				if (count <= 0)
+					throw new Exception("无上传文件");
+				for (int i = 1; i <= count; i++) {
+					MultipartFile file = multiRequest.getFile("file_" + i);
+					GridFSFile inputFile = gridFsTemplate.store(file.getInputStream(), file.getOriginalFilename());
+					String reg = ".+(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.BMP|.bmp|.PNG|.png)$";
+					Pattern pattern = Pattern.compile(reg);
+					Matcher matcher = pattern.matcher(file.getOriginalFilename());
+					if (matcher.matches()) {
+						File pic = new File(System.getProperty("java.io.tmpdir") + "/" + file.getOriginalFilename());
+						file.transferTo(pic);
+						Thumbnails.of(pic).forceSize(100, 100).toFile(pic);
+						gridFsTemplate.store(new FileInputStream(pic), "thumbnail-" + inputFile.getId());
+					}
+					String path = inputFile.getId().toString();
+					String pTp = multiRequest.getParameter("pTp_" + i);
+					PictureEntity picture = pictureService.findByTp(pTp);
+					if (picture == null) {
+						picture = new PictureEntity();
+						picture.setpTp(multiRequest.getParameter("pTp_" + i));
+						picture.setpPath(path);
+						picture.setpCc(multiRequest.getParameter("pCc_" + i));
+						picture.setpTt(multiRequest.getParameter("pTt_" + i));
+						pictureService.insert(picture);
+					} else {
+						picture.setpPath(path);
+						picture.setpCc(multiRequest.getParameter("pCc_" + i));
+						picture.setpTt(multiRequest.getParameter("pTt_" + i));
+						pictureService.update(picture);
+					}
+					result.append(",").append(pTp);
+				}
+			}
+			map.put("success", true);
+			map.put("result", result.deleteCharAt(0).toString());
+		} catch (Exception e) {
 			map.put("success", false);
 			map.put("result", e.getLocalizedMessage());
 			throw new AjaxException(e);
 		}
-        return map;
+		return map;
 	}
-	
+
 	@RequestMapping("mediauploadUI.html")
 	public String mediauploadUI() {
 		return Common.BACKGROUND_PATH + "/teaching/mediaupload";
 	}
-	
+
 	@RequestMapping("mediaupload.html")
 	@ResponseBody
-	public Object mediaupload(HttpServletRequest request,HttpServletResponse response) {
+	public Object mediaupload(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		StringBuilder result = new StringBuilder();
-		try{
-	        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());  
-	        if(multipartResolver.isMultipart(request)){
-	            MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest)request;  
-	            int count = Integer.parseInt(request.getParameter("count"));
-	            if(count<=0)
-	            	throw new Exception("无上传文件");
-	            for(int i=1;i<=count;i++){
-	            	MultipartFile file = multiRequest.getFile("file_"+i);
-	            	GridFSFile inputFile = gridFsTemplate.store(file.getInputStream(), file.getOriginalFilename());
-	            	String path = inputFile.getId().toString();
-	                String mYspm = multiRequest.getParameter("mYspm_"+i);
-	                MediaEntity media = mediaService.findByYspm(mYspm);
-                    if(media==null){
-                    	media = new MediaEntity();
-                    	media.setmLx(Integer.parseInt(multiRequest.getParameter("mLx_"+i)));
-                    	media.setmYspm(multiRequest.getParameter("mYspm_"+i));
-                    	String mJlsj = multiRequest.getParameter("mJlsj_"+i);
-                        media.setmJlsj(LocalDate.parse(mJlsj, DateTimeFormat.forPattern("yyyy-MM-dd")).toDate());
-                        media.setmJlr(multiRequest.getParameter("mJlr_"+i));
-                        media.setmScfr(multiRequest.getParameter("mScfr_"+i));
-                        media.setmCfdd(multiRequest.getParameter("mCfdd_"+i));
-                        media.setmSc(Long.parseLong(multiRequest.getParameter("mSc_"+i)));
-                        media.setmZtjl(multiRequest.getParameter("mZtjl_"+i));
-                        media.setmPath(path);
-                        mediaService.insert(media);
-                    }else{
-                    	media.setmLx(Integer.parseInt(multiRequest.getParameter("mLx_"+i)));
-                    	String mJlsj = multiRequest.getParameter("mJlsj_"+i);
-                        media.setmJlsj(LocalDate.parse(mJlsj, DateTimeFormat.forPattern("yyyy-MM-dd")).toDate());
-                        media.setmJlr(multiRequest.getParameter("mJlr_"+i));
-                        media.setmScfr(multiRequest.getParameter("mScfr_"+i));
-                        media.setmCfdd(multiRequest.getParameter("mCfdd_"+i));
-                        media.setmSc(Long.parseLong(multiRequest.getParameter("mSc_"+i)));
-                        media.setmZtjl(multiRequest.getParameter("mZtjl_"+i));
-                        media.setmPath(path);
-                        mediaService.update(media);
-                    }
-                    result.append(",").append(mYspm);
-	            }
-	        }
-	        map.put("success", true);
-	        map.put("result", result.deleteCharAt(0).toString());
-		}catch(Exception e){
+		try {
+			CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(
+					request.getSession().getServletContext());
+			if (multipartResolver.isMultipart(request)) {
+				MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest) request;
+				int count = Integer.parseInt(request.getParameter("count"));
+				if (count <= 0)
+					throw new Exception("无上传文件");
+				for (int i = 1; i <= count; i++) {
+					MultipartFile file = multiRequest.getFile("file_" + i);
+					GridFSFile inputFile = gridFsTemplate.store(file.getInputStream(), file.getOriginalFilename());
+					String path = inputFile.getId().toString();
+					String mYspm = multiRequest.getParameter("mYspm_" + i);
+					MediaEntity media = mediaService.findByYspm(mYspm);
+					if (media == null) {
+						media = new MediaEntity();
+						media.setmLx(Integer.parseInt(multiRequest.getParameter("mLx_" + i)));
+						media.setmYspm(multiRequest.getParameter("mYspm_" + i));
+						String mJlsj = multiRequest.getParameter("mJlsj_" + i);
+						media.setmJlsj(LocalDate.parse(mJlsj, DateTimeFormat.forPattern("yyyy-MM-dd")).toDate());
+						media.setmJlr(multiRequest.getParameter("mJlr_" + i));
+						media.setmScfr(multiRequest.getParameter("mScfr_" + i));
+						media.setmCfdd(multiRequest.getParameter("mCfdd_" + i));
+						media.setmSc(Long.parseLong(multiRequest.getParameter("mSc_" + i)));
+						media.setmZtjl(multiRequest.getParameter("mZtjl_" + i));
+						media.setmPath(path);
+						mediaService.insert(media);
+					} else {
+						media.setmLx(Integer.parseInt(multiRequest.getParameter("mLx_" + i)));
+						String mJlsj = multiRequest.getParameter("mJlsj_" + i);
+						media.setmJlsj(LocalDate.parse(mJlsj, DateTimeFormat.forPattern("yyyy-MM-dd")).toDate());
+						media.setmJlr(multiRequest.getParameter("mJlr_" + i));
+						media.setmScfr(multiRequest.getParameter("mScfr_" + i));
+						media.setmCfdd(multiRequest.getParameter("mCfdd_" + i));
+						media.setmSc(Long.parseLong(multiRequest.getParameter("mSc_" + i)));
+						media.setmZtjl(multiRequest.getParameter("mZtjl_" + i));
+						media.setmPath(path);
+						mediaService.update(media);
+					}
+					result.append(",").append(mYspm);
+				}
+			}
+			map.put("success", true);
+			map.put("result", result.deleteCharAt(0).toString());
+		} catch (Exception e) {
 			map.put("success", false);
 			map.put("result", e.getLocalizedMessage());
 			throw new AjaxException(e);
 		}
-        return map;
+		return map;
 	}
-	
+
 	@RequestMapping("editUI.html")
 	public String editUI(Model model, HttpServletRequest request, Long id) {
-		try
-		{
+		try {
 			TeachingVideoEntity teachingVideoEntity = teachingVideoService.findById(id);
 			PageUtil page = new PageUtil();
-			if(request.getParameter("page")!=null&&request.getParameter("page").trim().equals("")){
+			if (request.getParameter("page") != null && request.getParameter("page").trim().equals("")) {
 				page.setPageNum(Integer.valueOf(request.getParameter("page")));
 				page.setPageSize(Integer.valueOf(request.getParameter("rows")));
 				page.setOrderByColumn(request.getParameter("sidx"));
 				page.setOrderByType(request.getParameter("sord"));
 			}
 			List<TeachingVideoEntity> teachingVideoList = teachingVideoService.queryListByPage(null);
-			model.addAttribute("teachingVideoList",teachingVideoList);
+			model.addAttribute("teachingVideoList", teachingVideoList);
 			model.addAttribute("page", page);
 			model.addAttribute("teachingVideoEntity", teachingVideoEntity);
 			return Common.BACKGROUND_PATH + "/teaching/form";
-		}catch(Exception e)
-		{
+		} catch (Exception e) {
 			throw new AjaxException(e);
 		}
 	}
-	
+
 	@RequestMapping("edit.html")
 	@ResponseBody
-	public Object update(TeachingVideoEntity teachingVideoEntity)
-	{
+	public Object update(TeachingVideoEntity teachingVideoEntity) {
 		Map<String, Object> map = new HashMap<String, Object>();
-		try
-		{
+		try {
 			boolean result = teachingVideoService.updateById(teachingVideoEntity);
-			if(result)
-			{
+			if (result) {
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
 				map.put("message", "编辑成功");
-			}else
-			{
+			} else {
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
 				map.put("message", "编辑失败");
 			}
-		}catch(Exception e)
-		{
+		} catch (Exception e) {
 			throw new AjaxException(e);
 		}
 		return map;
 	}
-	
-	
+
 	@RequestMapping("deleteBatch.html")
 	@ResponseBody
 	public Object deleteBatch(String ids) {
 		Map<String, Object> result = new HashMap<String, Object>();
-		try
-		{
+		try {
 			String[] dataIds = ids.split(",");
 			List<Long> list = new ArrayList<Long>();
 			for (String string : dataIds) {
 				list.add(Long.valueOf(string));
 			}
 			boolean cnt = teachingVideoService.deleteBatchById(list);
-			if(cnt)
-			{
+			if (cnt) {
 				result.put("success", true);
 				result.put("data", null);
 				result.put("message", "删除成功");
-			}else
-			{
+			} else {
 				result.put("success", false);
 				result.put("data", null);
 				result.put("message", "删除失败");
 			}
-		}catch(Exception e)
-		{
+		} catch (Exception e) {
 			throw new AjaxException(e);
 		}
 		return result;
 	}
-	
+
 	@RequestMapping("detailUI.html")
 	public String detailUI(Model model, HttpServletRequest request) {
-		try
-		{
-			if(request.getParameter("id")!=null&&!request.getParameter("id").trim().equals("")){
+		try {
+			if (request.getParameter("id") != null && !request.getParameter("id").trim().equals("")) {
 				long id = Long.parseLong(request.getParameter("id"));
 				TeachingVideoEntity teachingVideoEntity = teachingVideoService.findById(id);
 				model.addAttribute("teachingVideoEntity", teachingVideoEntity);
 			}
 			return Common.BACKGROUND_PATH + "/teaching/detail";
-		}catch(Exception e)
-		{
+		} catch (Exception e) {
 			throw new SystemException(e);
 		}
 	}
