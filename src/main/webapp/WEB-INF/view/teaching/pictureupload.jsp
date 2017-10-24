@@ -135,7 +135,7 @@ function commit(){
 <body class="no-skin"> 
 <div class="page-header">
 	<h1>
-	上传图片文件
+	上传图片
 	</h1>
 </div>
 <div class="row" style="margin-top:5px;">
