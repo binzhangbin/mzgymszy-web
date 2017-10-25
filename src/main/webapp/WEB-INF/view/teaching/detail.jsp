@@ -225,13 +225,16 @@ function showAudio(mYspm){
 						<dt>课件内容:</dt>
 						<c:forEach var="jxKj" items="${ fn:split(teachingVideoEntity.jxKj, ',') }">
 							<dd>
-								<img src="${ctx}/media/showThumbnail.html?pTp=${jxKj}">
+								<%-- <img src="${ctx}/media/showThumbnail.html?pTp=${jxKj}">
 								<button class="btn btn-info btn-grey" onclick="javascript:showPicture('${jxKj}')">
 									<i class="fa fa-arrows-alt align-top bigger-250"></i>
 								</button>
 								<button class="btn btn-info btn-grey" onclick="location ='${ctx}/media/download.html?pTp=${jxKj}'">
 									<i class="fa fa-save align-top bigger-250"></i>
-								</button>
+								</button> --%>
+								<li>
+									<i class="fa fa-file bigger-110 green"></i>	${jxKj}
+								</li>
 							</dd>
 						</c:forEach>
 						<!-- 课件内容===End=== -->
