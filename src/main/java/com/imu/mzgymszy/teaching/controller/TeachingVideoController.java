@@ -138,7 +138,7 @@ public class TeachingVideoController extends BaseController {
 		}
 		return map;
 	}
-
+	
 	@RequestMapping("pictureuploadUI.html")
 	public String pictureuploadUI() {
 		return Common.BACKGROUND_PATH + "/teaching/pictureupload";
@@ -198,6 +198,68 @@ public class TeachingVideoController extends BaseController {
 		return map;
 	}
 
+	@RequestMapping("documentuploadUI.html")
+	public String documentloadUI() {
+		return Common.BACKGROUND_PATH + "/teaching/documentupload";
+	}
+
+	@RequestMapping("documentupload.html")
+	@ResponseBody
+	public Object documentupload(HttpServletRequest request, HttpServletResponse response) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		StringBuilder result = new StringBuilder();
+		try {
+			CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(
+					request.getSession().getServletContext());
+			if (multipartResolver.isMultipart(request)) {
+				MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest) request;
+				int count = Integer.parseInt(request.getParameter("count"));
+				if (count <= 0)
+					throw new Exception("无上传文件");
+				for (int i = 1; i <= count; i++) {
+					MultipartFile file = multiRequest.getFile("file_" + i);
+					GridFSFile inputFile = gridFsTemplate.store(file.getInputStream(), file.getOriginalFilename());
+					String path = inputFile.getId().toString();
+					String mYspm = multiRequest.getParameter("mYspm_" + i);
+					MediaEntity media = mediaService.findByYspm(mYspm);
+					if (media == null) {
+						media = new MediaEntity();
+						media.setmLx(Integer.parseInt(multiRequest.getParameter("mLx_" + i)));
+						media.setmYspm(multiRequest.getParameter("mYspm_" + i));
+						String mJlsj = multiRequest.getParameter("mJlsj_" + i);
+						media.setmJlsj(LocalDate.parse(mJlsj, DateTimeFormat.forPattern("yyyy-MM-dd")).toDate());
+						media.setmJlr(multiRequest.getParameter("mJlr_" + i));
+						media.setmScfr(multiRequest.getParameter("mScfr_" + i));
+						media.setmCfdd(multiRequest.getParameter("mCfdd_" + i));
+						media.setmSc(Long.parseLong(multiRequest.getParameter("mSc_" + i)));
+						media.setmZtjl(multiRequest.getParameter("mZtjl_" + i));
+						media.setmPath(path);
+						mediaService.insert(media);
+					} else {
+						media.setmLx(Integer.parseInt(multiRequest.getParameter("mLx_" + i)));
+						String mJlsj = multiRequest.getParameter("mJlsj_" + i);
+						media.setmJlsj(LocalDate.parse(mJlsj, DateTimeFormat.forPattern("yyyy-MM-dd")).toDate());
+						media.setmJlr(multiRequest.getParameter("mJlr_" + i));
+						media.setmScfr(multiRequest.getParameter("mScfr_" + i));
+						media.setmCfdd(multiRequest.getParameter("mCfdd_" + i));
+						media.setmSc(Long.parseLong(multiRequest.getParameter("mSc_" + i)));
+						media.setmZtjl(multiRequest.getParameter("mZtjl_" + i));
+						media.setmPath(path);
+						mediaService.update(media);
+					}
+					result.append(",").append(mYspm);
+				}
+			}
+			map.put("success", true);
+			map.put("result", result.deleteCharAt(0).toString());
+		} catch (Exception e) {
+			map.put("success", false);
+			map.put("result", e.getLocalizedMessage());
+			throw new AjaxException(e);
+		}
+		return map;
+	}
+	
 	@RequestMapping("mediauploadUI.html")
 	public String mediauploadUI() {
 		return Common.BACKGROUND_PATH + "/teaching/mediaupload";

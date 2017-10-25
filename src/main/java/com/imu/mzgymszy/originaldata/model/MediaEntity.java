@@ -117,7 +117,7 @@ public class MediaEntity extends BaseEntity{
         return mSc;
     }
 
-    public void setmSc(Long mSc) {
+    public void setmSc(long mSc) {
         this.mSc = mSc;
     }
 

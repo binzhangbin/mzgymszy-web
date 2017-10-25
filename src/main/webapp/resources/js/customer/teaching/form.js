@@ -26,6 +26,27 @@ $(function() {
 	        });
 		}
     });
+	/*文档测试===Start===*/
+	$('.files-upload').bind('focus', function(event) {
+		if(!isLayerOpen){
+			var pictureLayer = layer.open({
+				type : 2,
+				scrollbar : false,
+				content : sys.rootPath + '/teachingVideo/documentuploadUI.html?id='+$(this).attr("id"),
+				area : ['500px', '500px'],
+				maxmin : true,
+				shift : 4,
+				title : '<i class="fa fa-file-o"></i>&nbsp;选择文档',
+				success: function(){
+					isLayerOpen=true;
+				},
+				end:function(){
+					isLayerOpen=false;
+				}
+			});
+		}
+	});
+	/*文档测试===End===*/
 	$('.media-upload').bind('focus', function(event) {
 		if(!isLayerOpen){
 			var mediaLayer = layer.open({

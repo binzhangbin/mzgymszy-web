@@ -385,13 +385,13 @@
 			
 			<!-- 课件内容===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxKj">课件内容 </label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxKj">课件内容</label>
 				<div class="col-sm-9">
 				<div class="input-group">
-					<input class="form-control picture-upload" name="jxKj" id="jxKj" type="text" 
-					value="${teachingVideoEntity.jxKj }" placeholder="课件内容..." />
+					<input class="form-control files-upload" name="jxKj" id="jxKj" type="text" 
+					value="${teachingVideoEntity.jxKj }" placeholder="文档测试 ..." />
 					<span class="input-group-addon">
-						<i class="fa fa-file-image-o bigger-110"></i>
+						<i class="fa fa-file-o bigger-110"></i>
 					</span>
 				</div>
 				</div>
