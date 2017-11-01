@@ -68,6 +68,7 @@ $(function () {
         		no_file:'选择文件 ...',
         		btn_choose:'选择',
         		btn_change:'更改',
+        		maxSize:'50000000',//教学文档不要超过50M=50*1000*1000
         		droppable:false,
         		onchange:null,
         		thumbnail:false //| true | large
