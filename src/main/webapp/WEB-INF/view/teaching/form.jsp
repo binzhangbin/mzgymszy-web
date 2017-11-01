@@ -192,12 +192,12 @@
 			
 			<!-- 教师出生年月===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxCsny">教师出生年月</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxCsny">教师出生日期</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control form_datetime" name="jxCsny"
 							id="jxCsny" type="text" placeholder="教师出生年月..."
-							value="<fmt:formatDate value="${teachingVideoEntity.jxCsny}" type="date"/>" />
+							value="<fmt:formatDate value="${teachingVideoEntity.jxCsny}" type="date"/>" required/>
 						<span class="input-group-addon"> <i
 							class="fa fa-calendar bigger-110"></i>
 						</span>

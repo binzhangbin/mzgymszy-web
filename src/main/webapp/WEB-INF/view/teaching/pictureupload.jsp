@@ -60,11 +60,12 @@ $(function () {
             }
         });
         $("#btn_add").click(function(){  
-            $("#fileForm").append('<div class="form-group" id="div_'+i+'"> <div class="col-sm-12"> <div class="clearfix"> <input class="form-control" name="pTp_'+i+'" id="pTp_'+i+'" type="text" placeholder="图片编码" maxlength="10" required="true"/> </div></div> <div class="col-sm-12"> <div class="clearfix"> <input class="form-control" name="pCc_'+i+'" id="pCc_'+i+'" type="text" placeholder="尺寸" maxlength="10"/> </div> </div> <div class="col-sm-12"> <div class="clearfix"> <input class="form-control" name="pTt_'+i+'" id="pTt_'+i+'" type="text" placeholder="图题" maxlength="250"/> </div> </div> <div class="col-sm-12"> <div class="clearfix"> 	<input  name="file_'+i+'" id="file_'+i+'" type="file" class="form-control file_upload" required="true"/> </div> </div> <div class="center"><button class="btn btn-sm btn-warning" onclick="del('+i+')"> <i class="ace-icon fa fa-undo"></i> 取消</button></div> </div>');  
+            $("#fileForm").append('<div class="form-group" id="div_'+i+'"> <div class="col-sm-12"> <div class="clearfix"> <input class="form-control" name="pTp_'+i+'" id="pTp_'+i+'" type="text" placeholder="图片编码" maxlength="10" required="true"/> </div></div> <div class="col-sm-12"> <div class="clearfix"> <input class="form-control" name="pCc_'+i+'" id="pCc_'+i+'" type="text" placeholder="尺寸" maxlength="10"/> </div> </div> <div class="col-sm-12"> <div class="clearfix"> <input class="form-control" name="pTt_'+i+'" id="pTt_'+i+'" type="text" placeholder="图题" maxlength="250"/> </div> </div> <div class="col-sm-12"> <div class="clearfix"> 	<input  name="file_'+i+'" id="file_'+i+'" type="file" class="form-control file_upload" required="true"/> </div> <font color="#FF0000">照片文件大小不要超过50M</font>  </div> <div class="center"><button class="btn btn-sm btn-warning" onclick="del('+i+')"> <i class="ace-icon fa fa-undo"></i> 取消</button></div> </div>');  
             $('.file_upload').ace_file_input({
         		no_file:'选择文件 ...',
         		btn_choose:'选择',
         		btn_change:'更改',
+        		maxSize:'50000000',//教学照片不要超过50M=50*1000*1000
         		droppable:false,
         		onchange:null,
         		thumbnail:'large',
