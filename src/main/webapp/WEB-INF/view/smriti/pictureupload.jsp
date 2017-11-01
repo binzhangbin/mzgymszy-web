@@ -63,7 +63,7 @@ $(function () {
     		no_file:'选择文件 ...',
     		btn_choose:'选择',
     		btn_change:'更改',
-    		maxSize:'30000',//传承人照片不要超过30kb
+    		maxSize:'3000000',//传承人照片不要超过3M=3*1000*1000
     		droppable:false,
     		onchange:null,
     		thumbnail:'large',
@@ -140,7 +140,7 @@ function commit(){
  				<div class="clearfix">
  					<input  name="file" id="file" type="file" class="form-control file_upload" required="true"/>
  				</div>
- 				<font color="#FF0000">照片文件大小不要超过30kb</font> 
+ 				<font color="#FF0000">照片文件大小不要超过3M</font> 
  				</div>
  			</div>
 	    </form>
