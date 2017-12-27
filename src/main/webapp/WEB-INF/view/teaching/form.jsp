@@ -49,6 +49,21 @@
     }          
 </script>
 
+
+<script type="text/javascript">
+	function checkTel() { //手机号码格式验证
+		var value = document.getElementById("jxLxdh").value;
+		RegularExp=/^[0-9]{11}$/;
+		if (RegularExp.test(value)) {
+			return true;
+		} else {
+			alert("手机号格式不正确！应该为11位长度的数字,或固话前应有区号");
+			document.getElementById("jxLxdh").value="";
+			return false;
+		}
+	}
+</script>
+
 <style>
 .iconShow
 {
@@ -238,7 +253,7 @@
 					<div class="clearfix">
 						<input class="form-control" name="jxLxdh" id="jxLxdh" type="text"
 							value="${teachingVideoEntity.jxLxdh }" placeholder="联系电话..."
-							maxlength="11" required/>
+							 onblur="checkTel()" required/>
 					</div>
 				</div>
 			</div>
