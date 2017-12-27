@@ -93,6 +93,31 @@
         }
     });
 </script>
+<!--手机号和固话校验、邮箱校验-->
+<script type="text/javascript">
+	function checkTel() {
+		var value = document.getElementById("cLxfs").value;
+		RegularExp=/^[0-9]{11}$/;
+		if (RegularExp.test(value)) {
+			return true;
+		} else {
+			alert("手机号格式不正确！应该为11位长度的数字,或固话前应有区号");
+			document.getElementById("cLxfs").value="";
+			return false;
+		}
+	}
+	function isEmail() {
+		var value = document.getElementById("cDzxx").value;
+		RegularExp = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+		if (RegularExp.test(value)) {
+			return true;
+		} else {
+			alert("邮箱格式不正确！");
+			document.getElementById("cDzxx").value="";
+			return false;
+		}
+	}
+</script>
 <div class="page-header">
 	<h1>
 		<c:if test="${empty ccrEntity}">
@@ -216,7 +241,7 @@
 		      <div class="col-sm-10">
 		      <div class="clearfix">
 		         <input class="form-control" name="cLxfs" id="cLxfs" type="text" 
-		           value="${ccrEntity.cLxfs }" placeholder="联系方式..." required/>
+		           value="${ccrEntity.cLxfs }" placeholder="联系方式..." onblur="checkTel()" required/>
 		      </div>
 		      </div>
 		   </div>
@@ -243,7 +268,7 @@
 		      <div class="col-sm-10">
 		      <div class="clearfix">
 		         <input class="form-control" name="cDzxx" id="cDzxx" type="text" 
-		           value="${ccrEntity.cDzxx }" placeholder="电子信箱..."/>
+		           value="${ccrEntity.cDzxx }" placeholder="电子信箱..." onblur="isEmail()" />
 		      </div>
 		      </div>
 		   </div>	
