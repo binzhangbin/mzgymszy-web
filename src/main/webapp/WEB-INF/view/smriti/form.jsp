@@ -93,6 +93,7 @@
         }
     });
 </script>
+
 <!--手机号和固话校验、邮箱校验-->
 <script type="text/javascript">
 	function checkTel() {
@@ -118,6 +119,7 @@
 		}
 	}
 </script>
+
 <div class="page-header">
 	<h1>
 		<c:if test="${empty ccrEntity}">
