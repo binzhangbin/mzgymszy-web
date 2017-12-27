@@ -169,6 +169,7 @@
 			return true;
 		} else {
 			alert("手机号格式不正确！应该为11位长度的数字,或固话前应有区号");
+			document.getElementById("qyGzsBgdh").value="";
 			return false;
 		}
 	}
@@ -179,6 +180,7 @@
 			return true;
 		} else {
 			alert("邮箱格式不正确！");
+			document.getElementById("qyGzsYx").value="";
 			return false;
 		}
 	}
