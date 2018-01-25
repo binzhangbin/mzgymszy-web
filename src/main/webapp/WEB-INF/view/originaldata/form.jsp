@@ -762,7 +762,7 @@
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypDyrXm" id="gypDyrXm" type="text"
-						value="${originaldataEntity.gypDyrXm }" placeholder="调研人姓名..." maxlength="10" required/>
+						value="${originaldataEntity.gypDyrXm }" placeholder="调研人姓名..."  required/>
 				</div>
 				</div>
 			</div>
@@ -771,7 +771,7 @@
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypDyrLxfs" id="gypDyrLxfs" type="text"
-						value="${originaldataEntity.gypDyrLxfs }" placeholder="调研人联系方式..." maxlength="10" />
+						value="${originaldataEntity.gypDyrLxfs }" placeholder="调研人联系方式..."  />
 				</div>
 				</div>
 			</div>
