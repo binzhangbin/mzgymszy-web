@@ -94,19 +94,48 @@
     });
 </script>
 
-<!--手机号和固话校验、邮箱校验-->
+<!--身份证号码、联系方式和固话校验、邮编、邮箱校验-->
 <script type="text/javascript">
-	function checkTel() {
-		var value = document.getElementById("cLxfs").value;
-		RegularExp=/^[0-9]{11}$/;
+	//邮编校验
+	function isPostalCode() {
+		var value = document.getElementById("cYb").value;
+		var regularExp = /^[a-zA-Z0-9 ]{3,12}$/;
+		if (regularExp.test(value)) {
+			return true;
+		} else {
+			alert("邮编格式不正确！请重新输入！");
+			document.getElementById("cYb").value = "";
+			return false;
+		}
+	}
+	
+	//身份证号码校验
+	function checkIdCardNo() {
+		var value = document.getElementById("cSfzh").value;
+		RegularExp = /(^\d{15}$)|(^\d{17}([0-9]|X)$)/;
+		if (RegularExp.test(value)) {
+			return true;
+		} else {
+			alert("输入的身份证号长度不对，或者号码不符合规定！\n身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X");
+			document.getElementById("cSfzh").value = "";
+			return false;
+		}
+	}
+	
+	//联系方式校验
+	function checkTel(tel) {
+		var value = document.getElementById(tel).value;
+		RegularExp = /^[0-9]{11}$/;
 		if (RegularExp.test(value)) {
 			return true;
 		} else {
 			alert("手机号格式不正确！应该为11位长度的数字,或固话前应有区号");
-			document.getElementById("cLxfs").value="";
+			document.getElementById("cLxfs").value = "";
 			return false;
 		}
 	}
+	
+	// 邮箱校验
 	function isEmail() {
 		var value = document.getElementById("cDzxx").value;
 		RegularExp = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
@@ -114,7 +143,7 @@
 			return true;
 		} else {
 			alert("邮箱格式不正确！");
-			document.getElementById("cDzxx").value="";
+			document.getElementById("cDzxx").value = "";
 			return false;
 		}
 	}
@@ -145,7 +174,7 @@
 		      <div class="col-sm-10">
 		      <div class="clearfix">
 		         <input class="form-control" name="cSfzh" id="cSfzh" type="text" 
-		           value="${ccrEntity.cSfzh }" placeholder="身份证号..." required/>
+		           value="${ccrEntity.cSfzh }" placeholder="身份证号..." onblur="checkIdCardNo()" required/>
 		      </div>
 		      </div>
 		   </div>
@@ -243,7 +272,7 @@
 		      <div class="col-sm-10">
 		      <div class="clearfix">
 		         <input class="form-control" name="cLxfs" id="cLxfs" type="text" 
-		           value="${ccrEntity.cLxfs }" placeholder="联系方式..." onblur="checkTel()" required/>
+		           value="${ccrEntity.cLxfs }" placeholder="联系方式..." onblur="checkTel('cLxfs')" required/>
 		      </div>
 		      </div>
 		   </div>
@@ -279,7 +308,7 @@
 		      <div class="col-sm-10">
 		      <div class="clearfix">
 		         <input class="form-control" name="cYb" id="cYb" type="text" 
-		           value="${ccrEntity.cYb }" placeholder="邮编..." />
+		           value="${ccrEntity.cYb }" placeholder="邮编..." onblur="isPostalCode()" />
 		      </div>
 		      </div>
 		   </div>		
@@ -429,7 +458,7 @@
 		      <div class="col-sm-10">
 		      <div class="clearfix">
 		         <input class="form-control" name="cLxfsLs" id="cLxfsLs" type="text" 
-		           value="${ccrEntity.cLxfsLs }" placeholder="联系方式..." />
+		           value="${ccrEntity.cLxfsLs }" placeholder="联系方式..." onblur="checkTel('cLxfsLs')" />
 		      </div>
 		      </div>
 		   </div>
@@ -465,7 +494,7 @@
 		      <div class="col-sm-10">
 		      <div class="clearfix">
 		         <input class="form-control" name="cLxfsXt" id="cLxfsXt" type="text" 
-		           value="${ccrEntity.cLxfsXt }" placeholder="学徒联系方式..." />
+		           value="${ccrEntity.cLxfsXt }" placeholder="学徒联系方式..." onblur="checkTel('cLxfsXt')" />
 		      </div>
 		      </div>
 		   </div>
@@ -503,7 +532,7 @@
 		      <div class="col-sm-10">
 		      <div class="clearfix">
 		         <select class="form-control" id="cQygzs" name="cQygzs"
-						style="width: 100%">
+						style="width: 100%" required>
 						<c:if test="${empty ccrEntity}">
 							<option value="" selected="selected">企业/工作室</option>
 						</c:if> 
@@ -511,7 +540,7 @@
 							<option value="${item.id }"
 								<c:if test="${ccrEntity.cQygzs eq item.id}">selected="selected"</c:if>>${item.qyGzsMc }</option>
 						</c:forEach>
-						<c:if test="${ccrEntity.cQygzs eq 0}">
+						 <c:if test="${ccrEntity.cQygzs eq 0}">
 							<option value="" selected="selected">企业/工作室</option>
 						</c:if>
 					</select>
