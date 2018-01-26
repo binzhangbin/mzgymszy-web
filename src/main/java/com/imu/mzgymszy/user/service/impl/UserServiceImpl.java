@@ -9,7 +9,6 @@ import com.imu.mzgymszy.exception.ServiceException;
 import com.imu.mzgymszy.user.mapper.UserMapper;
 import com.imu.mzgymszy.user.model.UserEntity;
 import com.imu.mzgymszy.user.service.UserService;
-import com.imu.mzgymszy.util.EmailUtil;
 
 @Service("userService")
 public class UserServiceImpl extends AbstractService<UserEntity, Long> implements UserService{
@@ -17,9 +16,6 @@ public class UserServiceImpl extends AbstractService<UserEntity, Long> implement
 	@Autowired
 	private UserMapper userMapper;
 	
-	@SuppressWarnings("unused")
-	@Autowired
-	private EmailUtil emailUtil;
 	
 	//这句必须要加上。不然会报空指针异常，因为在实际调用的时候不是BaseMapper调用，而是具体的mapper，这里为userMapper
 	@Autowired
