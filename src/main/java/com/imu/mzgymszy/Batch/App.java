@@ -27,7 +27,7 @@ import net.coobird.thumbnailator.Thumbnails;
 public class App {
 
 	public static void main(String[] args) {
-		batchUploadPicture();
+		batchUploadMedia();
 	}
 
 	/**
@@ -81,6 +81,7 @@ public class App {
 					writer.newLine();
 				}
 			}
+			System.err.println("上传完成");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
