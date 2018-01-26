@@ -57,19 +57,8 @@
 		r.r_status,
 		r.r_description,
 		r.r_create_time,
-		r.r_update_time,
-		u.u_id,
-		u.u_name,
-		u.u_account_name,
-		u.u_password,
-		u.u_delete_status,
-		u.u_locked,
-		u.u_description,
-		u.u_credentials_salt,
-		u.u_creator_name,
-		u.u_create_time,
-		u.u_update_time
-		FROM tb_role r LEFT JOIN tb_role_user ru ON r.r_id = ru.r_id LEFT JOIN tb_user u ON ru.u_id = u.u_id
+		r.r_update_time
+		FROM tb_role r 
 		<where>
 			<if test="name != null and name != ''">
 				r.r_name=#{name}

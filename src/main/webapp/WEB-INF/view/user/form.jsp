@@ -94,7 +94,12 @@
 										</c:if>
 									</c:when>
 									<c:otherwise>
-										<c:if test="${userEntity.role.id eq role.id}"><option value="${role.id }" selected="selected">${role.name }</option></c:if>
+										<c:choose>
+											<c:when test="${userEntity.role.id eq role.id}"><option value="${role.id }" selected="selected">${role.name }</option></c:when>
+											<c:otherwise>
+												<option value="${role.id }">${role.name }</option>
+											</c:otherwise>
+										</c:choose>
 									</c:otherwise>
 								</c:choose>
 							</c:forEach>							
