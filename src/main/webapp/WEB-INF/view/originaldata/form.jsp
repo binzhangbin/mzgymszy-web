@@ -119,7 +119,7 @@
 			return true;
 		} else {
 			alert("手机号格式不正确！应该为11位长度的数字,或固话前应有区号");
-			document.getElementById("cLxfs").value = "";
+			document.getElementById(tel).value = "";
 			return false;
 		}
 	}
@@ -874,7 +874,7 @@
 					<div class="clearfix">
 						<input class="form-control" name="gypDyrLxfs" id="gypDyrLxfs"
 							type="text" value="${originaldataEntity.gypDyrLxfs }"
-							placeholder="调研人联系方式..." onblur="checkTel('gypDyrLxfs')" />
+							placeholder="调研人联系方式..." onblur="checkTel('gypDyrLxfs')" maxlength="20"/>
 					</div>
 				</div>
 			</div>

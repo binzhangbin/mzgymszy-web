@@ -98,7 +98,7 @@
            }
        }
     }          
-</script>qyGzsJjxy
+</script>
 
 <!-- 复选框：经济效益 -->
 <script type="text/javascript">
