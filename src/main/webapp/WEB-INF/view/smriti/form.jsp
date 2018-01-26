@@ -135,7 +135,7 @@
 		}
 	}
 	
-	// 邮箱校验
+	// 邮箱校验--ceshi
 	function isEmail() {
 		var value = document.getElementById("cDzxx").value;
 		RegularExp = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
