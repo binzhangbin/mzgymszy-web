@@ -50,8 +50,8 @@
            statistics="true">
     </cache> 
     
-	<!-- 用户会话数缓存 -->            
-	<cache name="shiro-kickout-session"
+    <!-- 用户会话数缓存 -->            
+    <cache name="shiro-kickout-session"
            maxEntriesLocalHeap="2000"
            eternal="false"
            timeToIdleSeconds="3600"
@@ -61,7 +61,7 @@
            statistics="true">
     </cache>
 
-	<!-- 用户尝试登录次数缓存：10分钟 -->
+    <!-- 用户尝试登录次数缓存：10分钟 -->
     <cache name="passwordRetryCache"
            maxEntriesLocalHeap="2000"
            eternal="false"
