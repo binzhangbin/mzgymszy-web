@@ -47,7 +47,9 @@ public class AddUser {
 		UserService userService = (UserService) ctx.getBean("userService");
 
 		// 对应批量上传的名单文件
-		File filesDetial = new File("E:\\项目\\民族工艺美术资源\\非遗传承人名单\\非遗传承人名单.txt");
+//		File filesDetial = new File("E:\\民族工艺美术资源\\201806013\\非遗传承人名单.txt");
+//		File filesDetial = new File("E:\\民族工艺美术资源\\201806013\\设计师名单.txt");
+		File filesDetial = new File("E:\\民族工艺美术资源\\201806013\\设计师名单2.txt");
 
 		// 读取文件
 		InputStreamReader reader = new InputStreamReader(new FileInputStream(filesDetial));
@@ -76,7 +78,8 @@ public class AddUser {
 			// 设置锁定状态：未锁定；删除状态：未删除
 			userEntity.setLocked(0);
 			// 用户描述
-			userEntity.setDescription("非遗传承人名单");
+//			userEntity.setDescription("非遗传承人");
+			userEntity.setDescription("设计师2");
 			// 加密盐
 			userEntity.setCredentialsSalt(user.getCredentialsSalt());
 			// 设置创建者姓名
@@ -84,12 +87,16 @@ public class AddUser {
 			userEntity.setCreateTime(new Date(System.currentTimeMillis()));
 
 			RoleEntity role = new RoleEntity();
-			// 此处的 ID 由数据库获取，对应相应的“非遗传承人名单”
-			role.setId(7l);
-			role.setName("非遗传承人");
-			role.setKey("非遗传承人");
+			// 此处的 ID 由数据库获取，对应相应的“非遗传承人名单”,由表“tb_role”查
+//			role.setId(5l);
+			role.setId(6l);
+//			role.setName("非遗传承人");
+			role.setName("设计师2");
+//			role.setKey("非遗传承人");
+			role.setKey("设计师2");
 			role.setStatus(0);
-			role.setDescription("非遗传承人");
+//			role.setDescription("非遗传承人");
+			role.setDescription("设计师2");
 			role.setCreateTime(new Date(System.currentTimeMillis()));
 			userEntity.setRole(role);
 
@@ -101,7 +108,7 @@ public class AddUser {
 			userEntity.setUserInfo(userInfo);
 
 			userService.insert(userEntity, user.getPassword());
-			// System.out.println(userEntity.toString());
+			 System.out.println(userEntity.toString());
 		}
 
 		System.err.println("上传完成");
