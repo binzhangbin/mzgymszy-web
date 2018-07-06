@@ -965,7 +965,7 @@
 		</c:if>
 	</button>
 	<button id="btn" type="button"
-		onclick="webside.common.loadPage('/originaldata/treelistUI.html<c:if test="${!empty originaldataEntity}">?page=${page.pageNum }&rows=${page.pageSize }&sidx=${page.orderByColumn }&sord=${page.orderByType }</c:if>')"
+		onclick="webside.common.loadPage('/originaldata/listUI.html<c:if test="${!empty originaldataEntity}">?page=${page.pageNum }&rows=${page.pageSize }&sidx=${page.orderByColumn }&sord=${page.orderByType }</c:if>')"
 		class="btn btn-info btn-sm">
 		<i class="fa fa-undo"></i>&nbsp;返回
 	</button>

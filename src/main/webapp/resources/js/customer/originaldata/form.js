@@ -102,7 +102,7 @@ $(function() {
             } else {
                 url = '/originaldata/add.html';
             }
-            webside.common.commit('originaldataForm', url, '/originaldata/treelistUI.html');
+            webside.common.commit('originaldataForm', url, '/originaldata/listUI.html');
         }
     });
 });
