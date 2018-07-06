@@ -76,7 +76,7 @@ function showAudio(mYspm){
 	</button>
 	</shiro:hasPermission>
 	<button id="btnCancel" type="button"
-		onclick="webside.common.loadPage('/originaldata/treelistUI.html')"
+		onclick="webside.common.loadPage('/originaldata/listUI.html')"
 		class="btn btn-info btn-sm">
 		<i class="fa fa-undo"></i>&nbsp;返回
 	</button>
