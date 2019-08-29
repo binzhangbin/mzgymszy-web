@@ -2,3 +2,7 @@
 /target/
 /workspace/
 /.settings/
+*.properties
+*.iml
+.idea
+.idea/*
