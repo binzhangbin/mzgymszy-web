@@ -190,6 +190,7 @@ function showAudio(mYspm){
 						<dt>多视图-图片:</dt>
 						<c:forEach var="gypDstTp" items="${ fn:split(originaldataEntity.gypDstTp, ',') }">
 							<dd>
+                                <b>${gypDstTp}</b>
 								<img src="${ctx}/media/showThumbnail.html?pTp=${gypDstTp}">
 								<button class="btn btn-info btn-grey" onclick="javascript:showPicture('${gypDstTp}')">
 									<i class="fa fa-arrows-alt align-top bigger-250"></i>
