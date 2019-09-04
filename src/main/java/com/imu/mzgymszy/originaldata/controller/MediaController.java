@@ -137,6 +137,8 @@ public class MediaController {
             GridFSDBFile gridFsdbFile = gridFsTemplate.findOne(new Query(Criteria.where("_id").is(media.getmPath())));  
             if(gridFsdbFile==null)
             	return;
+            response.setContentLength((int)gridFsdbFile.getLength());
+            response.setContentType("application/octet-stream");
             OutputStream out = response.getOutputStream();
             gridFsdbFile.writeTo(out);
             out.flush();  
