@@ -77,7 +77,7 @@ function showAudio(mYspm){
 	</shiro:hasPermission>
 	
 	<button id="btnCancel" type="button"
-		onclick="webside.common.loadPage('/teachingVideo/listUI.html')"
+		onclick="webside.common.loadPage('/teachingVideo/dlistUI.html')"
 		class="btn btn-info btn-sm">
 		<i class="fa fa-undo"></i>&nbsp;返回
 	</button>
@@ -251,7 +251,7 @@ function showAudio(mYspm){
 </div>
 <div class="center">
 	<button id="btn" type="button"
-		onclick="webside.common.loadPage('/teachingVideo/listUI.html')"
+		onclick="webside.common.loadPage('/teachingVideo/dlistUI.html')"
 		class="btn btn-info btn-sm">
 		<i class="fa fa-undo"></i>&nbsp;返回
 	</button>

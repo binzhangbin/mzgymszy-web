@@ -76,7 +76,11 @@ public class TeachingVideoController extends BaseController {
 			throw new AjaxException(e);
 		}
 	}
-
+	@RequestMapping("dlistUI.html")
+	public String dlistUI(Model model, HttpServletRequest request) {
+			request.getSession().setAttribute("dlistFlag","dlistFlag");
+			return Common.BACKGROUND_PATH + "/teaching/list";
+	}
 	/**
 	 * ajax分页动态加载模式
 	 * 
@@ -86,23 +90,42 @@ public class TeachingVideoController extends BaseController {
 	 */
 	@RequestMapping(value = "/list.html", method = RequestMethod.POST)
 	@ResponseBody
-	public Object list(String gridPager, HttpServletResponse response) throws Exception {
+	public Object list(String gridPager,HttpServletRequest request, HttpServletResponse response) throws Exception {
 		Map<String, Object> parameters = null;
 		// 1、映射Pager对象
 		Pager pager = JSON.parseObject(gridPager, Pager.class);
 		// 2、设置查询参数
 		parameters = pager.getParameters();
 		// 设置分页，page里面包含了分页信息
-		Page<Object> page = PageHelper.startPage(pager.getNowPage(), pager.getPageSize(), "jx_id DESC");
-		List<TeachingVideoEntity> list = teachingVideoService.queryListByPage(parameters);
+//		System.out.println(pager.getNowPage()+"=-==-");
+		int pageSize=pager.getPageSize();
+		int startSize=1;
 		parameters.clear();
+		if(request.getSession().getAttribute("dlistFlag")!=null&&"dlistFlag".equalsIgnoreCase((String) request.getSession().getAttribute("dlistFlag"))){//由更新进入
+			Object retPage = request.getSession().getAttribute("retPage");
+
+			if(retPage==null){
+				retPage=1;
+			}
+			startSize= (int) retPage;
+			parameters.put("nowPage",retPage);
+//			System.out.println("返回页："+retPage);
+			request.getSession().removeAttribute("dlistFlag");
+		} else{//由list分页进入
+            parameters.put("nowPage", pager.getNowPage());//下一页
+            request.getSession().setAttribute("retPage",pager.getNowPage());//迭代更新
+			startSize=pager.getNowPage();
+//            System.out.println("下一页："+pager.getNowPage());
+        }
+		Page<Object> page = PageHelper.startPage(startSize,pageSize, "jx_id DESC");
+		List<TeachingVideoEntity> list = teachingVideoService.queryListByPage(parameters);
 		parameters.put("isSuccess", Boolean.TRUE);
-		parameters.put("nowPage", pager.getNowPage());
 		parameters.put("pageSize", pager.getPageSize());
 		parameters.put("pageCount", page.getPages());
 		parameters.put("recordCount", page.getTotal());
 		parameters.put("startRecord", page.getStartRow());
 		// 列表展示数据
+        request.getSession().setAttribute("pageNum",pager.getNowPage());
 		parameters.put("exhibitDatas", list);
 		return parameters;
 	}

@@ -29,7 +29,7 @@ var dtGridColumns = [
 		},
 		{
 			id : 'jxWhcd',
-			title : '文化程度',
+			title : 'cultural',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
@@ -58,7 +58,7 @@ var dtGridColumns = [
 			resolution : function(value, record, column, grid, dataNo, columnNo) {
 				var content = '';
 				content += '<button class="btn btn-xs btn-info" onclick="webside.common.loadPage(\'/teachingVideo/detailUI.html?id=';
-				content += value
+				content =content+ value
 						+ '\')"><i class="fa fa-plus"></i>&nbsp;详情</button>';
 				return content;
 			}
@@ -79,12 +79,12 @@ var dtGridOption = {
 	gridContainer : 'dtGridContainer',
 	toolbarContainer : 'dtGridToolBarContainer',
 	tools : 'refresh|print|export[excel,csv,pdf,txt]',
-	exportFileName : '用户信息',
-	pageSize : pageSize,
-	pageSizeLimit : [ 10, 20, 30 ]
+	exportFileName : 'user info',
+	// nowPage:2
 };
 
 var grid = $.fn.dlshouwen.grid.init(dtGridOption);
+
 $(function() {
 	if (null != $("#orderByColumn").val() && '' != $("#orderByColumn").val()) {
 		grid.sortParameter.columnId = $("#orderByColumn").val();

@@ -3,13 +3,16 @@
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="${ctx }/resources/js/customer/teaching/list.js"></script>
+
+<script type="text/javascript" src="${ctx}/resources/js/dlshouwen.grid.v1.2.1/i18n/zh-cn.js"></script>
 <div class="page-header">
 	<shiro:hasPermission name="teachingVideo:add">
 	<button id="btnAdd" type="button" onclick="webside.common.addModel('/teachingVideo/addUI.html')" class="btn btn-red btn-sm">
 	  	<i class="fa fa-user-plus"></i>&nbsp;添加
 	</button>
-	
+
 	</shiro:hasPermission>
 	<shiro:hasPermission name="teachingVideo:edit">
 	<button id="btnEdit" type="button" onclick="webside.common.editModel('/teachingVideo/editUI.html')" class="btn btn-success btn-sm">
@@ -42,10 +45,10 @@
 			<div class="widget-header">
 				<h4 class="widget-title lighter">教学视频列表</h4>
 				<div class="widget-toolbar no-border">
-					<a href="#" data-action="fullscreen" class="orange2"> 
+					<a href="#" data-action="fullscreen" class="orange2">
 						<i class="ace-icon fa fa-arrows-alt"></i>
-					</a> 
-					<a href="#" data-action="collapse" class="green"> 
+					</a>
+					<a href="#" data-action="collapse" class="green">
 						<i class="ace-icon fa fa-chevron-up"></i>
 					</a>
 				</div>
@@ -53,7 +56,6 @@
 
 			<div class="widget-body" style="display: block;">
 				<div class="widget-main padding-6 no-padding-left no-padding-right">
-					<input id="pageNum" type="hidden" value="${page.pageNum }">
 					<input id="pageSize" type="hidden" value="${page.pageSize }">
 					<input id="orderByColumn" type="hidden" value="${page.orderByColumn }">
 					<input id="orderByType" type="hidden" value="${page.orderByType }">
@@ -63,8 +65,7 @@
 			</div>
 		</div>
 	</div>
-	
-	
-</div>
 
+
+</div>
 

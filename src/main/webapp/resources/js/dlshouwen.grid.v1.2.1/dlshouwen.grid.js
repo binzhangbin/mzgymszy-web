@@ -26,7 +26,7 @@
 			}
 			//如果语言错误则默认为英文
 			if(!$.fn.dlshouwen.grid.lang[options.lang]){
-				options.lang = 'en';
+				options.lang = 'zh-cn';
 			}
 			/**
 			 * 2. 定义对象
@@ -2896,7 +2896,7 @@
 (function($) {
 	$.fn.dlshouwen.grid.defaultOptions = {
 		grid : {
-			lang : 'en',
+			lang : 'zh-ch',
 			ajaxLoad : true,
 			loadAll : false,
 			postParams : false,//是否传递参数,只在loadAll=true时有效
