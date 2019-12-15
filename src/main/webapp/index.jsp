@@ -5,6 +5,7 @@
 <head>
 <%@include file="common/common.jspf"%>
 <script src="${ctx}/resources/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="${ctx}/resources/js/dlshouwen.grid.v1.2.1/i18n/zh-cn.js"></script>
 <script type="text/javascript">
 $(function() {
     webside.index.initHomePage();
