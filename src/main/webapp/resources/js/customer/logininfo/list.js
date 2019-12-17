@@ -1,31 +1,31 @@
 var dtGridColumns = [{
     id : 'id',
-    title : 'ç¼–å·',
+    title : '±àºÅ',
     type : 'number',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'userId',
-    title : 'ç”¨æˆ·ID',
+    title : 'ÓÃ»§ID',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'accountName',
-    title : 'è´¦æˆ·åç§°',
+    title : 'ÕË»§Ãû³Æ',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'loginIp',
-    title : 'ç™»å½•IP',
+    title : 'µÇÂ¼IP',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'xs'
 }, {
     id : 'loginTime',
-    title : 'ç™»å½•æ—¶é—´',
+    title : 'µÇÂ¼Ê±¼ä',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype:'string', 
@@ -43,7 +43,7 @@ var dtGridOption = {
     gridContainer : 'dtGridContainer',
     toolbarContainer : 'dtGridToolBarContainer',
     tools : 'refresh|print|export[excel,csv,pdf,txt]',
-    exportFileName : 'ç”¨æˆ·æ“ä½œä¿¡æ¯',
+    exportFileName : 'ÓÃ»§²Ù×÷ĞÅÏ¢',
     pageSize : 10,
     pageSizeLimit : [10, 20, 30]
 };
@@ -52,7 +52,7 @@ $(function() {
     grid.load();
     $("#btnSearch").click(customSearch);
     
-    //æ³¨å†Œå›è½¦é”®äº‹ä»¶
+    //×¢²á»Ø³µ¼üÊÂ¼ş
     document.onkeypress = function(e){
     var ev = document.all ? window.event : e;
         if(ev.keyCode==13) {
@@ -62,7 +62,7 @@ $(function() {
     
 });
 
-//è‡ªå®šä¹‰æŸ¥è¯¢
+//×Ô¶¨Òå²éÑ¯
 function customSearch() {
     grid.parameters = new Object();
     grid.parameters['accountName'] = $("#searchKey").val();

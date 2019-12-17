@@ -1,53 +1,53 @@
 var dtGridColumns = [{
     id : 'gypBm',
-    title : 'ç¼–ç ',
+    title : '±àÂë',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 },{
     id : 'gypMcZm',
-    title : 'ä¸»åç§° ',
+    title : 'Ö÷Ãû³Æ ',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 },{
     id : 'gypMcYm',
-    title : 'åˆ«å',
+    title : '±ğÃû',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs|md'
 },{
     id : 'gypScdDw',
-    title : 'æ”¶è—åœ°æ€§è´¨',
+    title : 'ÊÕ²ØµØĞÔÖÊ',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs|md'
 },{
     id : 'gypScdScrxm',
-    title : 'æ”¶è—äººå§“å',
+    title : 'ÊÕ²ØÈËĞÕÃû',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs|md'
 },{
     id : 'gypScdLxfs',
-    title : 'è”ç³»æ–¹å¼',
+    title : 'ÁªÏµ·½Ê½',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs|md'
 },{
     id : 'gypScdScdz',
-    title : 'æ”¶è—åœ°å€',
+    title : 'ÊÕ²ØµØÖ·',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs|md'
 },{
     id : 'gypScdSjnd',
-    title : 'æ”¶é›†å¹´ä»£',
+    title : 'ÊÕ¼¯Äê´ú',
     type:'date', 
     format:'yyyy-MM-dd',
     otype:'string', 
@@ -57,7 +57,7 @@ var dtGridColumns = [{
     hideType : 'sm|xs|md'
 },{
     id : 'id',
-    title : 'æ“ä½œ',
+    title : '²Ù×÷',
     type:'string', 
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
@@ -65,13 +65,13 @@ var dtGridColumns = [{
     resolution:function(value, record, column, grid, dataNo, columnNo){
     	 var content = '';
     	 content += '<button class="btn btn-xs btn-info" onclick="webside.common.loadPage(\'/visitor/detailUI.html?id=';
-    	 content += value + '\')"><i class="fa fa-plus"></i>&nbsp;è¯¦æƒ…</button>';
+    	 content += value + '\')"><i class="fa fa-plus"></i>&nbsp;ÏêÇé</button>';
     	 return content;
     }
 }
 ];
 
-//åŠ¨æ€è®¾ç½®jqGridçš„rowNum
+//¶¯Ì¬ÉèÖÃjqGridµÄrowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -86,7 +86,7 @@ var dtGridOption = {
     gridContainer : 'dtGridContainer',
     toolbarContainer : 'dtGridToolBarContainer',
     tools : 'refresh|print|export[excel,csv,pdf,txt]',
-    exportFileName : 'åŸå§‹æ•°æ®',
+    exportFileName : 'Ô­Ê¼Êı¾İ',
     pageSize : pageSize,
     pageSizeLimit : [10, 20, 30]
 };
@@ -104,7 +104,7 @@ $(function() {
     grid.load();
     $("#btnSearch").click(customSearch);
     
-    //æ³¨å†Œå›è½¦é”®äº‹ä»¶
+    //×¢²á»Ø³µ¼üÊÂ¼ş
     document.onkeypress = function(e){
     var ev = document.all ? window.event : e;
         if(ev.keyCode==13) {
@@ -115,8 +115,8 @@ $(function() {
 });
 
 /**
- * è‡ªå®šä¹‰æŸ¥è¯¢
- * è¿™é‡Œä¸ä¼ å…¥åˆ†é¡µä¿¡æ¯ï¼Œé˜²æ­¢åˆ é™¤è®°å½•åé‡æ–°è®¡ç®—çš„é¡µç æ¯”å½“å‰é¡µç å°è€Œå¯¼è‡´è®¡ç®—å¼‚å¸¸
+ * ×Ô¶¨Òå²éÑ¯
+ * ÕâÀï²»´«Èë·ÖÒ³ĞÅÏ¢£¬·ÀÖ¹É¾³ı¼ÇÂ¼ºóÖØĞÂ¼ÆËãµÄÒ³Âë±Èµ±Ç°Ò³ÂëĞ¡¶øµ¼ÖÂ¼ÆËãÒì³£
  */
 function customSearch() {
     grid.parameters = new Object();

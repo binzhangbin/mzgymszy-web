@@ -1,28 +1,28 @@
 var dtGridColumns = [
 		{
 			id : 'jxKcmc',
-			title : 'è¯¾ç¨‹åç§°',
+			title : '¿Î³ÌÃû³Æ',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxJsxm',
-			title : 'æ•™å¸ˆå§“å',
+			title : '½ÌÊ¦ĞÕÃû',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxJsxb',
-			title : 'æ€§åˆ«',
+			title : 'ĞÔ±ğ',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxJsmz',
-			title : 'æ°‘æ—',
+			title : 'Ãñ×å',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
@@ -36,21 +36,21 @@ var dtGridColumns = [
 		},
 		{
 			id : 'jxXstx',
-			title : 'å­¦æœ¯å¤´è¡”',
+			title : 'Ñ§ÊõÍ·ÏÎ',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxLxdh',
-			title : 'è”ç³»ç”µè¯',
+			title : 'ÁªÏµµç»°',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'id',
-			title : 'æ“ä½œ',
+			title : '²Ù×÷',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header',
@@ -59,12 +59,12 @@ var dtGridColumns = [
 				var content = '';
 				content += '<button class="btn btn-xs btn-info" onclick="webside.common.loadPage(\'/teachingVideo/detailUI.html?id=';
 				content =content+ value
-						+ '\')"><i class="fa fa-plus"></i>&nbsp;è¯¦æƒ…</button>';
+						+ '\')"><i class="fa fa-plus"></i>&nbsp;ÏêÇé</button>';
 				return content;
 			}
 		} ];
 
-// åŠ¨æ€è®¾ç½®jqGridçš„rowNum
+// ¶¯Ì¬ÉèÖÃjqGridµÄrowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -93,7 +93,7 @@ $(function() {
 	grid.load();
 	$("#btnSearch").click(customSearch);
 
-	// æ³¨å†Œå›è½¦é”®äº‹ä»¶
+	// ×¢²á»Ø³µ¼üÊÂ¼ş
 	document.onkeypress = function(e) {
 		var ev = document.all ? window.event : e;
 		if (ev.keyCode == 13) {
@@ -104,7 +104,7 @@ $(function() {
 });
 
 /**
- * è‡ªå®šä¹‰æŸ¥è¯¢ è¿™é‡Œä¸ä¼ å…¥åˆ†é¡µä¿¡æ¯ï¼Œé˜²æ­¢åˆ é™¤è®°å½•åé‡æ–°è®¡ç®—çš„é¡µç æ¯”å½“å‰é¡µç å°è€Œå¯¼è‡´è®¡ç®—å¼‚å¸¸
+ * ×Ô¶¨Òå²éÑ¯ ÕâÀï²»´«Èë·ÖÒ³ĞÅÏ¢£¬·ÀÖ¹É¾³ı¼ÇÂ¼ºóÖØĞÂ¼ÆËãµÄÒ³Âë±Èµ±Ç°Ò³ÂëĞ¡¶øµ¼ÖÂ¼ÆËãÒì³£
  */
 function customSearch() {
 	grid.parameters = new Object();

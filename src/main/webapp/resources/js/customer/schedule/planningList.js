@@ -1,42 +1,42 @@
 var dtGridColumns = [{
     id : 'jobName',
-    title : 'ä»»åŠ¡åç§°',
+    title : 'ÈÎÎñÃû³Æ',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'jobGroup',
-    title : 'ä»»åŠ¡ç»„',
+    title : 'ÈÎÎñ×é',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'xs'
 }, {
     id : 'jobClassName',
-    title : 'æ‰§è¡Œç±»',
+    title : 'Ö´ĞĞÀà',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs|md|lg'
 }, {
     id : 'jobDesc',
-    title : 'ä»»åŠ¡æè¿°',
+    title : 'ÈÎÎñÃèÊö',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs'
 }, {
     id : 'action',
-    title : 'æ“ä½œ',
+    title : '²Ù×÷',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     resolution : function(value, record, column, grid, dataNo, columnNo) {
-        return '<a onclick="webside.form.schedule.getTrigger(\''+record.jobName+'\',\''+record.jobGroup+'\');" href="javascript:void(0);">æŸ¥çœ‹trigger</a>';
+        return '<a onclick="webside.form.schedule.getTrigger(\''+record.jobName+'\',\''+record.jobGroup+'\');" href="javascript:void(0);">²é¿´trigger</a>';
     }
 }];
 
-//åŠ¨æ€è®¾ç½®jqGridçš„rowNum
+//¶¯Ì¬ÉèÖÃjqGridµÄrowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -44,8 +44,8 @@ var dtGridOption = {
     lang : 'zh-cn',
     ajaxLoad : true,
     loadAll : true,
-    postParams : true,//æ˜¯å¦ä¼ é€’å‚æ•°,åªåœ¨loadAll=trueæ—¶æœ‰æ•ˆ
-    isreload : true,//åˆ·æ–°æ—¶æ˜¯å¦é‡æ–°ä»æœåŠ¡å™¨è·å–æ•°æ®,åªåœ¨loadAll=trueæ—¶æœ‰æ•ˆ
+    postParams : true,//ÊÇ·ñ´«µİ²ÎÊı,Ö»ÔÚloadAll=trueÊ±ÓĞĞ§
+    isreload : true,//Ë¢ĞÂÊ±ÊÇ·ñÖØĞÂ´Ó·şÎñÆ÷»ñÈ¡Êı¾İ,Ö»ÔÚloadAll=trueÊ±ÓĞĞ§
     check : true,
     checkWidth :'37px',
     extraWidth : '37px',
@@ -66,7 +66,7 @@ $(function() {
 });
 
 /**
- * é‡æ–°åŠ è½½è¡¨æ ¼
+ * ÖØĞÂ¼ÓÔØ±í¸ñ
  */
 function customSearch() {
     grid.parameters = new Object();

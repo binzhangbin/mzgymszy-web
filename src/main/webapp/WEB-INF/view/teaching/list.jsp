@@ -5,7 +5,6 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="${ctx }/resources/js/customer/teaching/list.js"></script>
-
 <script type="text/javascript" src="${ctx}/resources/js/dlshouwen.grid.v1.2.1/i18n/zh-cn.js"></script>
 <div class="page-header">
 	<shiro:hasPermission name="teachingVideo:add">

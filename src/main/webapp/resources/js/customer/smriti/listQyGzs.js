@@ -1,43 +1,43 @@
 var dtGridColumns = [{
     id : 'id',
-    title : 'ç¼–å·',
+    title : '±àºÅ',
     type : 'number',
     columnClass : 'text-center',
     hideType : 'xs',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'qyGzsMc',
-    title : 'åç§°',
+    title : 'Ãû³Æ',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'qyGzsBgdh',
-    title : 'åŠå…¬ç”µè¯',
+    title : '°ì¹«µç»°',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'qyGzsYx',
-    title : 'é‚®ç®±',
+    title : 'ÓÊÏä',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'qyGzsTxdz',
-    title : 'é€šè®¯åœ°å€',
+    title : 'Í¨Ñ¶µØÖ·',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'qyGzsZycp',
-    title : 'ä¸»è¦äº§å“',
+    title : 'Ö÷Òª²úÆ·',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }];
 
-//åŠ¨æ€è®¾ç½®jqGridçš„rowNum
+//¶¯Ì¬ÉèÖÃjqGridµÄrowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -52,7 +52,7 @@ var dtGridOption = {
     gridContainer : 'dtGridContainer',
     toolbarContainer : 'dtGridToolBarContainer',
     tools : 'refresh|print|export[excel,csv,pdf,txt]',
-    exportFileName : 'ç”¨æˆ·ä¿¡æ¯',
+    exportFileName : 'ÓÃ»§ĞÅÏ¢',
     pageSize : pageSize,
     pageSizeLimit : [10, 20, 30]
 };
@@ -67,7 +67,7 @@ $(function() {
     grid.load();
     $("#btnSearch").click(customSearch);
     
-    //æ³¨å†Œå›è½¦é”®äº‹ä»¶
+    //×¢²á»Ø³µ¼üÊÂ¼ş
     document.onkeypress = function(e){
     var ev = document.all ? window.event : e;
         if(ev.keyCode==13) {
@@ -78,8 +78,8 @@ $(function() {
 });
 
 /**
- * è‡ªå®šä¹‰æŸ¥è¯¢
- * è¿™é‡Œä¸ä¼ å…¥åˆ†é¡µä¿¡æ¯ï¼Œé˜²æ­¢åˆ é™¤è®°å½•åé‡æ–°è®¡ç®—çš„é¡µç æ¯”å½“å‰é¡µç å°è€Œå¯¼è‡´è®¡ç®—å¼‚å¸¸
+ * ×Ô¶¨Òå²éÑ¯
+ * ÕâÀï²»´«Èë·ÖÒ³ĞÅÏ¢£¬·ÀÖ¹É¾³ı¼ÇÂ¼ºóÖØĞÂ¼ÆËãµÄÒ³Âë±Èµ±Ç°Ò³ÂëĞ¡¶øµ¼ÖÂ¼ÆËãÒì³£
  */
 function customSearch() {
     grid.parameters = new Object();

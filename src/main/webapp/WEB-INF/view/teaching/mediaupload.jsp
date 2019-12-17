@@ -14,6 +14,8 @@
 <!--[if IE]>
 	<script type="text/javascript" src="${ctx}/resources/js/jquery/jquery-1.11.3.min.js"></script>
 <![endif]-->
+
+	<script type="text/javascript" src="${ctx}/resources/js/dlshouwen.grid.v1.2.1/i18n/zh-cn.js"></script>
 <script type="text/javascript"
 	src="${ctx}/resources/js/nicescroll/jquery.nicescroll.min.js"></script>
 <link rel="stylesheet" href="${ctx }/resources/css/customer/webside-icon.min.css" />

@@ -2,7 +2,7 @@ var webside = {
     index : {
         initHomePage : function() {
             $(".page-content").load(sys.rootPath + "/welcome.jsp");
-            $(".breadcrumb").html('<li><i class="ace-icon fa fa-home home-icon"></i><a href="javascript:webside.index.initHomePage();">é¦–é¡µ</a></li><li class="active">æ§åˆ¶å°</li>');
+            $(".breadcrumb").html('<li><i class="ace-icon fa fa-home home-icon"></i><a href="javascript:webside.index.initHomePage();">Ê×Ò³</a></li><li class="active">¿ØÖÆÌ¨</li>');
         },
         menu : {
             initMenuEvent : function() {
@@ -12,46 +12,46 @@ var webside = {
                     	var lay;
                         var nav = $(this).attr("nav-menu");
                         var sn = nav.split(",");
-                        //æ¸…é™¤ç”¨æˆ·ä¿¡æ¯èœå•æ ·å¼
+                        //Çå³ıÓÃ»§ĞÅÏ¢²Ëµ¥ÑùÊ½
                         $(".user-menu").find('li').each(function() {
                             $(this).removeClass('active');
                         });
-                        //å¤„ç†ç›‘æ§-æ–°çª—å£æ‰“å¼€
+                        //´¦Àí¼à¿Ø-ĞÂ´°¿Ú´ò¿ª
                         if (sn[sn.length - 1] == '/sirona' || sn[sn.length - 1] == '/druid') {
                             window.open(sys.rootPath + sn[sn.length - 1]);
                         } else {
-                            var breadcrumb = '<li><i class="ace-icon fa fa-home home-icon"></i><a href="javascript:webside.index.initHomePage();">é¦–é¡µ</a></li>';
+                            var breadcrumb = '<li><i class="ace-icon fa fa-home home-icon"></i><a href="javascript:webside.index.initHomePage();">Ê×Ò³</a></li>';
                             for (var i = 0; i < sn.length - 1; i++) {
                                 breadcrumb += '<li class="active">' + sn[i] + '</li>';
                             }
                             lay = layer.load();
-                            //è®¾ç½®é¢åŒ…å±‘å†…å®¹
+                            //ÉèÖÃÃæ°üĞ¼ÄÚÈİ
                             $(".breadcrumb").html(breadcrumb);
-                            //åŠ è½½é¡µé¢
-                            $(".page-content").empty();//æ¸…é™¤è¯¥èŠ‚ç‚¹å­å…ƒç´ 
+                            //¼ÓÔØÒ³Ãæ
+                            $(".page-content").empty();//Çå³ı¸Ã½Úµã×ÓÔªËØ
                             $(".page-content").load(sys.rootPath + sn[sn.length - 1],function(){
                             	layer.close(lay);
                             });
                         }
                         var level = $(this).parent("li").attr("level");
                         if (level == 'level1' || level == 'level2') {
-                            //å¤„ç†ç›®å½•ç±»å‹çš„ç‚¹å‡»äº‹ä»¶-ä¸¤çº§èœå•
+                            //´¦ÀíÄ¿Â¼ÀàĞÍµÄµã»÷ÊÂ¼ş-Á½¼¶²Ëµ¥
                             $(this).parent("li").siblings().find("ul.nav-show").removeClass('nav-show').addClass('nav-hide').attr('style', 'display:none');
-                            //å¤„ç†èœå•ç±»å‹çš„ç‚¹å‡»äº‹ä»¶
+                            //´¦Àí²Ëµ¥ÀàĞÍµÄµã»÷ÊÂ¼ş
                             $(this).parent().parent().parent("li").siblings().find("ul.nav-show").removeClass('nav-show').addClass('nav-hide').attr('style', 'display:none');
                             $("ul.nav-list").find("li.active").removeClass("active").removeClass('open');
                             $(this).parent().addClass("active").parent().parent("li").addClass('active open');
                         } else if (level == 'level3') {
-                            //å¤„ç†ç›®å½•ç±»å‹çš„ç‚¹å‡»äº‹ä»¶-ä¸‰çº§èœå•
+                            //´¦ÀíÄ¿Â¼ÀàĞÍµÄµã»÷ÊÂ¼ş-Èı¼¶²Ëµ¥
                             $(this).parent("li").siblings().find("ul.nav-show").removeClass('nav-show').addClass('nav-hide').attr('style', 'display:none');
-                            //å¤„ç†èœå•ç±»å‹çš„ç‚¹å‡»äº‹ä»¶
+                            //´¦Àí²Ëµ¥ÀàĞÍµÄµã»÷ÊÂ¼ş
                             $(this).parent().parent().parent().parent().parent("li").siblings().find("ul.nav-show").removeClass('nav-show').addClass('nav-hide').attr('style', 'display:none');
                             $("ul.nav-list").find("li.active").removeClass("active").removeClass('open');
                             $(this).parent().addClass("active").parent().parent().parent().parent("li").addClass('active open');
                         } else {
-                            //å¤„ç†ç›®å½•ç±»å‹çš„ç‚¹å‡»äº‹ä»¶-å››çº§èœå•
+                            //´¦ÀíÄ¿Â¼ÀàĞÍµÄµã»÷ÊÂ¼ş-ËÄ¼¶²Ëµ¥
                             $(this).parent("li").siblings().find("ul.nav-show").removeClass('nav-show').addClass('nav-hide').attr('style', 'display:none');
-                            //å¤„ç†èœå•ç±»å‹çš„ç‚¹å‡»äº‹ä»¶
+                            //´¦Àí²Ëµ¥ÀàĞÍµÄµã»÷ÊÂ¼ş
                             $(this).parent().parent().parent().parent().parent().parent().parent("li").siblings().find("ul.nav-show").removeClass('nav-show').addClass('nav-hide').attr('style', 'display:none');
                             $("ul.nav-list").find("li.active").removeClass("active").removeClass('open');
                             $(this).parent().addClass("active").parent().parent().parent().parent().parent().parent("li").addClass('active open');
@@ -81,7 +81,7 @@ var webside = {
             });
         },
         /*
-         * ç›‘å¬æµè§ˆå™¨çª—å£å¤§å°å˜åŒ–
+         * ¼àÌıä¯ÀÀÆ÷´°¿Ú´óĞ¡±ä»¯
          */
         resizeScrollBar : function() {
             $(window).resize(function() {
@@ -91,71 +91,71 @@ var webside = {
     },
     common : {
         /**
-         *åŠ è½½éèœå•å±•ç¤ºé¡µé¢
-         * @param nav å¾…åŠ è½½çš„èµ„æºURL
+         *¼ÓÔØ·Ç²Ëµ¥Õ¹Ê¾Ò³Ãæ
+         * @param nav ´ı¼ÓÔØµÄ×ÊÔ´URL
          */
         loadPage : function(nav) {
-            //åŠ è½½é¡µé¢
+            //¼ÓÔØÒ³Ãæ
             $(".page-content").load(sys.rootPath + nav);
         },
         /**
-         * æ–°å¢
-         * @param {Object} nav  æäº¤url
+         * ĞÂÔö
+         * @param {Object} nav  Ìá½»url
          */
         addModel : function(nav) {
-            //åŠ è½½æ–°å¢é¡µé¢
+            //¼ÓÔØĞÂÔöÒ³Ãæ
             webside.common.loadPage(nav);
         },
         /**
-         * ç¼–è¾‘
-         * @param {Object} nav  æäº¤url
+         * ±à¼­
+         * @param {Object} nav  Ìá½»url
          */
         editModel : function(nav) {
-            //å½“å‰é¡µç 
+            //µ±Ç°Ò³Âë
             var nowPage = grid.pager.nowPage;
-            //è·å–æ¯é¡µæ˜¾ç¤ºçš„è®°å½•æ•°(å³: selectæ¡†ä¸­çš„10,20,30)
+            //»ñÈ¡Ã¿Ò³ÏÔÊ¾µÄ¼ÇÂ¼Êı(¼´: select¿òÖĞµÄ10,20,30)
             var pageSize = grid.pager.pageSize;
-            //è·å–æ’åºå­—æ®µ
+            //»ñÈ¡ÅÅĞò×Ö¶Î
             var columnId = grid.sortParameter.columnId;
-            //è·å–æ’åºæ–¹å¼ [0-ä¸æ’åºï¼Œ1-æ­£åºï¼Œ2-å€’åº]
+            //»ñÈ¡ÅÅĞò·½Ê½ [0-²»ÅÅĞò£¬1-ÕıĞò£¬2-µ¹Ğò]
             var sortType = grid.sortParameter.sortType;
-            //è·å–é€‰æ‹©çš„è¡Œ
+            //»ñÈ¡Ñ¡ÔñµÄĞĞ
             var rows = grid.getCheckedRecords();
             if (rows.length == 1) {
                 webside.common.loadPage(nav + '?id=' + rows[0].id + "&page=" + nowPage + "&rows=" + pageSize + "&sidx=" + columnId + "&sord=" + sortType);
             } else {
-                layer.msg("ä½ æ²¡æœ‰é€‰æ‹©è¡Œæˆ–é€‰æ‹©äº†å¤šè¡Œæ•°æ®", {
+                layer.msg("ÄãÃ»ÓĞÑ¡ÔñĞĞ»òÑ¡ÔñÁË¶àĞĞÊı¾İ", {
                     icon : 0
                 });
             }
         },
         /**
-         * åˆ é™¤
-         * @param {Object} nav  æäº¤url
-         * @param callback ä¸»å‡½æ•°æ‰§è¡Œå®Œæ¯•åè°ƒç”¨çš„å›è°ƒå‡½æ•°åç§°
+         * É¾³ı
+         * @param {Object} nav  Ìá½»url
+         * @param callback Ö÷º¯ÊıÖ´ĞĞÍê±Ïºóµ÷ÓÃµÄ»Øµ÷º¯ÊıÃû³Æ
          */
         delModel : function(nav, callback) {
             var rows = grid.getCheckedRecords();
             if (rows.length == 1) {
                 if (nav == '/user/deleteBatch.html') {
-                    if (rows[0].role.name == 'è¶…çº§ç®¡ç†å‘˜') {
-                        layer.msg('è¯¥ç”¨æˆ·ä¸ºè¶…çº§ç®¡ç†å‘˜,ä¸èƒ½åˆ é™¤!', {
+                    if (rows[0].role.name == '³¬¼¶¹ÜÀíÔ±') {
+                        layer.msg('¸ÃÓÃ»§Îª³¬¼¶¹ÜÀíÔ±,²»ÄÜÉ¾³ı!', {
                             icon : 0
                         });
                         return false;
                     }
                 }
                 if (nav == '/role/deleteBatch.html') {
-                    if (rows[0].name == 'è¶…çº§ç®¡ç†å‘˜') {
-                        layer.msg('è¯¥è§’è‰²ä¸ºåŸºç¡€è§’è‰²,ä¸èƒ½åˆ é™¤!', {
+                    if (rows[0].name == '³¬¼¶¹ÜÀíÔ±') {
+                        layer.msg('¸Ã½ÇÉ«Îª»ù´¡½ÇÉ«,²»ÄÜÉ¾³ı!', {
                             icon : 0
                         });
                         return false;
                     }
                 }
-                layer.confirm('ç¡®è®¤åˆ é™¤å—ï¼Ÿ', {
+                layer.confirm('È·ÈÏÉ¾³ıÂğ£¿', {
                     icon : 3,
-                    title : 'åˆ é™¤æç¤º'
+                    title : 'É¾³ıÌáÊ¾'
                 }, function(index, layero) {
                     var delete_ids = [];
                     /*
@@ -186,7 +186,7 @@ var webside = {
                             }
                         },
                         error : function(errorMsg) {
-                            layer.msg('æœåŠ¡å™¨æœªå“åº”,è¯·ç¨åå†è¯•', {
+                            layer.msg('·şÎñÆ÷Î´ÏìÓ¦,ÇëÉÔºóÔÙÊÔ', {
                                 icon : 3
                             });
                         }
@@ -194,19 +194,19 @@ var webside = {
                     layer.close(index);
                 });
             } else {
-                layer.msg("ä½ æ²¡æœ‰é€‰æ‹©è¡Œæˆ–é€‰æ‹©äº†å¤šè¡Œæ•°æ®", {
+                layer.msg("ÄãÃ»ÓĞÑ¡ÔñĞĞ»òÑ¡ÔñÁË¶àĞĞÊı¾İ", {
                     icon : 0
                 });
             }
         },
         /**
-         * æäº¤è¡¨å•
-         * é€‚ç”¨åœºæ™¯ï¼šformè¡¨å•çš„æäº¤ï¼Œä¸»è¦ç”¨åœ¨ç”¨æˆ·ã€è§’è‰²ã€èµ„æºç­‰è¡¨å•çš„æ·»åŠ ã€ä¿®æ”¹ç­‰
-         * @param {Object} commitUrl è¡¨å•æäº¤åœ°å€
-         * @param {Object} listUrl è¡¨å•æäº¤æˆåŠŸåè½¬å‘çš„åˆ—è¡¨é¡µåœ°å€
+         * Ìá½»±íµ¥
+         * ÊÊÓÃ³¡¾°£ºform±íµ¥µÄÌá½»£¬Ö÷ÒªÓÃÔÚÓÃ»§¡¢½ÇÉ«¡¢×ÊÔ´µÈ±íµ¥µÄÌí¼Ó¡¢ĞŞ¸ÄµÈ
+         * @param {Object} commitUrl ±íµ¥Ìá½»µØÖ·
+         * @param {Object} listUrl ±íµ¥Ìá½»³É¹¦ºó×ªÏòµÄÁĞ±íÒ³µØÖ·
          */
         commit : function(formId, commitUrl, jumpUrl) {
-            //ç»„è£…è¡¨å•æ•°æ®
+            //×é×°±íµ¥Êı¾İ
             var index;
             var data = $("#" + formId).serialize();
             if (undefined != $("#pageNum").val()) {
@@ -254,7 +254,7 @@ var webside = {
                         accountName : {
                             required : true,
                             email : true,
-                            remote : {//æ›´æ–°æ—¶ä¸éªŒè¯
+                            remote : {//¸üĞÂÊ±²»ÑéÖ¤
                                 param : {
                                     url : sys.rootPath + '/user/withoutAuth/validateAccountName.html',
                                     cache : false
@@ -282,21 +282,21 @@ var webside = {
                     },
                     messages : {
                         accountName : {
-                            required : "è¯·å¡«å†™é‚®ç®±",
-                            email : "è¯·å¡«å†™æ­£ç¡®çš„é‚®ç®±",
-                            remote : "è¯¥é‚®ç®±å·²æ³¨å†Œ,è¯·ä½¿ç”¨å…¶ä»–é‚®ç®±"
+                            required : "ÇëÌîĞ´ÓÊÏä",
+                            email : "ÇëÌîĞ´ÕıÈ·µÄÓÊÏä",
+                            remote : "¸ÃÓÊÏäÒÑ×¢²á,ÇëÊ¹ÓÃÆäËûÓÊÏä"
                         },
                         password : {
-                            required : "è¯·å¡«å†™å¯†ç ",
-                            minlength : "å¯†ç é•¿åº¦ä¸èƒ½å°‘äº6ä¸ªå­—ç¬¦"
+                            required : "ÇëÌîĞ´ÃÜÂë",
+                            minlength : "ÃÜÂë³¤¶È²»ÄÜÉÙÓÚ6¸ö×Ö·û"
                         },
                         repassword : {
-                            required : "è¯·å†æ¬¡å¡«å†™å¯†ç ",
-                            minlength : "å¯†ç é•¿åº¦ä¸èƒ½å°‘äº6ä¸ªå­—ç¬¦",
-                            equalTo : "ä¸¤æ¬¡å¡«å†™å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°å¡«å†™"
+                            required : "ÇëÔÙ´ÎÌîĞ´ÃÜÂë",
+                            minlength : "ÃÜÂë³¤¶È²»ÄÜÉÙÓÚ6¸ö×Ö·û",
+                            equalTo : "Á½´ÎÌîĞ´ÃÜÂë²»Ò»ÖÂ£¬ÇëÖØĞÂÌîĞ´"
                         },
-                        userName : "è¯·å¡«å†™çœŸå®å§“å",
-                        "role.id" : "è¯·é€‰æ‹©è§’è‰²"
+                        userName : "ÇëÌîĞ´ÕæÊµĞÕÃû",
+                        "role.id" : "ÇëÑ¡Ôñ½ÇÉ«"
                     },
                     highlight : function(e) {
                         $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
@@ -350,13 +350,13 @@ var webside = {
                     },
                     messages : {
                         password : {
-                            required : "è¯·å¡«å†™å¯†ç ",
-                            minlength : "å¯†ç é•¿åº¦ä¸èƒ½å°‘äº6ä¸ªå­—ç¬¦"
+                            required : "ÇëÌîĞ´ÃÜÂë",
+                            minlength : "ÃÜÂë³¤¶È²»ÄÜÉÙÓÚ6¸ö×Ö·û"
                         },
                         repassword : {
-                            required : "è¯·å†æ¬¡å¡«å†™å¯†ç ",
-                            minlength : "å¯†ç é•¿åº¦ä¸èƒ½å°‘äº6ä¸ªå­—ç¬¦",
-                            equalTo : "ä¸¤æ¬¡å¡«å†™å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°å¡«å†™"
+                            required : "ÇëÔÙ´ÎÌîĞ´ÃÜÂë",
+                            minlength : "ÃÜÂë³¤¶È²»ÄÜÉÙÓÚ6¸ö×Ö·û",
+                            equalTo : "Á½´ÎÌîĞ´ÃÜÂë²»Ò»ÖÂ£¬ÇëÖØĞÂÌîĞ´"
                         }
                     },
                     highlight : function(e) {
@@ -380,10 +380,10 @@ var webside = {
         userInfo : {
             initButton : function() {
                 $("#btnEdit").click(function() {
-                    //æŒ‰é’®åˆ‡æ¢
+                    //°´Å¥ÇĞ»»
                     $(this).hide();
                     $("#btnAdd").show();
-                    //è¡¨å•åˆ‡æ¢
+                    //±íµ¥ÇĞ»»
                     $("#lableDiv").hide();
                     $("#formDiv").show();
                 });
@@ -404,7 +404,7 @@ var webside = {
             validateUserInfoForm : function() {
                 jQuery.validator.addMethod("phone", function(value, element) {
                     return this.optional(element) || /^1[3|4|5|7|8]\d{9}$/.test(value);
-                }, "è¯·è¾“å…¥11ä½æ‰‹æœºå·ç ");
+                }, "ÇëÊäÈë11Î»ÊÖ»úºÅÂë");
 
                 $('#userInfoForm').validate({
                     errorElement : 'div',
@@ -430,14 +430,14 @@ var webside = {
                         }
                     },
                     messages : {
-                        userName : "è¯·å¡«å†™çœŸå®å§“å",
-                        "userInfo.sex" : "è¯·é€‰æ‹©æ€§åˆ«",
-                        "userInfo.birthday" : "è¯·å¡«å†™å‡ºç”Ÿæ—¥æœŸ",
+                        userName : "ÇëÌîĞ´ÕæÊµĞÕÃû",
+                        "userInfo.sex" : "ÇëÑ¡ÔñĞÔ±ğ",
+                        "userInfo.birthday" : "ÇëÌîĞ´³öÉúÈÕÆÚ",
                         "userInfo.telephone" : {
-                            required : "è¯·å¡«å†™æ‰‹æœºå·ç ",
-                            phone : "è¯·å¡«å†™11ä½æ‰‹æœºå·ç "
+                            required : "ÇëÌîĞ´ÊÖ»úºÅÂë",
+                            phone : "ÇëÌîĞ´11Î»ÊÖ»úºÅÂë"
                         },
-                        "userInfo.address" : "è¯·å¡«å†™è”ç³»åœ°å€"
+                        "userInfo.address" : "ÇëÌîĞ´ÁªÏµµØÖ·"
                     },
                     highlight : function(e) {
                         $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
@@ -492,10 +492,10 @@ var webside = {
                     },
                     messages : {
                         name : {
-                            required : "è¯·å¡«å†™è§’è‰²åç§°",
-                            remote : "è¯¥è§’è‰²å·²å­˜åœ¨"
+                            required : "ÇëÌîĞ´½ÇÉ«Ãû³Æ",
+                            remote : "¸Ã½ÇÉ«ÒÑ´æÔÚ"
                         },
-                        key : "è¯·å¡«å†™è§’è‰²æ ‡è¯†"
+                        key : "ÇëÌîĞ´½ÇÉ«±êÊ¶"
                     },
                     highlight : function(e) {
                         $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
@@ -529,7 +529,7 @@ var webside = {
             },
             initSourceTree : function() {
                 $('#parentId').select2({
-                    placeholder : "è¯·é€‰æ‹©ä¸Šçº§èµ„æº...",
+                    placeholder : "ÇëÑ¡ÔñÉÏ¼¶×ÊÔ´...",
                     language : "zh-CN",
                     minimumResultsForSearch : Infinity,
                     templateResult : webside.form.resource.formatState,
@@ -554,9 +554,9 @@ var webside = {
                         area : 'auto',
                         maxmin : true,
                         shift : 4,
-                        title : '<i class="fa fa-cogs"></i>&nbsp;é€‰æ‹©å›¾æ ‡'
+                        title : '<i class="fa fa-cogs"></i>&nbsp;Ñ¡ÔñÍ¼±ê'
                     });
-                    //å¼¹å‡ºå³å…¨å±
+                    //µ¯³ö¼´È«ÆÁ
                     layer.full(iconLayer);
                 });
                 $("#iconShow").bind('click', function(event) {
@@ -599,7 +599,7 @@ var webside = {
                         sourceUrl : {
                             required : function() {
                                 /*
-                                 //ä»…ç›®å½•èœå•ä¸éœ€è¦url
+                                 //½öÄ¿Â¼²Ëµ¥²»ĞèÒªurl
                                  var parentId = $.trim($("#parentId").val());
                                  if (parentId == null || parentId == "") {
                                  return false;
@@ -613,7 +613,7 @@ var webside = {
                         icon : {
                             required : function() {
                                 /*
-                                 //ä»…ç›®å½•èœå•éœ€è¦icon
+                                 //½öÄ¿Â¼²Ëµ¥ĞèÒªicon
                                  var parentId = $.trim($("#parentId").val());
                                  if (parentId == null || parentId == "") {
                                  return true;
@@ -626,12 +626,12 @@ var webside = {
                         }
                     },
                     messages : {
-                        parentId : "è¯·é€‰æ‹©ä¸Šçº§èµ„æº",
-                        name : "è¯·å¡«å†™èµ„æºåç§°",
-                        sourceKey : "è¯·å¡«å†™èµ„æºæ ‡è¯†",
-                        type : "è¯·é€‰æ‹©èµ„æºç±»å‹",
-                        sourceUrl : "è¯·å¡«å†™èµ„æºURL",
-                        icon : "è¯·é€‰æ‹©èœå•å›¾æ ‡"
+                        parentId : "ÇëÑ¡ÔñÉÏ¼¶×ÊÔ´",
+                        name : "ÇëÌîĞ´×ÊÔ´Ãû³Æ",
+                        sourceKey : "ÇëÌîĞ´×ÊÔ´±êÊ¶",
+                        type : "ÇëÑ¡Ôñ×ÊÔ´ÀàĞÍ",
+                        sourceUrl : "ÇëÌîĞ´×ÊÔ´URL",
+                        icon : "ÇëÑ¡Ôñ²Ëµ¥Í¼±ê"
                     },
                     highlight : function(e) {
                         $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
@@ -692,9 +692,9 @@ var webside = {
                     });
                 },
                 /**
-                 * é€’å½’éå†èŠ‚ç‚¹ï¼Œè·å–è¯¥èŠ‚ç‚¹çš„æ‰€æœ‰çˆ¶èŠ‚ç‚¹
-                 * @param {Object} treeObj  jstreeå¯¹è±¡
-                 * @param {Object} nodeObj  jstree nodeèŠ‚ç‚¹å¯¹è±¡
+                 * µİ¹é±éÀú½Úµã£¬»ñÈ¡¸Ã½ÚµãµÄËùÓĞ¸¸½Úµã
+                 * @param {Object} treeObj  jstree¶ÔÏó
+                 * @param {Object} nodeObj  jstree node½Úµã¶ÔÏó
                  */
                 getParents : function(treeObj, nodeObj) {
                     var parentId = treeObj.get_parent(nodeObj);
@@ -704,19 +704,19 @@ var webside = {
                     }
                 },
                 /**
-                 * æäº¤è¡¨å•
-                 * é€‚ç”¨åœºæ™¯ï¼šformè¡¨å•çš„æäº¤ï¼Œè§’è‰²æˆæƒæäº¤
-                 * @param {Object} commitUrl è¡¨å•æäº¤åœ°å€
-                 * @param {Object} listUrl è¡¨å•æäº¤æˆåŠŸåè½¬å‘çš„åˆ—è¡¨é¡µåœ°å€
+                 * Ìá½»±íµ¥
+                 * ÊÊÓÃ³¡¾°£ºform±íµ¥µÄÌá½»£¬½ÇÉ«ÊÚÈ¨Ìá½»
+                 * @param {Object} commitUrl ±íµ¥Ìá½»µØÖ·
+                 * @param {Object} listUrl ±íµ¥Ìá½»³É¹¦ºó×ªÏòµÄÁĞ±íÒ³µØÖ·
                  */
                 commitPerm : function(commitUrl, listUrl) {
                     webside.form.resource.authorize.ids = [];
                     var tree = $('#tree').jstree();
-                    //è·å–æ‰€æœ‰é€‰ä¸­èŠ‚ç‚¹id
+                    //»ñÈ¡ËùÓĞÑ¡ÖĞ½Úµãid
                     var selectedIds = tree.get_checked();
-                    //è·å–æ‰€æœ‰é€‰ä¸­èŠ‚ç‚¹
+                    //»ñÈ¡ËùÓĞÑ¡ÖĞ½Úµã
                     var selected = tree.get_checked(true);
-                    //éå†èŠ‚ç‚¹ï¼Œè·å–é€‰ä¸­èŠ‚ç‚¹çš„æ‰€æœ‰çˆ¶èŠ‚ç‚¹
+                    //±éÀú½Úµã£¬»ñÈ¡Ñ¡ÖĞ½ÚµãµÄËùÓĞ¸¸½Úµã
                     for (var i = 0; i < selected.length; i++) {
                         webside.form.resource.authorize.getParents(tree, selected[i]);
                     }
@@ -747,7 +747,7 @@ var webside = {
                         },
                         error : function(errorMsg) {
                             layer.close(index);
-                            layer.msg('æœåŠ¡å™¨æœªå“åº”,è¯·ç¨åå†è¯•', {
+                            layer.msg('·şÎñÆ÷Î´ÏìÓ¦,ÇëÉÔºóÔÙÊÔ', {
                                 icon : 2
                             });
                         }
@@ -760,7 +760,7 @@ var webside = {
                 $('#jobGroupSelect').select2({
                     language : "zh-CN",
                     minimumResultsForSearch : Infinity,
-                    placeholder : "è¯·é€‰æ‹©ä»»åŠ¡ç»„..."
+                    placeholder : "ÇëÑ¡ÔñÈÎÎñ×é..."
                 }).on('change',function(){
                     $("#jobGroup").val($(this).find("option:selected").text());
                     $("#jobClassName").val($(this).val());
@@ -804,9 +804,9 @@ var webside = {
                     state : false,
                     onColor : 'success',
                     offColor : 'warning',
-                    onText : 'æ˜¯',
-                    offText : 'å¦',
-                    labelText : 'æ˜¯å¦æ·»åŠ trigger',
+                    onText : 'ÊÇ',
+                    offText : '·ñ',
+                    labelText : 'ÊÇ·ñÌí¼Ótrigger',
                     labelWidth : 100,
                     onSwitchChange : function(event, state){
                         if(state)
@@ -868,16 +868,16 @@ var webside = {
                         }
                     },
                     messages : {
-                        jobName : "è¯·å¡«å†™ä»»åŠ¡åç§°",
-                        jobGroupSelect : "è¯·é€‰æ‹©ä»»åŠ¡ç»„",
-                        triggerName: "è¯·å¡«å†™triggeråç§°",
-                        triggerGroup: "è¯·å¡«å†™triggerç»„",
+                        jobName : "ÇëÌîĞ´ÈÎÎñÃû³Æ",
+                        jobGroupSelect : "ÇëÑ¡ÔñÈÎÎñ×é",
+                        triggerName: "ÇëÌîĞ´triggerÃû³Æ",
+                        triggerGroup: "ÇëÌîĞ´trigger×é",
                         cronExpression : {
-                            required : "è¯·å¡«å†™ä»»åŠ¡è§¦å‘è¡¨è¾¾å¼",
-                            remote : "è¡¨è¾¾å¼ä¸æ­£ç¡®"
+                            required : "ÇëÌîĞ´ÈÎÎñ´¥·¢±í´ïÊ½",
+                            remote : "±í´ïÊ½²»ÕıÈ·"
                         },
-                        startDate : "è¯·é€‰æ‹©ä»»åŠ¡å¼€å§‹æ—¥æœŸ",
-                        endDate : "è¯·é€‰æ‹©ä»»åŠ¡ç»“æŸæ—¥æœŸ"
+                        startDate : "ÇëÑ¡ÔñÈÎÎñ¿ªÊ¼ÈÕÆÚ",
+                        endDate : "ÇëÑ¡ÔñÈÎÎñ½áÊøÈÕÆÚ"
                     },
                     highlight : function(e) {
                         $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
@@ -935,14 +935,14 @@ var webside = {
                         }
                     },
                     messages : {
-                        triggerName: "è¯·å¡«å†™triggeråç§°",
-                        triggerGroup: "è¯·å¡«å†™triggerç»„",
+                        triggerName: "ÇëÌîĞ´triggerÃû³Æ",
+                        triggerGroup: "ÇëÌîĞ´trigger×é",
                         cronExpression : {
-                            required : "è¯·å¡«å†™ä»»åŠ¡è§¦å‘è¡¨è¾¾å¼",
-                            remote : "è¡¨è¾¾å¼ä¸æ­£ç¡®"
+                            required : "ÇëÌîĞ´ÈÎÎñ´¥·¢±í´ïÊ½",
+                            remote : "±í´ïÊ½²»ÕıÈ·"
                         },
-                        startDate : "è¯·é€‰æ‹©ä»»åŠ¡å¼€å§‹æ—¥æœŸ",
-                        endDate : "è¯·é€‰æ‹©ä»»åŠ¡ç»“æŸæ—¥æœŸ"
+                        startDate : "ÇëÑ¡ÔñÈÎÎñ¿ªÊ¼ÈÕÆÚ",
+                        endDate : "ÇëÑ¡ÔñÈÎÎñ½áÊøÈÕÆÚ"
                     },
                     highlight : function(e) {
                         $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
@@ -980,12 +980,12 @@ var webside = {
                 });
             },
             editModel : function(nav) {
-                //è·å–é€‰æ‹©çš„è¡Œ
+                //»ñÈ¡Ñ¡ÔñµÄĞĞ
                 var rows = grid.getCheckedRecords();
                 if (rows.length == 1) {
                     webside.common.loadPage(nav + '?jobName=' + rows[0].jobName+'&jobGroup='+rows[0].jobGroup+'&triggerName='+rows[0].triggerName+'&triggerGroup='+rows[0].triggerGroup);
                 } else {
-                    layer.msg("ä½ æ²¡æœ‰é€‰æ‹©è¡Œæˆ–é€‰æ‹©äº†å¤šè¡Œæ•°æ®", {
+                    layer.msg("ÄãÃ»ÓĞÑ¡ÔñĞĞ»òÑ¡ÔñÁË¶àĞĞÊı¾İ", {
                         icon : 0
                     });
                 }
@@ -997,19 +997,19 @@ var webside = {
                 var param = {};
                 if(undefined ==jobName)
                 {
-                    //æ‰§è¡Œjob
+                    //Ö´ĞĞjob
                     param.jobName = rows[0].jobName;
                     param.jobGroup = rows[0].jobGroup;
                 }else
                 {
-                    //æ‰§è¡Œtrigger
+                    //Ö´ĞĞtrigger
                     param.triggerName = rows[0].triggerName;
                     param.triggerGroup = rows[0].triggerGroup;
                 }
                 if (rows.length == 1) {
-                    layer.confirm('ç¡®è®¤åˆ é™¤å—ï¼Ÿ', {
+                    layer.confirm('È·ÈÏÉ¾³ıÂğ£¿', {
                     icon : 3,
-                    title : 'åˆ é™¤æç¤º'
+                    title : 'É¾³ıÌáÊ¾'
                 }, function(index, layero) {
                     $.ajax({
                         type : "POST",
@@ -1031,7 +1031,7 @@ var webside = {
                             }
                         },
                         error : function(errorMsg) {
-                            layer.msg('æœåŠ¡å™¨æœªå“åº”,è¯·ç¨åå†è¯•', {
+                            layer.msg('·şÎñÆ÷Î´ÏìÓ¦,ÇëÉÔºóÔÙÊÔ', {
                                 icon : 3
                             });
                         }
@@ -1039,7 +1039,7 @@ var webside = {
                     layer.close(index);
                 });
                 } else {
-                    layer.msg("ä½ æ²¡æœ‰é€‰æ‹©è¡Œæˆ–é€‰æ‹©äº†å¤šè¡Œæ•°æ®", {
+                    layer.msg("ÄãÃ»ÓĞÑ¡ÔñĞĞ»òÑ¡ÔñÁË¶àĞĞÊı¾İ", {
                         icon : 0
                     });
                 }
@@ -1050,12 +1050,12 @@ var webside = {
                 var param = {};
                 if(undefined ==jobName)
                 {
-                    //æ‰§è¡Œjob
+                    //Ö´ĞĞjob
                     param.jobName = rows[0].jobName;
                     param.jobGroup = rows[0].jobGroup;
                 }else
                 {
-                    //æ‰§è¡Œtrigger
+                    //Ö´ĞĞtrigger
                     param.triggerName = rows[0].triggerName;
                     param.triggerGroup = rows[0].triggerGroup;
                 }
@@ -1085,13 +1085,13 @@ var webside = {
                             }
                         },
                         error : function(errorMsg) {
-                            layer.msg('æœåŠ¡å™¨æœªå“åº”,è¯·ç¨åå†è¯•', {
+                            layer.msg('·şÎñÆ÷Î´ÏìÓ¦,ÇëÉÔºóÔÙÊÔ', {
                                 icon : 3
                             });
                         }
                     });
                 }else {
-                    layer.msg("ä½ æ²¡æœ‰é€‰æ‹©ä»»åŠ¡æˆ–é€‰æ‹©äº†å¤šä¸ªä»»åŠ¡", {
+                    layer.msg("ÄãÃ»ÓĞÑ¡ÔñÈÎÎñ»òÑ¡ÔñÁË¶à¸öÈÎÎñ", {
                         icon : 0
                     });
                 }

@@ -5,6 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="ctx" value="${pageContext.request.contextPath }" />
 <script type="text/javascript" src="${ctx }/resources/js/ace/ace-elements.min.js"></script>
+<script type="text/javascript" src="${ctx}/resources/js/dlshouwen.grid.v1.2.1/i18n/zh-cn.js"></script>
 <script type="text/javascript">
 var isLayerOpen =false;
 jQuery(function($) {
@@ -40,7 +41,11 @@ function showVideo(mYspm){
 			  closeBtn: 1,
 			  skin: 'layui-layer-nobg',
 			  shadeClose: true,
-			  content: '<video src="'+sys.rootPath+'/media/showMedia.html?mYspm='+mYspm+'" autoplay="autoplay">您的浏览器不支持该视频播放。</video>',
+			  content:'<video width="320" height="180" controls>\n' +
+					  '\t\t<source src="'+sys.rootPath+'/media/showMedia.html?mYspm='+mYspm+'" type="video/mp4">\n' +
+					  '\t\t\t\t测试\n' +
+					  '\t\t\t\t</video>',
+			  //content: '<video src="'+sys.rootPath+'/media/showMedia.html?mYspm='+mYspm+'" autoplay="autoplay">您的浏览器不支持该视频播放。</video>',
 			  success: function(){
 	              isLayerOpen=true;
 	          },

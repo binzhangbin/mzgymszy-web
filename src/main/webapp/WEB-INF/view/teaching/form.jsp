@@ -18,6 +18,7 @@
 	src="${ctx }/resources/js/customer/teaching/form.js"></script>
 <script type="text/javascript"
 	src="${ctx }/resources/js/distpicker/distpicker.min.js"></script>
+<script type="text/javascript" src="${ctx}/resources/js/dlshouwen.grid.v1.2.1/i18n/zh-cn.js"></script>
 	
 <!-- 复选框：教学类型：鞍马类、服装及配饰类、毡庐类、餐饮类、游乐类、宗教类、其它 -->
 <script type="text/javascript">

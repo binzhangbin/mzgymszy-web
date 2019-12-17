@@ -16,6 +16,7 @@
 <![endif]-->
 <script type="text/javascript"
 	src="${ctx}/resources/js/nicescroll/jquery.nicescroll.min.js"></script>
+	<script type="text/javascript" src="${ctx}/resources/js/dlshouwen.grid.v1.2.1/i18n/zh-cn.js"></script>
 <link rel="stylesheet" href="${ctx }/resources/css/customer/webside-icon.min.css" />
 <link rel="stylesheet" href="${ctx}/resources/fonts/opensans/ace-fonts.min.css"/>
 <link rel="stylesheet" href="${ctx}/resources/css/ace/ace.min.css" class="ace-main-stylesheet" id="main-ace-style"/>
