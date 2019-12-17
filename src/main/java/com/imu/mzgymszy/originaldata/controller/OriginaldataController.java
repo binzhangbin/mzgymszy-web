@@ -72,6 +72,7 @@ public class OriginaldataController extends BaseController {
 	
 	@RequestMapping("treelistUI.html")
 	public String treelistUI(Model model, HttpServletRequest request) {
+		System.out.println("8888888888");
 		try
 		{
 			PageUtil page = new PageUtil();
@@ -88,9 +89,14 @@ public class OriginaldataController extends BaseController {
 			throw new AjaxException(e);
 		}
 	}
-	
+	@RequestMapping("dtreelistUI.html")
+	public String dtreelistUI(Model model, HttpServletRequest request) {
+		request.getSession().setAttribute("dtreelistFlag","dtreelistFlag");
+		return Common.BACKGROUND_PATH + "/originaldata/list";
+	}
 	@RequestMapping("listUI.html")
 	public String listUI(Model model, HttpServletRequest request) {
+		System.out.println("9999999999999999");
 		try
 		{
 			PageUtil page = new PageUtil();
@@ -122,12 +128,35 @@ public class OriginaldataController extends BaseController {
 	 */
 	@RequestMapping(value = "/list.html", method = RequestMethod.POST)
 	@ResponseBody
-	public Object list(String gridPager, HttpServletResponse response) throws Exception{
+	public Object list(String gridPager,HttpServletRequest request, HttpServletResponse response) throws Exception{
 		Map<String, Object> parameters = null;
 		//1、映射Pager对象
 		Pager pager = JSON.parseObject(gridPager, Pager.class);
 		//2、设置查询参数
 		parameters = pager.getParameters();
+		// 设置分页，page里面包含了分页信息
+		System.out.println(pager.getNowPage()+"=-==-");
+		int pageSize=pager.getPageSize();
+		int startSize=1;
+		System.out.println(parameters.get("pageCount")+"===");
+		parameters.clear();
+		System.out.println(parameters.get("pageCount")+"---");
+		if(request.getSession().getAttribute("dtreelistFlag")!=null&&"dtreelistFlag".equalsIgnoreCase((String) request.getSession().getAttribute("dtreelistFlag"))){//由更新进入
+			Object retPage = request.getSession().getAttribute("retPage1");
+
+			if(retPage==null){
+				retPage=1;
+			}
+			startSize= (int) retPage;
+			parameters.put("nowPage",retPage);
+			System.out.println("返回页："+retPage);
+			request.getSession().removeAttribute("dtreelistFlag");
+		} else{//由list分页进入
+			parameters.put("nowPage", pager.getNowPage());//下一页
+			request.getSession().setAttribute("retPage1",pager.getNowPage());//迭代更新
+			startSize=pager.getNowPage();
+			System.out.println("下一页："+pager.getNowPage());
+		}
 		String searchkey = (String) parameters.get("searchKey");
 		if(!StringUtil.isBlank(searchkey)){
 			String[] key = {"gypbm","gypmczm","gypmcym","gypbz"};
@@ -145,16 +174,15 @@ public class OriginaldataController extends BaseController {
 	    	}
 		}
 		//设置分页，page里面包含了分页信息
-		Page<Object> page = PageHelper.startPage(pager.getNowPage(),pager.getPageSize(), "gyp_id DESC");
+		Page<Object> page = PageHelper.startPage(startSize,pageSize, "gyp_id DESC");
 		List<OriginaldataEntity> list = originaldataService.queryListByPage(parameters);
-		parameters.clear();
 		parameters.put("isSuccess", Boolean.TRUE);
-		parameters.put("nowPage", pager.getNowPage());
 		parameters.put("pageSize", pager.getPageSize());
 		parameters.put("pageCount", page.getPages());
 		parameters.put("recordCount", page.getTotal());
 		parameters.put("startRecord", page.getStartRow());
 		//列表展示数据
+		request.getSession().setAttribute("pageNum",pager.getNowPage());
 		parameters.put("exhibitDatas", list);
 		return parameters;
 	}
