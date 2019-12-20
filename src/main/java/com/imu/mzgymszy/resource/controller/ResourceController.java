@@ -66,14 +66,14 @@ public class ResourceController extends BaseController {
 	@ResponseBody
 	public Object list(String gridPager) throws Exception{
 		Map<String,Object> parameters = null;
-		// æ˜ å°„Pagerå¯¹è±¡
+		// Ó³ÉäPager¶ÔÏó
 		Pager pager = JSON.parseObject(gridPager, Pager.class);
-		// åˆ¤æ–­æ˜¯å¦åŒ…å«è‡ªå®šä¹‰å‚æ•°
+		// ÅĞ¶ÏÊÇ·ñ°üº¬×Ô¶¨Òå²ÎÊı
 		parameters = pager.getParameters();
 		if (parameters.size() < 0) {
 			parameters.put("name", null);
 		}
-		// è®¾ç½®åˆ†é¡µï¼Œpageé‡Œé¢åŒ…å«äº†åˆ†é¡µä¿¡æ¯
+		// ÉèÖÃ·ÖÒ³£¬pageÀïÃæ°üº¬ÁË·ÖÒ³ĞÅÏ¢
 		Page<Object> page = PageHelper.startPage(pager.getNowPage(),pager.getPageSize(), "s_id DESC");
 	
 		List<ResourceEntity> list = resourceService.queryListByPage(parameters);
@@ -84,7 +84,7 @@ public class ResourceController extends BaseController {
 		parameters.put("pageCount", page.getPages());
 		parameters.put("recordCount", page.getTotal());
 		parameters.put("startRecord", page.getStartRow());
-		//åˆ—è¡¨å±•ç¤ºæ•°æ®
+		//ÁĞ±íÕ¹Ê¾Êı¾İ
 		parameters.put("exhibitDatas", list);
 		return parameters;
 	}
@@ -158,12 +158,12 @@ public class ResourceController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "æ·»åŠ æˆåŠŸ");
+				map.put("message", "Ìí¼Ó³É¹¦");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "æ·»åŠ å¤±è´¥");
+				map.put("message", "Ìí¼ÓÊ§°Ü");
 			}
 		}catch(Exception e)
 		{
@@ -213,12 +213,12 @@ public class ResourceController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "ç¼–è¾‘æˆåŠŸ");
+				map.put("message", "±à¼­³É¹¦");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "ç¼–è¾‘å¤±è´¥");
+				map.put("message", "±à¼­Ê§°Ü");
 			}
 		}catch(Exception e)
 		{
@@ -244,12 +244,12 @@ public class ResourceController extends BaseController {
 			{
 				result.put("success", true);
 				result.put("data", null);
-				result.put("message", "åˆ é™¤æˆåŠŸ");
+				result.put("message", "É¾³ı³É¹¦");
 			}else
 			{
 				result.put("success", false);
 				result.put("data", null);
-				result.put("message", "åˆ é™¤å¤±è´¥");
+				result.put("message", "É¾³ıÊ§°Ü");
 			}
 		}catch(Exception e)
 		{

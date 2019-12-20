@@ -16,7 +16,7 @@ $(function() {
 	            area : ['500px', '500px'],
 	            maxmin : true,
 	            shift : 4,
-	            title : '<i class="fa fa-file-image-o"></i>&nbsp;é€‰æ‹©å›¾ç‰‡',
+	            title : '<i class="fa fa-file-image-o"></i>&nbsp;Ñ¡ÔñÍ¼Æ¬',
 	            success: function(){
 	                isLayerOpen=true;
 	            },
@@ -26,7 +26,7 @@ $(function() {
 	        });
 		}
     });
-	/*æ–‡æ¡£æµ‹è¯•===Start===*/
+	/*ÎÄµµ²âÊÔ===Start===*/
 	$('.files-upload').bind('focus', function(event) {
 		if(!isLayerOpen){
 			var pictureLayer = layer.open({
@@ -36,7 +36,7 @@ $(function() {
 				area : ['500px', '500px'],
 				maxmin : true,
 				shift : 4,
-				title : '<i class="fa fa-file-o"></i>&nbsp;é€‰æ‹©æ–‡æ¡£',
+				title : '<i class="fa fa-file-o"></i>&nbsp;Ñ¡ÔñÎÄµµ',
 				success: function(){
 					isLayerOpen=true;
 				},
@@ -46,7 +46,7 @@ $(function() {
 			});
 		}
 	});
-	/*æ–‡æ¡£æµ‹è¯•===End===*/
+	/*ÎÄµµ²âÊÔ===End===*/
 	$('.media-upload').bind('focus', function(event) {
 		if(!isLayerOpen){
 			var mediaLayer = layer.open({
@@ -56,7 +56,7 @@ $(function() {
 	            area : ['500px', '500px'],
 	            maxmin : true,
 	            shift : 4,
-	            title : '<i class="fa fa-file-video-o"></i>&nbsp;é€‰æ‹©æ–‡ä»¶',
+	            title : '<i class="fa fa-file-video-o"></i>&nbsp;Ñ¡ÔñÎÄ¼þ',
 	            success: function(){
 	                isLayerOpen=true;
 	            },
@@ -101,7 +101,7 @@ $(function() {
             } else {
                 url = '/teachingVideo/add.html';
             }
-            webside.common.commit('teachingVideoForm', url, '/teachingVideo/listUI.html');
+            webside.common.commit('teachingVideoForm', url, '/teachingVideo/detailUI.html?id=${detailsId}');
         }
     });
 });

@@ -29,7 +29,7 @@ var dtGridColumns = [
 		},
 		{
 			id : 'jxWhcd',
-			title : 'cultural',
+			title : 'ÎÄ»¯',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'

@@ -12,9 +12,9 @@ import jodd.util.StringUtil;
 
 /**
  * @ClassName: OriginaldataEntity
- * @Description: åŸå§‹æ•°æ®æ¨¡å‹
+ * @Description: Ô­Ê¼Êı¾İÄ£ĞÍ
  * @author tianhao
- * @date 2016å¹´10æœˆ28æ—¥ ä¸‹åˆ1:38:57
+ * @date 2016Äê10ÔÂ28ÈÕ ÏÂÎç1:38:57
  * 
  */
 @Alias("originaldataEntity")
@@ -25,242 +25,242 @@ public class OriginaldataEntity extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @Fields gypBm : ç¼–ç 
+	 * @Fields gypBm : ±àÂë
 	 */
 	private String gypBm;
 
 	/**
-	 * @Fields gypMcZm : ä¸»åç§°
+	 * @Fields gypMcZm : Ö÷Ãû³Æ
 	 */
 	private String gypMcZm;
 
 	/**
-	 * @Fields gypMcYm : åˆ«å
+	 * @Fields gypMcYm : ±ğÃû
 	 */
 	private String gypMcYm;
 
 	/**
-	 * @Fields gypScdDw : æ”¶è—åœ°æ€§è´¨
+	 * @Fields gypScdDw : ÊÕ²ØµØĞÔÖÊ
 	 */
 	private String gypScdDw;
 
 	/**
-	 * @Fields gypScdScrxm : æ”¶è—äººå§“å/å½’å±äººï¼ˆåœ°ï¼‰
+	 * @Fields gypScdScrxm : ÊÕ²ØÈËĞÕÃû/¹éÊôÈË£¨µØ£©
 	 */
 	private String gypScdScrxm;
 	
 	/**
-	 * gypScdDq:å½’å±äººåœ°åŒº
+	 * gypScdDq:¹éÊôÈËµØÇø
 	 */
 	private String gypScdDq;
 
 	/**
-	 * @Fields gypScdLxfs : è”ç³»æ–¹å¼
+	 * @Fields gypScdLxfs : ÁªÏµ·½Ê½
 	 */
 	private String gypScdLxfs;
 
 	/**
-	 * @Fields gypScdScdz : æ”¶è—åœ°å€
+	 * @Fields gypScdScdz : ÊÕ²ØµØÖ·
 	 */
 	private String gypScdScdz;
 
 	/**
-	 * @Fields gypScdSjnd : æ”¶é›†å¹´ä»£
+	 * @Fields gypScdSjnd : ÊÕ¼¯Äê´ú
 	 */
 	private Date gypScdSjnd;
 
 	/**
-	 * @Fields gypScdSynx : ä½¿ç”¨å¹´é™
+	 * @Fields gypScdSynx : Ê¹ÓÃÄêÏŞ
 	 */
 	private int gypScdSynx;
 
 	/**
-	 * @Fields gypCyzSf : æ›¾ç”¨è€…èº«ä»½
+	 * @Fields gypCyzSf : ÔøÓÃÕßÉí·İ
 	 */
 	private String gypCyzSf;
 
 	/**
-	 * @Fields gypCyzMz : æ›¾ç”¨è€…æ°‘æ—
+	 * @Fields gypCyzMz : ÔøÓÃÕßÃñ×å
 	 */
 	private String gypCyzMz;
 	
 	/**
-	 * gypCyzXb:æ›¾ç”¨è€…æ€§åˆ«
+	 * gypCyzXb:ÔøÓÃÕßĞÔ±ğ
 	 */
 	private String gypCyzXb;
 
 	/**
-	 * @Fields gypLyd : æ¥æºåœ°
+	 * @Fields gypLyd : À´Ô´µØ
 	 */
 	private String gypLyd;
 
 	/**
-	 * @Fields gypZsZsfs : è£…é¥°æ–¹å¼
+	 * @Fields gypZsZsfs : ×°ÊÎ·½Ê½
 	 */
 	private String gypZsZsfs;
 
 	/**
-	 * @Fields gypZsZta : è£…é¥°-ä¸»å›¾æ¡ˆ
+	 * @Fields gypZsZta : ×°ÊÎ-Ö÷Í¼°¸
 	 */
 	private String gypZsZta;
 
 	/**
-	 * @Fields gypZsMs : è£…é¥°æè¿°
+	 * @Fields gypZsMs : ×°ÊÎÃèÊö
 	 */
 	private String gypZsMs;
 
 	/**
-	 * @Fields gypZsGjzp : è£…é¥°å·¥å…·ç…§ç‰‡(å®Œæ•´)
+	 * @Fields gypZsGjzp : ×°ÊÎ¹¤¾ßÕÕÆ¬(ÍêÕû)
 	 */
 	private String gypZsGjzp;
 	
 	/**
-	 * gypZsGjzpjb:è£…é¥°å·¥å…·ç…§ç‰‡(å±€éƒ¨)
+	 * gypZsGjzpjb:×°ÊÎ¹¤¾ßÕÕÆ¬(¾Ö²¿)
 	 */
 	private String gypZsGjzpjb;
 
 	/**
-	 * @Fields gypGgxtZtgg : æ€»ä½“è§„æ ¼
+	 * @Fields gypGgxtZtgg : ×ÜÌå¹æ¸ñ
 	 */
 	private String gypGgxtZtgg;
 
 	/**
-	 * @Fields gypGgxtJbgg : å±€éƒ¨è§„æ ¼
+	 * @Fields gypGgxtJbgg : ¾Ö²¿¹æ¸ñ
 	 */
 	private String gypGgxtJbgg;
 
 	/**
-	 * @Fields gypDstTp : å¤šè§†å›¾-å›¾ç‰‡
+	 * @Fields gypDstTp : ¶àÊÓÍ¼-Í¼Æ¬
 	 */
 	private String gypDstTp;
 
 	/**
-	 * @Fields gypDstSst : å¤šè§†å›¾-ä¸‰è§†å›¾(æ”¹ä¸ºï¼šå­˜å‚¨è§†é¢‘)
+	 * @Fields gypDstSst : ¶àÊÓÍ¼-ÈıÊÓÍ¼(¸ÄÎª£º´æ´¢ÊÓÆµ)
 	 */
 	private String gypDstSst;
 
 	/**
-	 * @Fields gypCcx : ä¼ æ‰¿ç³»
+	 * @Fields gypCcx : ´«³ĞÏµ
 	 */
 	private long gypCcx;
 
 	/**
-	 * @Fields gypZzgjCggj :åˆ¶ä½œå·¥å…·-å¸¸è§„å·¥å…·(æ”¹ä¸ºï¼šæ‰‹å·¥å·¥å…·)
+	 * @Fields gypZzgjCggj :ÖÆ×÷¹¤¾ß-³£¹æ¹¤¾ß(¸ÄÎª£ºÊÖ¹¤¹¤¾ß)
 	 */
 	private String gypZzgjCggj;
 
 	/**
-	 * @Fields gypZzgjZygj : åˆ¶ä½œå·¥å…·-ä¸“ç”¨å·¥å…·(æ”¹ä¸ºï¼šåŠæ‰‹å·¥å·¥å…·)
+	 * @Fields gypZzgjZygj : ÖÆ×÷¹¤¾ß-×¨ÓÃ¹¤¾ß(¸ÄÎª£º°ëÊÖ¹¤¹¤¾ß)
 	 */
 	private String gypZzgjZygj;
 
 	/**
-	 * @Fields gypZzclCz : åˆ¶ä½œææ–™æè´¨
+	 * @Fields gypZzclCz : ÖÆ×÷²ÄÁÏ²ÄÖÊ
 	 */
 	private String gypZzclCz;
 
 	/**
-	 * @Fields gypZzclClmc : åˆ¶ä½œææ–™åç§°(ç»™ä¸ºï¼šåˆ¶ä½œææ–™ç…§ç‰‡)
+	 * @Fields gypZzclClmc : ÖÆ×÷²ÄÁÏÃû³Æ(¸øÎª£ºÖÆ×÷²ÄÁÏÕÕÆ¬)
 	 */
 	private String gypZzclClmc;
 
 	/**
-	 * @Fields gypSygnSych : ä½¿ç”¨åœºåˆ
+	 * @Fields gypSygnSych : Ê¹ÓÃ³¡ºÏ
 	 */
 	private String gypSygnSych;
 
 	/**
-	 * @Fields gypSygnSysp : ä½¿ç”¨è§†é¢‘
+	 * @Fields gypSygnSysp : Ê¹ÓÃÊÓÆµ
 	 */
 	private String gypSygnSysp;
 
 	/**
-	 * @Fields gypSygnSyyp : ä½¿ç”¨éŸ³é¢‘
+	 * @Fields gypSygnSyyp : Ê¹ÓÃÒôÆµ
 	 */
 	private String gypSygnSyyp;
 
 	/**
-	 * @Fields gypZzlcZzsp : åˆ¶ä½œæµç¨‹-åˆ¶ä½œè§†é¢‘
+	 * @Fields gypZzlcZzsp : ÖÆ×÷Á÷³Ì-ÖÆ×÷ÊÓÆµ
 	 */
 	private String gypZzlcZzsp;
 
 	/**
-	 * @Fields gypZzlcZzyp : åˆ¶ä½œæµç¨‹-åˆ¶ä½œéŸ³é¢‘
+	 * @Fields gypZzlcZzyp : ÖÆ×÷Á÷³Ì-ÖÆ×÷ÒôÆµ
 	 */
 	private String gypZzlcZzyp;
 
 	/**
-	 * @Fields gypSycsCssp : ä¼ è¯´è§†é¢‘
+	 * @Fields gypSycsCssp : ´«ËµÊÓÆµ
 	 */
 	private String gypSycsCssp;
 
 	/**
-	 * @Fields gypSycsCsyp : ä¼ è¯´éŸ³é¢‘
+	 * @Fields gypSycsCsyp : ´«ËµÒôÆµ
 	 */
 	private String gypSycsCsyp;
 
 	/**
-	 * @Fields gypBz : å¤‡æ³¨
+	 * @Fields gypBz : ±¸×¢
 	 */
 	private String gypBz;
 
 	/**
-	 * @Fields gypFoldId : ç›®å½•id
+	 * @Fields gypFoldId : Ä¿Â¼id
 	 */
 	private long gypFoldId;
 
 	/**
-	 * @Fields gypFoldName : æ‰€å±ç›®å½•åç§°
+	 * @Fields gypFoldName : ËùÊôÄ¿Â¼Ãû³Æ
 	 */
 	private String gypFoldName;
 
 	/**
-	 * @Fields gypDelFlag : åˆ é™¤æ ‡è®°
+	 * @Fields gypDelFlag : É¾³ı±ê¼Ç
 	 */
 	private int gypDelFlag;
 
 	/**
-	 * @Fields createTime : åˆ›å»ºæ—¶é—´
+	 * @Fields createTime : ´´½¨Ê±¼ä
 	 */
 	private Date gypCreateTime;
 
 	/**
-	 * @Fields updateTime : æ›´æ–°æ—¶é—´
+	 * @Fields updateTime : ¸üĞÂÊ±¼ä
 	 */
 	private Date gypUpdateTime;
 
 	/**
-	 * @Fields gypDyrXm : è°ƒç ”äººå§“å
+	 * @Fields gypDyrXm : µ÷ÑĞÈËĞÕÃû
 	 */
 	private String gypDyrXm;
 
 	/**
-	 * @Fields gypDyrLxfs : è°ƒç ”äººè”ç³»æ–¹å¼
+	 * @Fields gypDyrLxfs : µ÷ÑĞÈËÁªÏµ·½Ê½
 	 */
 	private String gypDyrLxfs;
 
 	/**
-	 * @Fields gypDyrDw : è°ƒç ”äººå•ä½
+	 * @Fields gypDyrDw : µ÷ÑĞÈËµ¥Î»
 	 */
 	private String gypDyrDw;
 
 	/**
-	 * gypDyrWzzlr:æ–‡å­—æ•´ç†äºº
+	 * gypDyrWzzlr:ÎÄ×ÖÕûÀíÈË
 	 */
 	private String gypDyrWzzlr;
 
 	/**
-	 * gypDyrTpclr:å›¾ç‰‡å¤„ç†äºº
+	 * gypDyrTpclr:Í¼Æ¬´¦ÀíÈË
 	 */
 	private String gypDyrTpclr;
 
 	/**
-	 * gypDyrSpclr:è§†é¢‘å¤„ç†äºº
+	 * gypDyrSpclr:ÊÓÆµ´¦ÀíÈË
 	 */
 	private String gypDyrSpclr;
 
 	/**
-	 * @Fields gypDyrTbsj : å¡«è¡¨æ—¶é—´
+	 * @Fields gypDyrTbsj : Ìî±íÊ±¼ä
 	 */
 	private Date gypDyrTbsj;
 

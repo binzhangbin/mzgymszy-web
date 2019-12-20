@@ -8,26 +8,26 @@
 
 /*
  * Translated default messages for the jQuery validation plugin.
- * Locale: ZH (Chinese, ä¸­æ–‡ (ZhÅngwÃ©n), æ±‰è¯­, æ¼¢èª)
+ * Locale: ZH (Chinese, ÖĞÎÄ (Zh¨­ngw¨¦n), ººÓï, hÕZ)
  */
 $.extend($.validator.messages, {
-	required: "è¿™æ˜¯å¿…å¡«å­—æ®µ",
-	remote: "è¯·ä¿®æ­£æ­¤å­—æ®µ",
-	email: "è¯·è¾“å…¥æœ‰æ•ˆçš„ç”µå­é‚®ä»¶åœ°å€",
-	url: "è¯·è¾“å…¥æœ‰æ•ˆçš„ç½‘å€",
-	date: "è¯·è¾“å…¥æœ‰æ•ˆçš„æ—¥æœŸ",
-	dateISO: "è¯·è¾“å…¥æœ‰æ•ˆçš„æ—¥æœŸ (YYYY-MM-DD)",
-	number: "è¯·è¾“å…¥æœ‰æ•ˆçš„æ•°å­—",
-	digits: "åªèƒ½è¾“å…¥æ•°å­—",
-	creditcard: "è¯·è¾“å…¥æœ‰æ•ˆçš„ä¿¡ç”¨å¡å·ç ",
-	equalTo: "ä½ çš„è¾“å…¥ä¸ç›¸åŒ",
-	extension: "è¯·è¾“å…¥æœ‰æ•ˆçš„åç¼€",
-	maxlength: $.validator.format("æœ€å¤šå¯ä»¥è¾“å…¥ {0} ä¸ªå­—ç¬¦"),
-	minlength: $.validator.format("æœ€å°‘è¦è¾“å…¥ {0} ä¸ªå­—ç¬¦"),
-	rangelength: $.validator.format("è¯·è¾“å…¥é•¿åº¦åœ¨ {0} åˆ° {1} ä¹‹é—´çš„å­—ç¬¦ä¸²"),
-	range: $.validator.format("è¯·è¾“å…¥èŒƒå›´åœ¨ {0} åˆ° {1} ä¹‹é—´çš„æ•°å€¼"),
-	max: $.validator.format("è¯·è¾“å…¥ä¸å¤§äº {0} çš„æ•°å€¼"),
-	min: $.validator.format("è¯·è¾“å…¥ä¸å°äº {0} çš„æ•°å€¼")
+	required: "ÕâÊÇ±ØÌî×Ö¶Î",
+	remote: "ÇëĞŞÕı´Ë×Ö¶Î",
+	email: "ÇëÊäÈëÓĞĞ§µÄµç×ÓÓÊ¼şµØÖ·",
+	url: "ÇëÊäÈëÓĞĞ§µÄÍøÖ·",
+	date: "ÇëÊäÈëÓĞĞ§µÄÈÕÆÚ",
+	dateISO: "ÇëÊäÈëÓĞĞ§µÄÈÕÆÚ (YYYY-MM-DD)",
+	number: "ÇëÊäÈëÓĞĞ§µÄÊı×Ö",
+	digits: "Ö»ÄÜÊäÈëÊı×Ö",
+	creditcard: "ÇëÊäÈëÓĞĞ§µÄĞÅÓÃ¿¨ºÅÂë",
+	equalTo: "ÄãµÄÊäÈë²»ÏàÍ¬",
+	extension: "ÇëÊäÈëÓĞĞ§µÄºó×º",
+	maxlength: $.validator.format("×î¶à¿ÉÒÔÊäÈë {0} ¸ö×Ö·û"),
+	minlength: $.validator.format("×îÉÙÒªÊäÈë {0} ¸ö×Ö·û"),
+	rangelength: $.validator.format("ÇëÊäÈë³¤¶ÈÔÚ {0} µ½ {1} Ö®¼äµÄ×Ö·û´®"),
+	range: $.validator.format("ÇëÊäÈë·¶Î§ÔÚ {0} µ½ {1} Ö®¼äµÄÊıÖµ"),
+	max: $.validator.format("ÇëÊäÈë²»´óÓÚ {0} µÄÊıÖµ"),
+	min: $.validator.format("ÇëÊäÈë²»Ğ¡ÓÚ {0} µÄÊıÖµ")
 });
 
 }));

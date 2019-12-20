@@ -67,40 +67,40 @@ public class UserController extends BaseController {
 	
 	
 	/**
-	 * ajaxåˆ†é¡µåŠ¨æ€åŠ è½½æ¨¡å¼
-	 * @param dtGridPager Pagerå¯¹è±¡
+	 * ajax·ÖÒ³¶¯Ì¬¼ÓÔØÄ£Ê½
+	 * @param dtGridPager Pager¶ÔÏó
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/list.html", method = RequestMethod.POST)
 	@ResponseBody
 	public Object list(String gridPager, HttpServletResponse response) throws Exception{
 		Map<String, Object> parameters = null;
-		//1ã€æ˜ å°„Pagerå¯¹è±¡
+		//1¡¢Ó³ÉäPager¶ÔÏó
 		Pager pager = JSON.parseObject(gridPager, Pager.class);
-		//2ã€è®¾ç½®æŸ¥è¯¢å‚æ•°
+		//2¡¢ÉèÖÃ²éÑ¯²ÎÊı
 		parameters = pager.getParameters();
 		parameters.put("creatorName", ShiroAuthenticationManager.getUserAccountName());
 		if (parameters.size() < 0) {
 			parameters.put("userName", null);
 		}
-		//3ã€åˆ¤æ–­æ˜¯å¦æ˜¯å¯¼å‡ºæ“ä½œ
+		//3¡¢ÅĞ¶ÏÊÇ·ñÊÇµ¼³ö²Ù×÷
 		if(pager.getIsExport())
 		{
 			if(pager.getExportAllData())
 			{
-				//3.1ã€å¯¼å‡ºå…¨éƒ¨æ•°æ®
+				//3.1¡¢µ¼³öÈ«²¿Êı¾İ
 				List<UserEntity> list = userService.queryListByPage(parameters);
 				ExportUtils.exportAll(response, pager, list);
 				return null;
 			}else
 			{
-				//3.2ã€å¯¼å‡ºå½“å‰é¡µæ•°æ®
+				//3.2¡¢µ¼³öµ±Ç°Ò³Êı¾İ
 				ExportUtils.export(response, pager);
 				return null;
 			}
 		}else
 		{
-			//è®¾ç½®åˆ†é¡µï¼Œpageé‡Œé¢åŒ…å«äº†åˆ†é¡µä¿¡æ¯
+			//ÉèÖÃ·ÖÒ³£¬pageÀïÃæ°üº¬ÁË·ÖÒ³ĞÅÏ¢
 			Page<Object> page = PageHelper.startPage(pager.getNowPage(),pager.getPageSize(), "u_id DESC");
 			List<UserEntity> list = userService.queryListByPage(parameters);
 			parameters.clear();
@@ -110,7 +110,7 @@ public class UserController extends BaseController {
 			parameters.put("pageCount", page.getPages());
 			parameters.put("recordCount", page.getTotal());
 			parameters.put("startRecord", page.getStartRow());
-			//åˆ—è¡¨å±•ç¤ºæ•°æ®
+			//ÁĞ±íÕ¹Ê¾Êı¾İ
 			parameters.put("exhibitDatas", list);
 			return parameters;
 		}
@@ -140,15 +140,15 @@ public class UserController extends BaseController {
 		try
 		{
 			String password = userEntity.getPassword();
-			// åŠ å¯†ç”¨æˆ·è¾“å…¥çš„å¯†ç ï¼Œå¾—åˆ°å¯†ç å’ŒåŠ å¯†ç›ï¼Œä¿å­˜åˆ°æ•°æ®åº“
+			// ¼ÓÃÜÓÃ»§ÊäÈëµÄÃÜÂë£¬µÃµ½ÃÜÂëºÍ¼ÓÃÜÑÎ£¬±£´æµ½Êı¾İ¿â
 			UserEntity user = EndecryptUtils.md5Password(userEntity.getAccountName(), userEntity.getPassword(), 2);
-			//è®¾ç½®æ·»åŠ ç”¨æˆ·çš„å¯†ç å’ŒåŠ å¯†ç›
+			//ÉèÖÃÌí¼ÓÓÃ»§µÄÃÜÂëºÍ¼ÓÃÜÑÎ
 			userEntity.setPassword(user.getPassword());
 			userEntity.setCredentialsSalt(user.getCredentialsSalt());
-			//è®¾ç½®åˆ›å»ºè€…å§“å
+			//ÉèÖÃ´´½¨ÕßĞÕÃû
 			userEntity.setCreatorName(ShiroAuthenticationManager.getUserAccountName());
 			userEntity.setCreateTime(new Date(System.currentTimeMillis()));
-			//è®¾ç½®é”å®šçŠ¶æ€ï¼šæœªé”å®šï¼›åˆ é™¤çŠ¶æ€ï¼šæœªåˆ é™¤
+			//ÉèÖÃËø¶¨×´Ì¬£ºÎ´Ëø¶¨£»É¾³ı×´Ì¬£ºÎ´É¾³ı
 			userEntity.setLocked(0);
 			userEntity.setDeleteStatus(0);
 			UserInfoEntity userInfo = new UserInfoEntity();
@@ -158,12 +158,12 @@ public class UserController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "æ·»åŠ æˆåŠŸ");
+				map.put("message", "Ìí¼Ó³É¹¦");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "æ·»åŠ å¤±è´¥");
+				map.put("message", "Ìí¼ÓÊ§°Ü");
 			}
 		}catch(ServiceException e)
 		{
@@ -203,19 +203,19 @@ public class UserController extends BaseController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		try
 		{
-			//è®¾ç½®åˆ›å»ºè€…å§“å
+			//ÉèÖÃ´´½¨ÕßĞÕÃû
 			userEntity.setCreatorName(ShiroAuthenticationManager.getUserAccountName());
 			int result = userService.update(userEntity);
 			if(result == 1)
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "ç¼–è¾‘æˆåŠŸ");
+				map.put("message", "±à¼­³É¹¦");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "ç¼–è¾‘å¤±è´¥");
+				map.put("message", "±à¼­Ê§°Ü");
 			}
 		}catch(Exception e)
 		{
@@ -241,12 +241,12 @@ public class UserController extends BaseController {
 			{
 				result.put("success", true);
 				result.put("data", null);
-				result.put("message", "åˆ é™¤æˆåŠŸ");
+				result.put("message", "É¾³ı³É¹¦");
 			}else
 			{
 				result.put("success", false);
 				result.put("data", null);
-				result.put("message", "åˆ é™¤å¤±è´¥");
+				result.put("message", "É¾³ıÊ§°Ü");
 			}
 		}catch(Exception e)
 		{
@@ -261,12 +261,12 @@ public class UserController extends BaseController {
 		Map<String, Object> result = new HashMap<String, Object>();
 		try
 		{
-			//ç”Ÿæˆéšæœºå¯†ç 
+			//Éú³ÉËæ»úÃÜÂë
 			String password = "123$%^";
 			
-			//åŠ å¯†ç”¨æˆ·è¾“å…¥çš„å¯†ç ï¼Œå¾—åˆ°å¯†ç å’ŒåŠ å¯†ç›ï¼Œä¿å­˜åˆ°æ•°æ®åº“
+			//¼ÓÃÜÓÃ»§ÊäÈëµÄÃÜÂë£¬µÃµ½ÃÜÂëºÍ¼ÓÃÜÑÎ£¬±£´æµ½Êı¾İ¿â
 			UserEntity user = EndecryptUtils.md5Password(userEntity.getAccountName(), password, 2);
-			//è®¾ç½®æ·»åŠ ç”¨æˆ·çš„å¯†ç å’ŒåŠ å¯†ç›
+			//ÉèÖÃÌí¼ÓÓÃ»§µÄÃÜÂëºÍ¼ÓÃÜÑÎ
 			userEntity.setPassword(user.getPassword());
 			userEntity.setCredentialsSalt(user.getCredentialsSalt());
 			if(userEntity.getId() == null)
@@ -282,18 +282,18 @@ public class UserController extends BaseController {
 					{
 						result.put("success", true);
 						result.put("data", null);
-						result.put("message", "å¯†ç é‡ç½®æˆåŠŸ");
+						result.put("message", "ÃÜÂëÖØÖÃ³É¹¦");
 					}else
 					{
 						result.put("success", false);
 						result.put("data", null);
-						result.put("message", "å¯†ç é‡ç½®å¤±è´¥");
+						result.put("message", "ÃÜÂëÖØÖÃÊ§°Ü");
 					}
 				}else
 				{
 					result.put("success", false);
 					result.put("data", null);
-					result.put("message", "è´¦æˆ·ä¸å­˜åœ¨");
+					result.put("message", "ÕË»§²»´æÔÚ");
 				}
 			}else
 			{
@@ -302,12 +302,12 @@ public class UserController extends BaseController {
 				{
 					result.put("success", true);
 					result.put("data", null);
-					result.put("message", "å¯†ç é‡ç½®æˆåŠŸ");
+					result.put("message", "ÃÜÂëÖØÖÃ³É¹¦");
 				}else
 				{
 					result.put("success", false);
 					result.put("data", null);
-					result.put("message", "å¯†ç é‡ç½®å¤±è´¥");
+					result.put("message", "ÃÜÂëÖØÖÃÊ§°Ü");
 				}
 			}
 			
@@ -324,11 +324,11 @@ public class UserController extends BaseController {
 		Map<String, Object> result = new HashMap<String, Object>();
 		try
 		{
-			//ç”Ÿæˆéšæœºå¯†ç 
+			//Éú³ÉËæ»úÃÜÂë
 			String password = "123$%^";
-			//åŠ å¯†ç”¨æˆ·è¾“å…¥çš„å¯†ç ï¼Œå¾—åˆ°å¯†ç å’ŒåŠ å¯†ç›ï¼Œä¿å­˜åˆ°æ•°æ®åº“
+			//¼ÓÃÜÓÃ»§ÊäÈëµÄÃÜÂë£¬µÃµ½ÃÜÂëºÍ¼ÓÃÜÑÎ£¬±£´æµ½Êı¾İ¿â
 			UserEntity user = EndecryptUtils.md5Password(userEntity.getAccountName(), password, 2);
-			//è®¾ç½®æ·»åŠ ç”¨æˆ·çš„å¯†ç å’ŒåŠ å¯†ç›
+			//ÉèÖÃÌí¼ÓÓÃ»§µÄÃÜÂëºÍ¼ÓÃÜÑÎ
 			userEntity.setPassword(user.getPassword());
 			userEntity.setCredentialsSalt(user.getCredentialsSalt());
 			
@@ -343,18 +343,18 @@ public class UserController extends BaseController {
 				{
 					result.put("success", true);
 					result.put("data", null);
-					result.put("message", "å¯†ç é‡ç½®æˆåŠŸ");
+					result.put("message", "ÃÜÂëÖØÖÃ³É¹¦");
 				}else
 				{
 					result.put("success", false);
 					result.put("data", null);
-					result.put("message", "å¯†ç é‡ç½®å¤±è´¥");
+					result.put("message", "ÃÜÂëÖØÖÃÊ§°Ü");
 				}
 			}else
 			{
 				result.put("success", false);
 				result.put("data", null);
-				result.put("message", "è´¦æˆ·ä¸å­˜åœ¨");
+				result.put("message", "ÕË»§²»´æÔÚ");
 			}
 		}catch(Exception e)
 		{
@@ -389,12 +389,12 @@ public class UserController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "ç¼–è¾‘æˆåŠŸ");
+				map.put("message", "±à¼­³É¹¦");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "ç¼–è¾‘å¤±è´¥");
+				map.put("message", "±à¼­Ê§°Ü");
 			}
 		}catch(Exception e)
 		{
@@ -425,9 +425,9 @@ public class UserController extends BaseController {
 		{
 			String password = userEntity.getPassword();
 			//userEntity.setUserName(new String(userEntity.getUserName().getBytes("iso-8859-1"),"utf-8"));
-			//åŠ å¯†ç”¨æˆ·è¾“å…¥çš„å¯†ç ï¼Œå¾—åˆ°å¯†ç å’ŒåŠ å¯†ç›ï¼Œä¿å­˜åˆ°æ•°æ®åº“
+			//¼ÓÃÜÓÃ»§ÊäÈëµÄÃÜÂë£¬µÃµ½ÃÜÂëºÍ¼ÓÃÜÑÎ£¬±£´æµ½Êı¾İ¿â
 			UserEntity user = EndecryptUtils.md5Password(userEntity.getAccountName(), userEntity.getPassword(), 2);
-			//è®¾ç½®æ·»åŠ ç”¨æˆ·çš„å¯†ç å’ŒåŠ å¯†ç›
+			//ÉèÖÃÌí¼ÓÓÃ»§µÄÃÜÂëºÍ¼ÓÃÜÑÎ
 			userEntity.setPassword(user.getPassword());
 			userEntity.setCredentialsSalt(user.getCredentialsSalt());
 			int cnt = userService.updateOnly(userEntity, password);
@@ -435,12 +435,12 @@ public class UserController extends BaseController {
 			{
 				result.put("success", true);
 				result.put("data", null);
-				result.put("message", "å¯†ç ä¿®æ”¹æˆåŠŸ");
+				result.put("message", "ÃÜÂëĞŞ¸Ä³É¹¦");
 			}else
 			{
 				result.put("success", false);
 				result.put("data", null);
-				result.put("message", "å¯†ç ä¿®æ”¹å¤±è´¥");
+				result.put("message", "ÃÜÂëĞŞ¸ÄÊ§°Ü");
 			}
 		}catch(Exception e)
 		{

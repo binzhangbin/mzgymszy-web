@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=GBK"
+	pageEncoding="GBK"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -20,13 +20,13 @@
 	src="${ctx }/resources/js/distpicker/distpicker.min.js"></script>
 <script type="text/javascript" src="${ctx}/resources/js/dlshouwen.grid.v1.2.1/i18n/zh-cn.js"></script>
 	
-<!-- å¤é€‰æ¡†ï¼šæ•™å­¦ç±»å‹ï¼šéé©¬ç±»ã€æœè£…åŠé…é¥°ç±»ã€æ¯¡åºç±»ã€é¤é¥®ç±»ã€æ¸¸ä¹ç±»ã€å®—æ•™ç±»ã€å…¶å®ƒ -->
+<!-- ¸´Ñ¡¿ò£º½ÌÑ§ÀàĞÍ£º°°ÂíÀà¡¢·ş×°¼°ÅäÊÎÀà¡¢Õ±Â®Àà¡¢²ÍÒûÀà¡¢ÓÎÀÖÀà¡¢×Ú½ÌÀà¡¢ÆäËü -->
 <script type="text/javascript">
-    var boxObj = document.getElementsByName("jxLx");  //è·å–æ‰€æœ‰çš„å¤é€‰æ¡†
-    var payment = "${teachingVideoEntity.jxLx}"; //ç”¨elè¡¨è¾¾å¼è·å–åœ¨æ§åˆ¶å±‚å­˜æ”¾çš„å¤é€‰æ¡†çš„å€¼ä¸ºå­—ç¬¦ä¸²ç±»å‹
-    var pay = payment.split(",");    //å»æ‰å®ƒä»¬ä¹‹é—´çš„åˆ†å‰²ç¬¦â€œï¼Œâ€  
+    var boxObj = document.getElementsByName("jxLx");  //»ñÈ¡ËùÓĞµÄ¸´Ñ¡¿ò
+    var payment = "${teachingVideoEntity.jxLx}"; //ÓÃel±í´ïÊ½»ñÈ¡ÔÚ¿ØÖÆ²ã´æ·ÅµÄ¸´Ñ¡¿òµÄÖµÎª×Ö·û´®ÀàĞÍ
+    var pay = payment.split(",");    //È¥µôËüÃÇÖ®¼äµÄ·Ö¸î·û¡°£¬¡±  
     for(i=0;i<boxObj.length;i++) {
-       for(j=0;j<pay.length;j++) {	//å¦‚æœå€¼ä¸ä¿®æ”¹å‰çš„å€¼ç›¸ç­‰
+       for(j=0;j<pay.length;j++) {	//Èç¹ûÖµÓëĞŞ¸ÄÇ°µÄÖµÏàµÈ
            if(boxObj[i].value == pay[j]) {
                boxObj[i].checked= true;
                break;
@@ -35,30 +35,30 @@
     }          
 </script>
 
-<!-- å¤é€‰æ¡†ï¼šæˆè¯¾è¯­ç§ -->
+<!-- ¸´Ñ¡¿ò£ºÊÚ¿ÎÓïÖÖ -->
 <script type="text/javascript">
-    var boxObj = document.getElementsByName("jxYz");  //è·å–æ‰€æœ‰çš„å¤é€‰æ¡†
-    var payment = "${teachingVideoEntity.jxYz}"; //ç”¨elè¡¨è¾¾å¼è·å–åœ¨æ§åˆ¶å±‚å­˜æ”¾çš„å¤é€‰æ¡†çš„å€¼ä¸ºå­—ç¬¦ä¸²ç±»å‹
-    var pay = payment.split(",");    //å»æ‰å®ƒä»¬ä¹‹é—´çš„åˆ†å‰²ç¬¦â€œï¼Œâ€  
+    var boxObj = document.getElementsByName("jxYz");  //»ñÈ¡ËùÓĞµÄ¸´Ñ¡¿ò
+    var payment = "${teachingVideoEntity.jxYz}"; //ÓÃel±í´ïÊ½»ñÈ¡ÔÚ¿ØÖÆ²ã´æ·ÅµÄ¸´Ñ¡¿òµÄÖµÎª×Ö·û´®ÀàĞÍ
+    var pay = payment.split(",");    //È¥µôËüÃÇÖ®¼äµÄ·Ö¸î·û¡°£¬¡±  
     for(i=0;i<boxObj.length;i++) {
-       for(j=0;j<pay.length;j++) {	//å¦‚æœå€¼ä¸ä¿®æ”¹å‰çš„å€¼ç›¸ç­‰
+       for(j=0;j<pay.length;j++) {	//Èç¹ûÖµÓëĞŞ¸ÄÇ°µÄÖµÏàµÈ
            if(boxObj[i].value == pay[j]) {
                boxObj[i].checked= true;
                break;
            }
        }
-    }          
+    }
 </script>
 
 
 <script type="text/javascript">
-	function checkTel() { //æ‰‹æœºå·ç æ ¼å¼éªŒè¯
+	function checkTel() { //ÊÖ»úºÅÂë¸ñÊ½ÑéÖ¤
 		var value = document.getElementById("jxLxdh").value;
 		RegularExp=/^[0-9]{11}$/;
 		if (RegularExp.test(value)) {
 			return true;
 		} else {
-			alert("æ‰‹æœºå·æ ¼å¼ä¸æ­£ç¡®ï¼åº”è¯¥ä¸º11ä½é•¿åº¦çš„æ•°å­—,æˆ–å›ºè¯å‰åº”æœ‰åŒºå·");
+			alert("ÊÖ»úºÅ¸ñÊ½²»ÕıÈ·£¡Ó¦¸ÃÎª11Î»³¤¶ÈµÄÊı×Ö,»ò¹Ì»°Ç°Ó¦ÓĞÇøºÅ");
 			document.getElementById("jxLxdh").value="";
 			return false;
 		}
@@ -104,10 +104,10 @@
 <div class="page-header">
 	<h1>
 		<c:if test="${empty teachingVideoEntity}">
-		æ–°å¢æ•™å­¦è§†é¢‘
+		ĞÂÔö½ÌÑ§ÊÓÆµ
 		</c:if>
 		<c:if test="${!empty teachingVideoEntity}">
-		ç¼–è¾‘æ•™å­¦è§†é¢‘
+		±à¼­½ÌÑ§ÊÓÆµ
 		</c:if>
 	</h1>
 </div>
@@ -122,97 +122,97 @@
 				<input type="hidden" name="id" id="teachingVideoId" value="${teachingVideoEntity.id }">
 			</c:if>
 			
-			<!-- æ•™å­¦ç±»å‹ï¼šéé©¬ç±»ã€æœè£…åŠé…é¥°ç±»ã€æ¯¡åºç±»ã€é¤é¥®ç±»ã€æ¸¸ä¹ç±»ã€å®—æ•™ç±»ã€å…¶å®ƒ===Start=== -->
+			<!-- ½ÌÑ§ÀàĞÍ£º°°ÂíÀà¡¢·ş×°¼°ÅäÊÎÀà¡¢Õ±Â®Àà¡¢²ÍÒûÀà¡¢ÓÎÀÖÀà¡¢×Ú½ÌÀà¡¢ÆäËü===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxLx">æ•™å­¦ç±»å‹</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxLx">½ÌÑ§ÀàĞÍ</label>
 				<div class="col-sm-9">
 					<div class="checkbox">
 						<label> <input class="ace" name="jxLx" id="jxLx"
-							type="checkbox" value="éé©¬ç±»"
-							${teachingVideoEntity.jxLx eq "éé©¬ç±»"?"checked":""} required /> <span
-							class="lbl">éé©¬ç±»</span>
+							type="checkbox" value="°°ÂíÀà"
+							${teachingVideoEntity.jxLx eq "°°ÂíÀà"?"checked":""} required /> <span
+							class="lbl">°°ÂíÀà</span>
 						</label> <label> <input class="ace" name="jxLx" id="jxLx"
-							type="checkbox" value="æœè£…åŠé…é¥°ç±»"
-							${teachingVideoEntity.jxLx eq "æœè£…åŠé…é¥°ç±»"?"checked":""} required />
-							<span class="lbl">æœè£…åŠé…é¥°ç±»</span>
+							type="checkbox" value="·ş×°¼°ÅäÊÎÀà"
+							${teachingVideoEntity.jxLx eq "·ş×°¼°ÅäÊÎÀà"?"checked":""} required />
+							<span class="lbl">·ş×°¼°ÅäÊÎÀà</span>
 						</label> <label> <input class="ace" name="jxLx" id="jxLx"
-							type="checkbox" value="æ¯¡åºç±»"
-							${teachingVideoEntity.jxLx eq "æ¯¡åºç±»"?"checked":""} required /> <span
-							class="lbl">æ¯¡åºç±»</span>
+							type="checkbox" value="Õ±Â®Àà"
+							${teachingVideoEntity.jxLx eq "Õ±Â®Àà"?"checked":""} required /> <span
+							class="lbl">Õ±Â®Àà</span>
 						</label> <label> <input class="ace" name="jxLx" id="jxLx"
-							type="checkbox" value="é¤é¥®ç±»"
-							${teachingVideoEntity.jxLx eq "é¤é¥®ç±»"?"checked":""} required /> <span
-							class="lbl">é¤é¥®ç±»</span>
+							type="checkbox" value="²ÍÒûÀà"
+							${teachingVideoEntity.jxLx eq "²ÍÒûÀà"?"checked":""} required /> <span
+							class="lbl">²ÍÒûÀà</span>
 						</label> <label> <input class="ace" name="jxLx" id="jxLx"
-							type="checkbox" value="æ¸¸ä¹ç±»"
-							${teachingVideoEntity.jxLx eq "æ¸¸ä¹ç±»"?"checked":""} required /> <span
-							class="lbl">æ¸¸ä¹ç±»</span>
+							type="checkbox" value="ÓÎÀÖÀà"
+							${teachingVideoEntity.jxLx eq "ÓÎÀÖÀà"?"checked":""} required /> <span
+							class="lbl">ÓÎÀÖÀà</span>
 						</label> <label> <input class="ace" name="jxLx" id="jxLx"
-							type="checkbox" value="å®—æ•™ç±»"
-							${teachingVideoEntity.jxLx eq "å®—æ•™ç±»"?"checked":""} required /> <span
-							class="lbl">å®—æ•™ç±»</span>
+							type="checkbox" value="×Ú½ÌÀà"
+							${teachingVideoEntity.jxLx eq "×Ú½ÌÀà"?"checked":""} required /> <span
+							class="lbl">×Ú½ÌÀà</span>
 						</label> <label> <input class="ace" name="jxLx" id="jxLx"
-							type="checkbox" value="å…¶å®ƒ"
-							${teachingVideoEntity.jxLx eq "å…¶å®ƒ"?"checked":""} required /> <span
-							class="lbl">å…¶å®ƒ</span>
+							type="checkbox" value="ÆäËü"
+							${teachingVideoEntity.jxLx eq "ÆäËü"?"checked":""} required /> <span
+							class="lbl">ÆäËü</span>
 						</label>
 					</div>
 				</div>
 			</div>
-			<!-- æ•™å­¦ç±»å‹ï¼šéé©¬ç±»ã€æœè£…åŠé…é¥°ç±»ã€æ¯¡åºç±»ã€é¤é¥®ç±»ã€æ¸¸ä¹ç±»ã€å®—æ•™ç±»ã€å…¶å®ƒ===End=== -->
+			<!-- ½ÌÑ§ÀàĞÍ£º°°ÂíÀà¡¢·ş×°¼°ÅäÊÎÀà¡¢Õ±Â®Àà¡¢²ÍÒûÀà¡¢ÓÎÀÖÀà¡¢×Ú½ÌÀà¡¢ÆäËü===End=== -->
 			
-			<!-- æ•™å¸ˆå§“å===Start=== -->
+			<!-- ½ÌÊ¦ĞÕÃû===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxJsxm">æ•™å¸ˆå§“å</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxJsxm">½ÌÊ¦ĞÕÃû</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxJsxm" id="jxJsxm" type="text"
-							value="${teachingVideoEntity.jxJsxm }" placeholder="æ•™å¸ˆå§“å..."
+							value="${teachingVideoEntity.jxJsxm }" placeholder="½ÌÊ¦ĞÕÃû..."
 							maxlength="50" required />
 					</div>
 				</div>
 			</div>
-			<!-- æ•™å¸ˆå§“å===End=== -->
+			<!-- ½ÌÊ¦ĞÕÃû===End=== -->
 			
-			<!-- æ•™å¸ˆæ€§åˆ«===Start=== -->
+			<!-- ½ÌÊ¦ĞÔ±ğ===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxJsxb">æ•™å¸ˆæ€§åˆ«</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxJsxb">½ÌÊ¦ĞÔ±ğ</label>
 				<div class="col-sm-9">
 					<div class="radio">
 						<label> <input class="ace" name="jxJsxb" id="jxJsxb"
-							type="radio" value="ç”·"
-							${teachingVideoEntity.jxJsxb eq "ç”·"?"checked":""} required/> <span
-							class="lbl">ç”·</span>
+							type="radio" value="ÄĞ"
+							${teachingVideoEntity.jxJsxb eq "ÄĞ"?"checked":""} required/> <span
+							class="lbl">ÄĞ</span>
 						</label> <label> <input class="ace" name="jxJsxb" id="jxJsxb"
-							type="radio" value="å¥³"
-							${teachingVideoEntity.jxJsxb eq "å¥³"?"checked":""} required/> <span
-							class="lbl">å¥³</span>
+							type="radio" value="Å®"
+							${teachingVideoEntity.jxJsxb eq "Å®"?"checked":""} required/> <span
+							class="lbl">Å®</span>
 						</label>
 					</div>
 				</div>
 			</div>
-			<!-- æ•™å¸ˆæ€§åˆ«===End=== -->
+			<!-- ½ÌÊ¦ĞÔ±ğ===End=== -->
 			
-			<!-- æ•™å¸ˆæ°‘æ—===Start=== -->
+			<!-- ½ÌÊ¦Ãñ×å===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxJsmz">æ•™å¸ˆæ°‘æ—</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxJsmz">½ÌÊ¦Ãñ×å</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxJsmz" id="jxJsmz" type="text"
-							value="${teachingVideoEntity.jxJsmz }" placeholder="æ•™å¸ˆæ°‘æ—..."
+							value="${teachingVideoEntity.jxJsmz }" placeholder="½ÌÊ¦Ãñ×å..."
 							maxlength="4" required/>
 					</div>
 				</div>
 			</div>
-			<!-- æ•™å¸ˆæ°‘æ—===End=== -->
+			<!-- ½ÌÊ¦Ãñ×å===End=== -->
 			
-			<!-- æ•™å¸ˆå‡ºç”Ÿå¹´æœˆ===Start=== -->
+			<!-- ½ÌÊ¦³öÉúÄêÔÂ===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxCsny">æ•™å¸ˆå‡ºç”Ÿæ—¥æœŸ</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxCsny">½ÌÊ¦³öÉúÈÕÆÚ</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control form_datetime" name="jxCsny"
-							id="jxCsny" type="text" placeholder="æ•™å¸ˆå‡ºç”Ÿå¹´æœˆ..."
+							id="jxCsny" type="text" placeholder="½ÌÊ¦³öÉúÄêÔÂ..."
 							value="<fmt:formatDate value="${teachingVideoEntity.jxCsny}" type="date"/>" required/>
 						<span class="input-group-addon"> <i
 							class="fa fa-calendar bigger-110"></i>
@@ -220,212 +220,212 @@
 					</div>
 				</div>
 			</div>
-			<!-- æ•™å¸ˆå‡ºç”Ÿå¹´æœˆ===End=== -->
+			<!-- ½ÌÊ¦³öÉúÄêÔÂ===End=== -->
 			
-			<!-- æ–‡åŒ–ç¨‹åº¦===Start=== -->
+			<!-- ÎÄ»¯³Ì¶È===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxWhcd">æ–‡åŒ–ç¨‹åº¦</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxWhcd">ÎÄ»¯³Ì¶È</label>
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="jxWhcd" id="jxWhcd" type="text"
-						value="${teachingVideoEntity.jxWhcd }" placeholder="æ–‡åŒ–ç¨‹åº¦..." maxlength="10" required/>
+						value="${teachingVideoEntity.jxWhcd }" placeholder="ÎÄ»¯³Ì¶È..." maxlength="10" required/>
 				</div>
 				</div>
 			</div>
-			<!-- æ–‡åŒ–ç¨‹åº¦===End=== -->
+			<!-- ÎÄ»¯³Ì¶È===End=== -->
 			
-			<!-- ç±è´¯===Start=== -->
+			<!-- ¼®¹á===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxJg">æ•™å¸ˆç±è´¯</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxJg">½ÌÊ¦¼®¹á</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxJg" id="jxJg" type="text"
-							value="${teachingVideoEntity.jxJg }" placeholder="æ•™å¸ˆç±è´¯..."
+							value="${teachingVideoEntity.jxJg }" placeholder="½ÌÊ¦¼®¹á..."
 							maxlength="50" required />
 					</div>
 				</div>
 			</div>
-			<!-- ç±è´¯===End=== -->
+			<!-- ¼®¹á===End=== -->
 			
-			<!-- è”ç³»ç”µè¯===Start=== -->
+			<!-- ÁªÏµµç»°===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxLxdh">è”ç³»ç”µè¯</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxLxdh">ÁªÏµµç»°</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxLxdh" id="jxLxdh" type="text"
-							value="${teachingVideoEntity.jxLxdh }" placeholder="è”ç³»ç”µè¯..."
+							value="${teachingVideoEntity.jxLxdh }" placeholder="ÁªÏµµç»°..."
 							 onblur="checkTel()" required/>
 					</div>
 				</div>
 			</div>
-			<!-- è”ç³»ç”µè¯===End=== -->
+			<!-- ÁªÏµµç»°===End=== -->
 			
-			<!-- å­¦æœ¯å¤´è¡”===Start=== -->
+			<!-- Ñ§ÊõÍ·ÏÎ===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxXstx">å­¦æœ¯å¤´è¡”</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxXstx">Ñ§ÊõÍ·ÏÎ</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxXstx" id="jxXstx" type="text"
-							value="${teachingVideoEntity.jxXstx }" placeholder="å­¦æœ¯å¤´è¡”..." maxlength="10" />
+							value="${teachingVideoEntity.jxXstx }" placeholder="Ñ§ÊõÍ·ÏÎ..." maxlength="10" />
 					</div>
 				</div>
 			</div>
-			<!-- å­¦æœ¯å¤´è¡”===End=== -->
+			<!-- Ñ§ÊõÍ·ÏÎ===End=== -->
 			
-			<!-- é€šè®¯åœ°å€===Start=== -->
+			<!-- Í¨Ñ¶µØÖ·===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxTxdz">é€šè®¯åœ°å€</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxTxdz">Í¨Ñ¶µØÖ·</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxTxdz" id="jxTxdz" type="text"
-							value="${teachingVideoEntity.jxTxdz }" placeholder="é€šè®¯åœ°å€..." maxlength="50" required />
+							value="${teachingVideoEntity.jxTxdz }" placeholder="Í¨Ñ¶µØÖ·..." maxlength="50" required />
 					</div>
 				</div>
 			</div>
-			<!-- é€šè®¯åœ°å€===End=== -->
+			<!-- Í¨Ñ¶µØÖ·===End=== -->
 			
-			<!-- ç…§ç‰‡===Start=== -->
+			<!-- ÕÕÆ¬===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxZp">æ•™å¸ˆç…§ç‰‡</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxZp">½ÌÊ¦ÕÕÆ¬</label>
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="jxZp" id="jxZp" type="text" 
-					value="${teachingVideoEntity.jxZp }" placeholder="æ•™å¸ˆç…§ç‰‡..." />
+					value="${teachingVideoEntity.jxZp }" placeholder="½ÌÊ¦ÕÕÆ¬..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
 				</div>
 				</div>
 			</div>
-			<!-- ç…§ç‰‡===End=== -->
+			<!-- ÕÕÆ¬===End=== -->
 			
-			<!-- è¯¾ç¨‹åç§°===Start=== -->
+			<!-- ¿Î³ÌÃû³Æ===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxKcmc">è¯¾ç¨‹åç§°</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxKcmc">¿Î³ÌÃû³Æ</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxKcmc" id="jxKcmc" type="text"
-							value="${teachingVideoEntity.jxKcmc }" placeholder="è¯¾ç¨‹åç§°..." maxlength="25" required/>
+							value="${teachingVideoEntity.jxKcmc }" placeholder="¿Î³ÌÃû³Æ..." maxlength="25" required/>
 					</div>
 				</div>
 			</div>
-			<!-- è¯¾ç¨‹åç§°===End=== -->
+			<!-- ¿Î³ÌÃû³Æ===End=== -->
 			
-			<!-- æˆè¯¾è¯­ç§===Start=== -->
+			<!-- ÊÚ¿ÎÓïÖÖ===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxYz">æˆè¯¾è¯­ç§</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxYz">ÊÚ¿ÎÓïÖÖ</label>
 				<div class="col-sm-9">
 					<div class="checkbox">
-						<label> <input class="ace" name="jxYz" id="jxYz" type="checkbox" value="æ±‰è¯­"
-							${teachingVideoEntity.jxYz eq "æ±‰è¯­"?"checked":""} required /> <span class="lbl">æ±‰è¯­</span>
+						<label> <input class="ace" name="jxYz" id="jxYz" type="checkbox" value="ººÓï"
+							${teachingVideoEntity.jxYz eq "ººÓï"?"checked":""} required /> <span class="lbl">ººÓï</span>
 						</label> 
-						<label> <input class="ace" name="jxYz" id="jxYz" type="checkbox" value="è’™è¯­"
-							${teachingVideoEntity.jxYz eq "è’™è¯­"?"checked":""} required /> <span class="lbl">è’™è¯­</span>
+						<label> <input class="ace" name="jxYz" id="jxYz" type="checkbox" value="ÃÉÓï"
+							${teachingVideoEntity.jxYz eq "ÃÉÓï"?"checked":""} required /> <span class="lbl">ÃÉÓï</span>
 						</label> 
-						<label> <input class="ace" name="jxYz" id="jxYz" type="checkbox" value="å…¶å®ƒ"
-							${teachingVideoEntity.jxYz eq "å…¶å®ƒ"?"checked":""} required /> <span class="lbl">å…¶å®ƒ</span>
+						<label> <input class="ace" name="jxYz" id="jxYz" type="checkbox" value="ÆäËü"
+							${teachingVideoEntity.jxYz eq "ÆäËü"?"checked":""} required /> <span class="lbl">ÆäËü</span>
 						</label> 
 					</div>
 				</div>
 			</div>
-			<!-- æˆè¯¾è¯­ç§===End=== -->
+			<!-- ÊÚ¿ÎÓïÖÖ===End=== -->
 			
-			<!-- ä¸ªäººç®€å†===Start=== -->
+			<!-- ¸öÈË¼òÀú===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxGrjl">ä¸ªäººç®€å†</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxGrjl">¸öÈË¼òÀú</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxGrjl" id="jxGrjl" type="text"
-							value="${teachingVideoEntity.jxGrjl }" placeholder="ä¸ªäººç®€å†..."
+							value="${teachingVideoEntity.jxGrjl }" placeholder="¸öÈË¼òÀú..."
 							maxlength="500"  />
 					</div>
 				</div>
 			</div>
-			<!-- ä¸ªäººç®€å†===End=== -->
+			<!-- ¸öÈË¼òÀú===End=== -->
 			
-			<!-- æˆè¯¾åœºæ™¯ç…§ç‰‡===Start=== -->
+			<!-- ÊÚ¿Î³¡¾°ÕÕÆ¬===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxCjzp">æˆè¯¾åœºæ™¯ç…§</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxCjzp">ÊÚ¿Î³¡¾°ÕÕ</label>
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control picture-upload" name="jxCjzp" id="jxCjzp" type="text" 
-					value="${teachingVideoEntity.jxCjzp }" placeholder="æˆè¯¾åœºæ™¯ç…§..." />
+					value="${teachingVideoEntity.jxCjzp }" placeholder="ÊÚ¿Î³¡¾°ÕÕ..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-image-o bigger-110"></i>
 					</span>
 				</div>
 				</div>
 			</div>
-			<!-- æˆè¯¾åœºæ™¯ç…§ç‰‡===End=== -->
+			<!-- ÊÚ¿Î³¡¾°ÕÕÆ¬===End=== -->
 			
-			<!-- ç« èŠ‚æ•°é‡(æ•™å­¦è§†é¢‘)===Start=== -->
+			<!-- ÕÂ½ÚÊıÁ¿(½ÌÑ§ÊÓÆµ)===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxZjsl">ç« èŠ‚æ•°é‡</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxZjsl">ÕÂ½ÚÊıÁ¿</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxZjsl" id="jxZjsl" type="text"
-							value="${teachingVideoEntity.jxZjsl }" placeholder="ç« èŠ‚æ•°é‡..."
+							value="${teachingVideoEntity.jxZjsl }" placeholder="ÕÂ½ÚÊıÁ¿..."
 							maxlength="10" />
 					</div>
 				</div>
 			</div>
-			<!-- ç« èŠ‚æ•°é‡(æ•™å­¦è§†é¢‘)===End=== -->
+			<!-- ÕÂ½ÚÊıÁ¿(½ÌÑ§ÊÓÆµ)===End=== -->
 			
-			<!-- æ€»æ—¶é•¿(æ•™å­¦è§†é¢‘)===Start=== -->
+			<!-- ×ÜÊ±³¤(½ÌÑ§ÊÓÆµ)===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxZsc">æ€»æ—¶é•¿</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxZsc">×ÜÊ±³¤</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxZsc" id="jxZsc" type="text"
-							value="${teachingVideoEntity.jxZsc }" placeholder="æ€»æ—¶é•¿..."
+							value="${teachingVideoEntity.jxZsc }" placeholder="×ÜÊ±³¤..."
 							maxlength="10" />
 					</div>
 				</div>
 			</div>
-			<!-- æ€»æ—¶é•¿(æ•™å­¦è§†é¢‘)===End=== -->
+			<!-- ×ÜÊ±³¤(½ÌÑ§ÊÓÆµ)===End=== -->
 			
-			<!-- æ•™å­¦è§†é¢‘===Start=== -->
+			<!-- ½ÌÑ§ÊÓÆµ===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxSp">æ•™å­¦è§†é¢‘</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxSp">½ÌÑ§ÊÓÆµ</label>
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control media-upload" name="jxSp" id="jxSp" type="text" 
-					value="${teachingVideoEntity.jxSp }" placeholder="æ•™å­¦è§†é¢‘ ..." />
+					value="${teachingVideoEntity.jxSp }" placeholder="½ÌÑ§ÊÓÆµ ..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-video-o bigger-110"></i>
 					</span>
 				</div>
 				</div>
 			</div>
-			<!-- æ•™å­¦è§†é¢‘===End=== -->
+			<!-- ½ÌÑ§ÊÓÆµ===End=== -->
 			
-			<!-- è¯¾ä»¶å†…å®¹===Start=== -->
+			<!-- ¿Î¼şÄÚÈİ===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxKj">è¯¾ä»¶å†…å®¹</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxKj">¿Î¼şÄÚÈİ</label>
 				<div class="col-sm-9">
 				<div class="input-group">
 					<input class="form-control files-upload" name="jxKj" id="jxKj" type="text" 
-					value="${teachingVideoEntity.jxKj }" placeholder="æ–‡æ¡£æµ‹è¯• ..." />
+					value="${teachingVideoEntity.jxKj }" placeholder="ÎÄµµ²âÊÔ ..." />
 					<span class="input-group-addon">
 						<i class="fa fa-file-o bigger-110"></i>
 					</span>
 				</div>
 				</div>
 			</div>
-			<!-- è¯¾ä»¶å†…å®¹===End=== -->
+			<!-- ¿Î¼şÄÚÈİ===End=== -->
 			
-			<!-- å¤‡æ³¨===Start=== -->
+			<!-- ±¸×¢===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="jxBz">å¤‡æ³¨</label>
+				<label class="control-label col-sm-2 no-padding-right" for="jxBz">±¸×¢</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="jxBz" id="jxBz" type="text"
-							value="${teachingVideoEntity.jxBz }" placeholder="å¤‡æ³¨..."
+							value="${teachingVideoEntity.jxBz }" placeholder="±¸×¢..."
 							maxlength="50" />
 					</div>
 				</div>
 			</div>
-			<!-- å¤‡æ³¨===End=== -->
+			<!-- ±¸×¢===End=== -->
 			
 		</form>
 		<div class="hr hr-dotted"></div>
@@ -435,17 +435,19 @@
 	<button id="btnAdd" type="button" onclick="javascript:$('#teachingVideoForm').submit();" class="btn btn-success btn-sm">
 		<i class="fa fa-user-plus"></i>&nbsp;
 		<c:if test="${empty teachingVideoEntity}">
-		æ·»åŠ 
+		Ìí¼Ó
 		</c:if>
 		<c:if test="${!empty teachingVideoEntity}">
-		ä¿å­˜
+		±£´æ
 		</c:if>
 	</button>
 
 	<button id="btn" type="button"
-		onclick="webside.common.loadPage('/teachingVideo/listUI.html<c:if test="${!empty teachingVideoEntity}">?page=${page.pageNum }&rows=${page.pageSize }&sidx=${page.orderByColumn }&sord=${page.orderByType }</c:if>')"
-		class="btn btn-info btn-sm">
-		<i class="fa fa-undo"></i>&nbsp;è¿”å›
+<%--		onclick="webside.common.loadPage('/teachingVideo/listUI.html<c:if test="${!empty teachingVideoEntity}">?page=${retPage }&rows=${page.pageSize }&sidx=${page.orderByColumn }&sord=${page.orderByType }</c:if>')"--%>
+            onclick="webside.common.loadPage('/teachingVideo/detailUI.html?id=${detailsId}')"
+            class="btn btn-info btn-sm">
+
+		<i class="fa fa-undo"></i>&nbsp;·µ»Ø
 	</button>
 
 </div>

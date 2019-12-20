@@ -109,7 +109,7 @@ public class FolderTreeController extends BaseController {
 			if(node.getDepth()>3){
 				result.put("success", Boolean.FALSE);
 				result.put("data", null);
-				result.put("message", "娣诲姞澶辫触:涓嶈兘鍒涘缓娣卞害澶т簬涓夌殑鐩綍");
+				result.put("message", "添加失败:不能创建深度大于三的目录");
 				return result;
 			}
 			node.setDelFlag(0);
@@ -122,11 +122,11 @@ public class FolderTreeController extends BaseController {
 			result.put("success", Boolean.TRUE);
 			result.put("id", String.valueOf(node.getId()));
 			result.put("data", null);
-			result.put("message", "娣诲姞鎴愬姛");
+			result.put("message", "添加成功");
 		} catch (Exception e) {
 			result.put("success", Boolean.FALSE);
 			result.put("data", e.getLocalizedMessage());
-			result.put("message", "娣诲姞澶辫触");
+			result.put("message", "添加失败");
 			throw new AjaxException(e);
 		}
 		return result;
@@ -159,11 +159,11 @@ public class FolderTreeController extends BaseController {
 			}
 			result.put("success", Boolean.TRUE);
 			result.put("data", null);
-			result.put("message", "淇敼鎴愬姛");
+			result.put("message", "修改成功");
 		} catch (Exception e) {
 			result.put("success", Boolean.FALSE);
 			result.put("data", e.getLocalizedMessage());
-			result.put("message", "淇敼澶辫触");
+			result.put("message", "修改失败");
 			throw new AjaxException(e);
 		}
 		return result;
@@ -187,8 +187,8 @@ public class FolderTreeController extends BaseController {
 			List<FoldEntity> subfolds = foldService.findSubFold(id);
 			if(subfolds.size()>0){
 				result.put("success", Boolean.FALSE);
-				result.put("data", "涓嶈兘鍒犻櫎鍚湁瀛愮洰褰曠殑鐩綍");
-				result.put("message", "鍒犻櫎澶辫触,涓嶈兘鍒犻櫎鍚湁瀛愮洰褰曠殑鐩綍");
+				result.put("data", "不能删除含有子目录的目录");
+				result.put("message", "删除失败,不能删除含有子目录的目录");
 				return result;
 			}
 			foldService.deleteById(id);
@@ -202,11 +202,11 @@ public class FolderTreeController extends BaseController {
 			}
 			result.put("success", Boolean.TRUE);
 			result.put("data", null);
-			result.put("message", "鍒犻櫎鎴愬姛");
+			result.put("message", "删除成功");
 		} catch (Exception e) {
 			result.put("success", Boolean.FALSE);
 			result.put("data", e.getLocalizedMessage());
-			result.put("message", "鍒犻櫎澶辫触");
+			result.put("message", "删除失败");
 			throw new AjaxException(e);
 		}
 		return result;
@@ -228,11 +228,11 @@ public class FolderTreeController extends BaseController {
 			FoldEntity node = foldService.findById(id);
 			result.put("success", Boolean.TRUE);
 			result.put("data", node.getFullPath());
-			result.put("message", "鑾峰彇鎴愬姛");
+			result.put("message", "获取成功");
 		} catch (Exception e) {
 			result.put("success", Boolean.FALSE);
 			result.put("data", e.getLocalizedMessage());
-			result.put("message", "鑾峰彇澶辫触");
+			result.put("message", "获取失败");
 			throw new AjaxException(e);
 		}
 		return result;
