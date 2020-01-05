@@ -11,6 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.lucene.document.Document;
 import org.joda.time.LocalDate;
@@ -96,7 +97,8 @@ public class OriginaldataController extends BaseController {
 	}
 	@RequestMapping("listUI.html")
 	public String listUI(Model model, HttpServletRequest request) {
-		System.out.println("9999999999999999");
+		HttpSession session = request.getSession();
+//		System.out.println("9999999999999999");
 		try
 		{
 			PageUtil page = new PageUtil();
@@ -108,6 +110,8 @@ public class OriginaldataController extends BaseController {
 			}
 			model.addAttribute("page", page);
 			if(!StringUtil.isBlank(request.getParameter("foldId"))){
+				session.setAttribute("fId",request.getParameter("foldId"));
+
 				model.addAttribute("foldId",request.getParameter("foldId"));
 			}
 			if(!StringUtil.isBlank(request.getParameter("searchKey"))){
@@ -122,26 +126,26 @@ public class OriginaldataController extends BaseController {
 	
 	
 	/**
-	 * ajax·ÖÒ³¶¯Ì¬¼ÓÔØÄ£Ê½
-	 * @param dtGridPager Pager¶ÔÏó
+	 * ajaxåˆ†é¡µåŠ¨æ€åŠ è½½æ¨¡å¼
+	 * @param dtGridPager Pagerå¯¹è±¡
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/list.html", method = RequestMethod.POST)
 	@ResponseBody
 	public Object list(String gridPager,HttpServletRequest request, HttpServletResponse response) throws Exception{
 		Map<String, Object> parameters = null;
-		//1¡¢Ó³ÉäPager¶ÔÏó
+		//1ã€æ˜ å°„Pagerå¯¹è±¡
 		Pager pager = JSON.parseObject(gridPager, Pager.class);
-		//2¡¢ÉèÖÃ²éÑ¯²ÎÊı
+		//2ã€è®¾ç½®æŸ¥è¯¢å‚æ•°
 		parameters = pager.getParameters();
-		// ÉèÖÃ·ÖÒ³£¬pageÀïÃæ°üº¬ÁË·ÖÒ³ĞÅÏ¢
-		System.out.println(pager.getNowPage()+"=-==-");
+		// è®¾ç½®åˆ†é¡µï¼Œpageé‡Œé¢åŒ…å«äº†åˆ†é¡µä¿¡æ¯
+//		System.out.println(pager.getNowPage()+"=-==-");
 		int pageSize=pager.getPageSize();
 		int startSize=1;
-		System.out.println(parameters.get("pageCount")+"===");
+//		System.out.println(parameters.get("pageCount")+"===");
 		parameters.clear();
-		System.out.println(parameters.get("pageCount")+"---");
-		if(request.getSession().getAttribute("dtreelistFlag")!=null&&"dtreelistFlag".equalsIgnoreCase((String) request.getSession().getAttribute("dtreelistFlag"))){//ÓÉ¸üĞÂ½øÈë
+//		System.out.println(parameters.get("pageCount")+"---");
+		if(request.getSession().getAttribute("dtreelistFlag")!=null&&"dtreelistFlag".equalsIgnoreCase((String) request.getSession().getAttribute("dtreelistFlag"))){//ç”±æ›´æ–°è¿›å…¥
 			Object retPage = request.getSession().getAttribute("retPage1");
 
 			if(retPage==null){
@@ -149,13 +153,13 @@ public class OriginaldataController extends BaseController {
 			}
 			startSize= (int) retPage;
 			parameters.put("nowPage",retPage);
-			System.out.println("·µ»ØÒ³£º"+retPage);
+//			System.out.println("è¿”å›é¡µï¼š"+retPage);
 			request.getSession().removeAttribute("dtreelistFlag");
-		} else{//ÓÉlist·ÖÒ³½øÈë
-			parameters.put("nowPage", pager.getNowPage());//ÏÂÒ»Ò³
-			request.getSession().setAttribute("retPage1",pager.getNowPage());//µü´ú¸üĞÂ
+		} else{//ç”±liståˆ†é¡µè¿›å…¥
+			parameters.put("nowPage", pager.getNowPage());//ä¸‹ä¸€é¡µ
+			request.getSession().setAttribute("retPage1",pager.getNowPage());//è¿­ä»£æ›´æ–°
 			startSize=pager.getNowPage();
-			System.out.println("ÏÂÒ»Ò³£º"+pager.getNowPage());
+//			System.out.println("ä¸‹ä¸€é¡µï¼š"+pager.getNowPage());
 		}
 		String searchkey = (String) parameters.get("searchKey");
 		if(!StringUtil.isBlank(searchkey)){
@@ -173,15 +177,16 @@ public class OriginaldataController extends BaseController {
 	    		parameters.put("gypId","-1");
 	    	}
 		}
-		//ÉèÖÃ·ÖÒ³£¬pageÀïÃæ°üº¬ÁË·ÖÒ³ĞÅÏ¢
+		//è®¾ç½®åˆ†é¡µï¼Œpageé‡Œé¢åŒ…å«äº†åˆ†é¡µä¿¡æ¯
 		Page<Object> page = PageHelper.startPage(startSize,pageSize, "gyp_id DESC");
+		parameters.put("foldId",request.getSession().getAttribute("fId"));
 		List<OriginaldataEntity> list = originaldataService.queryListByPage(parameters);
 		parameters.put("isSuccess", Boolean.TRUE);
 		parameters.put("pageSize", pager.getPageSize());
 		parameters.put("pageCount", page.getPages());
 		parameters.put("recordCount", page.getTotal());
 		parameters.put("startRecord", page.getStartRow());
-		//ÁĞ±íÕ¹Ê¾Êı¾İ
+		//åˆ—è¡¨å±•ç¤ºæ•°æ®
 		request.getSession().setAttribute("pageNum",pager.getNowPage());
 		parameters.put("exhibitDatas", list);
 		return parameters;
@@ -221,11 +226,11 @@ public class OriginaldataController extends BaseController {
 			SearchUtil.addIndex(originaldataEntity.toIndex());
 			map.put("success", Boolean.TRUE);
 			map.put("data", null);
-			map.put("message", "Ìí¼Ó³É¹¦");
+			map.put("message", "æ·»åŠ æˆåŠŸ");
 		}catch(Exception e){
 			map.put("success", Boolean.FALSE);
 			map.put("data", e.getLocalizedMessage());
-			map.put("message", "Ìí¼ÓÊ§°Ü");
+			map.put("message", "æ·»åŠ å¤±è´¥");
 			throw new AjaxException(e);
 		}
 		return map;
@@ -247,7 +252,7 @@ public class OriginaldataController extends BaseController {
 	            MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest)request;  
 	            int count = Integer.parseInt(request.getParameter("count"));
 	            if(count<=0)
-	            	throw new Exception("ÎŞÉÏ´«ÎÄ¼ş");
+	            	throw new Exception("æ— ä¸Šä¼ æ–‡ä»¶");
 	            for(int i=1;i<=count;i++){
 	            	MultipartFile file = multiRequest.getFile("file_"+i);
 	            	GridFSFile inputFile = gridFsTemplate.store(file.getInputStream(), file.getOriginalFilename());
@@ -305,7 +310,7 @@ public class OriginaldataController extends BaseController {
 	            MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest)request;  
 	            int count = Integer.parseInt(request.getParameter("count"));
 	            if(count<=0)
-	            	throw new Exception("ÎŞÉÏ´«ÎÄ¼ş");
+	            	throw new Exception("æ— ä¸Šä¼ æ–‡ä»¶");
 	            for(int i=1;i<=count;i++){
 	            	MultipartFile file = multiRequest.getFile("file_"+i);
 	            	GridFSFile inputFile = gridFsTemplate.store(file.getInputStream(), file.getOriginalFilename());
@@ -391,12 +396,12 @@ public class OriginaldataController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "±à¼­³É¹¦");
+				map.put("message", "ç¼–è¾‘æˆåŠŸ");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "±à¼­Ê§°Ü");
+				map.put("message", "ç¼–è¾‘å¤±è´¥");
 			}
 		}catch(Exception e)
 		{
@@ -422,12 +427,12 @@ public class OriginaldataController extends BaseController {
 			{
 				result.put("success", true);
 				result.put("data", null);
-				result.put("message", "É¾³ı³É¹¦");
+				result.put("message", "åˆ é™¤æˆåŠŸ");
 			}else
 			{
 				result.put("success", false);
 				result.put("data", null);
-				result.put("message", "É¾³ıÊ§°Ü");
+				result.put("message", "åˆ é™¤å¤±è´¥");
 			}
 		}catch(Exception e)
 		{

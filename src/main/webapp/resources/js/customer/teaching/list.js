@@ -1,56 +1,56 @@
 var dtGridColumns = [
 		{
 			id : 'jxKcmc',
-			title : '¿Î³ÌÃû³Æ',
+			title : 'è¯¾ç¨‹åç§°',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxJsxm',
-			title : '½ÌÊ¦ĞÕÃû',
+			title : 'æ•™å¸ˆå§“å',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxJsxb',
-			title : 'ĞÔ±ğ',
+			title : 'æ€§åˆ«',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxJsmz',
-			title : 'Ãñ×å',
+			title : 'æ°‘æ—',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxWhcd',
-			title : 'ÎÄ»¯',
+			title : 'æ–‡åŒ–',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxXstx',
-			title : 'Ñ§ÊõÍ·ÏÎ',
+			title : 'å­¦æœ¯å¤´è¡”',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'jxLxdh',
-			title : 'ÁªÏµµç»°',
+			title : 'è”ç³»ç”µè¯',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header'
 		},
 		{
 			id : 'id',
-			title : '²Ù×÷',
+			title : 'æ“ä½œ',
 			type : 'string',
 			columnClass : 'text-center',
 			headerClass : 'dlshouwen-grid-header',
@@ -59,12 +59,12 @@ var dtGridColumns = [
 				var content = '';
 				content += '<button class="btn btn-xs btn-info" onclick="webside.common.loadPage(\'/teachingVideo/detailUI.html?id=';
 				content =content+ value
-						+ '\')"><i class="fa fa-plus"></i>&nbsp;ÏêÇé</button>';
+						+ '\')"><i class="fa fa-plus"></i>&nbsp;è¯¦æƒ…</button>';
 				return content;
 			}
 		} ];
 
-// ¶¯Ì¬ÉèÖÃjqGridµÄrowNum
+// åŠ¨æ€è®¾ç½®jqGridçš„rowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -93,7 +93,7 @@ $(function() {
 	grid.load();
 	$("#btnSearch").click(customSearch);
 
-	// ×¢²á»Ø³µ¼üÊÂ¼ş
+	// æ³¨å†Œå›è½¦é”®äº‹ä»¶
 	document.onkeypress = function(e) {
 		var ev = document.all ? window.event : e;
 		if (ev.keyCode == 13) {
@@ -104,7 +104,7 @@ $(function() {
 });
 
 /**
- * ×Ô¶¨Òå²éÑ¯ ÕâÀï²»´«Èë·ÖÒ³ĞÅÏ¢£¬·ÀÖ¹É¾³ı¼ÇÂ¼ºóÖØĞÂ¼ÆËãµÄÒ³Âë±Èµ±Ç°Ò³ÂëĞ¡¶øµ¼ÖÂ¼ÆËãÒì³£
+ * è‡ªå®šä¹‰æŸ¥è¯¢ è¿™é‡Œä¸ä¼ å…¥åˆ†é¡µä¿¡æ¯ï¼Œé˜²æ­¢åˆ é™¤è®°å½•åé‡æ–°è®¡ç®—çš„é¡µç æ¯”å½“å‰é¡µç å°è€Œå¯¼è‡´è®¡ç®—å¼‚å¸¸
  */
 function customSearch() {
 	grid.parameters = new Object();

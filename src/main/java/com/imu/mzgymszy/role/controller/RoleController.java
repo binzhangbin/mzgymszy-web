@@ -64,31 +64,31 @@ public class RoleController extends BaseController {
 	@RequestMapping(value = "list.html", method = RequestMethod.POST)
 	public Object list(String gridPager, HttpServletResponse response) throws Exception{
 		Map<String, Object> parameters = null;
-		// Ó³ÉäPager¶ÔÏó
+		// æ˜ å°„Pagerå¯¹è±¡
 		Pager pager = JSON.parseObject(gridPager, Pager.class);
-		// ÅĞ¶ÏÊÇ·ñ°üº¬×Ô¶¨Òå²ÎÊı
+		// åˆ¤æ–­æ˜¯å¦åŒ…å«è‡ªå®šä¹‰å‚æ•°
 		parameters = pager.getParameters();
 		if (parameters.size() < 0) {
 			parameters.put("name", null);
 		}
-		//3¡¢ÅĞ¶ÏÊÇ·ñÊÇµ¼³ö²Ù×÷
+		//3ã€åˆ¤æ–­æ˜¯å¦æ˜¯å¯¼å‡ºæ“ä½œ
 				if(pager.getIsExport())
 				{
 					if(pager.getExportAllData())
 					{
-						//3.1¡¢µ¼³öÈ«²¿Êı¾İ
+						//3.1ã€å¯¼å‡ºå…¨éƒ¨æ•°æ®
 						List<RoleEntity> list = roleService.queryListByPage(parameters);
 						ExportUtils.exportAll(response, pager, list);
 						return null;
 					}else
 					{
-						//3.2¡¢µ¼³öµ±Ç°Ò³Êı¾İ
+						//3.2ã€å¯¼å‡ºå½“å‰é¡µæ•°æ®
 						ExportUtils.export(response, pager);
 						return null;
 					}
 				}else
 				{
-					//ÉèÖÃ·ÖÒ³£¬pageÀïÃæ°üº¬ÁË·ÖÒ³ĞÅÏ¢
+					//è®¾ç½®åˆ†é¡µï¼Œpageé‡Œé¢åŒ…å«äº†åˆ†é¡µä¿¡æ¯
 					Page<Object> page = PageHelper.startPage(pager.getNowPage(),pager.getPageSize(), "r_id DESC");
 					List<RoleEntity> list = roleService.queryListByPage(parameters);
 					parameters.clear();
@@ -98,7 +98,7 @@ public class RoleController extends BaseController {
 					parameters.put("pageCount", page.getPages());
 					parameters.put("recordCount", page.getTotal());
 					parameters.put("startRecord", page.getStartRow());
-					//ÁĞ±íÕ¹Ê¾Êı¾İ
+					//åˆ—è¡¨å±•ç¤ºæ•°æ®
 					parameters.put("exhibitDatas", list);
 					return parameters;
 				}
@@ -124,12 +124,12 @@ public class RoleController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "Ìí¼Ó³É¹¦");
+				map.put("message", "æ·»åŠ æˆåŠŸ");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "Ìí¼ÓÊ§°Ü");
+				map.put("message", "æ·»åŠ å¤±è´¥");
 			}
 		}catch(Exception e)
 		{
@@ -170,12 +170,12 @@ public class RoleController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "±à¼­³É¹¦");
+				map.put("message", "ç¼–è¾‘æˆåŠŸ");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "±à¼­Ê§°Ü");
+				map.put("message", "ç¼–è¾‘å¤±è´¥");
 			}
 		}catch(Exception e)
 		{
@@ -192,13 +192,13 @@ public class RoleController extends BaseController {
 		try
 		{
 			String[] roleIds = ids.split(",");
-			//1¡¢¼ì²é¸Ã½ÇÉ«ÏÂÊÇ·ñÓĞÓÃ»§£¬Èç¹ûÓĞÔòÅ×Òì³££¬Ã»ÓĞÔòÖ´ĞĞºóÃæÉ¾³ı²Ù×÷
+			//1ã€æ£€æŸ¥è¯¥è§’è‰²ä¸‹æ˜¯å¦æœ‰ç”¨æˆ·ï¼Œå¦‚æœæœ‰åˆ™æŠ›å¼‚å¸¸ï¼Œæ²¡æœ‰åˆ™æ‰§è¡Œåé¢åˆ é™¤æ“ä½œ
 			int userCount = roleService.findRoleUserById(Integer.valueOf(roleIds[0]));
 			if(userCount>0)
 			{
 				result.put("success", false);
 				result.put("data", null);
-				result.put("message", "¸Ã½ÇÉ«ÒÑ·ÖÅäÓÃ»§,ÇëÈ¥µôÓÃ»§½ÇÉ«¹ØÁªºóÔÙÉ¾³ı");
+				result.put("message", "è¯¥è§’è‰²å·²åˆ†é…ç”¨æˆ·,è¯·å»æ‰ç”¨æˆ·è§’è‰²å…³è”åå†åˆ é™¤");
 			}else
 			{
 				Boolean flag = roleService.deleteRoleById(Long.valueOf(roleIds[0]));
@@ -206,12 +206,12 @@ public class RoleController extends BaseController {
 				{
 					result.put("success", true);
 					result.put("data", null);
-					result.put("message", "É¾³ı³É¹¦");
+					result.put("message", "åˆ é™¤æˆåŠŸ");
 				}else
 				{
 					result.put("success", false);
 					result.put("data", null);
-					result.put("message", "É¾³ıÊ§°Ü");
+					result.put("message", "åˆ é™¤å¤±è´¥");
 				}
 			}
 		}catch(Exception e)
@@ -261,12 +261,12 @@ public class RoleController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "ÊÚÈ¨³É¹¦");
+				map.put("message", "æˆæƒæˆåŠŸ");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "ÊÚÈ¨Ê§°Ü");
+				map.put("message", "æˆæƒå¤±è´¥");
 			}
 		}catch(Exception e)
 		{

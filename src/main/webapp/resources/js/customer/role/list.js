@@ -1,25 +1,25 @@
 var dtGridColumns = [{
     id : 'id',
-    title : '±àºÅ',
+    title : 'ç¼–å·',
     type : 'number',
     columnClass : 'text-center',
     hideType : 'xs',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'name',
-    title : '½ÇÉ«Ãû³Æ',
+    title : 'è§’è‰²åç§°',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'key',
-    title : '½ÇÉ«±êÊ¶',
+    title : 'è§’è‰²æ ‡è¯†',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'status',
-    title : '½ÇÉ«×´Ì¬',
+    title : 'è§’è‰²çŠ¶æ€',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
@@ -27,22 +27,22 @@ var dtGridColumns = [{
     resolution : function(value, record, column, grid, dataNo, columnNo) {
         if(value == 0)
         {
-            return '<span class="label label-sm label-success arrowed arrowed-righ">Õı³£</span>';
+            return '<span class="label label-sm label-success arrowed arrowed-righ">æ­£å¸¸</span>';
         }else
         {
-            return '<span class="label label-sm label-warning arrowed arrowed-righ">ÒÑÉ¾³ı</span>';
+            return '<span class="label label-sm label-warning arrowed arrowed-righ">å·²åˆ é™¤</span>';
         }
     }
 }, {
     id : 'description',
-    title : '½ÇÉ«ÃèÊö',
+    title : 'è§’è‰²æè¿°',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'xs'
 }, {
     id : 'createTime',
-    title : '´´½¨Ê±¼ä',
+    title : 'åˆ›å»ºæ—¶é—´',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype : 'string',
@@ -52,7 +52,7 @@ var dtGridColumns = [{
     hideType : 'sm|xs'
 }, {
     id : 'updateTime',
-    title : '¸üĞÂÊ±¼ä',
+    title : 'æ›´æ–°æ—¶é—´',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype : 'string',
@@ -69,7 +69,7 @@ var dtGridColumns = [{
     }
 }];
 
-//¶¯Ì¬ÉèÖÃjqGridµÄrowNum
+//åŠ¨æ€è®¾ç½®jqGridçš„rowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -84,7 +84,7 @@ var dtGridOption = {
     gridContainer : 'dtGridContainer',
     toolbarContainer : 'dtGridToolBarContainer',
     tools : 'refresh|print|export[excel,csv,pdf,txt]',
-    exportFileName : '½ÇÉ«ĞÅÏ¢',
+    exportFileName : 'è§’è‰²ä¿¡æ¯',
     pageSize : pageSize,
     pageSizeLimit : [10, 20, 30]
 };
@@ -99,7 +99,7 @@ $(function() {
     grid.load();
     $("#btnSearch").click(customSearch);
     
-    //×¢²á»Ø³µ¼üÊÂ¼ş
+    //æ³¨å†Œå›è½¦é”®äº‹ä»¶
     document.onkeypress = function(e){
     var ev = document.all ? window.event : e;
         if(ev.keyCode==13) {
@@ -110,8 +110,8 @@ $(function() {
 });
 
 /**
- * ×Ô¶¨Òå²éÑ¯
- * ÕâÀï²»´«Èë·ÖÒ³ĞÅÏ¢£¬·ÀÖ¹É¾³ı¼ÇÂ¼ºóÖØĞÂ¼ÆËãµÄÒ³Âë±Èµ±Ç°Ò³ÂëĞ¡¶øµ¼ÖÂ¼ÆËãÒì³£
+ * è‡ªå®šä¹‰æŸ¥è¯¢
+ * è¿™é‡Œä¸ä¼ å…¥åˆ†é¡µä¿¡æ¯ï¼Œé˜²æ­¢åˆ é™¤è®°å½•åé‡æ–°è®¡ç®—çš„é¡µç æ¯”å½“å‰é¡µç å°è€Œå¯¼è‡´è®¡ç®—å¼‚å¸¸
  */
 function customSearch() {
     grid.parameters = new Object();

@@ -9,7 +9,7 @@ $(function() {
 	            area : ['600px', '600px'],
 	            maxmin : true,
 	            shift : 4,
-	            title : '<i class="fa fa-folder"></i>&nbsp;选择目录',
+	            title : '<i class="fa fa-folder"></i>&nbsp;閫夋嫨鐩綍',
 	            success: function(){
 	                isLayerOpen=true;
 	            },
@@ -36,7 +36,7 @@ $(function() {
 	            area : ['500px', '500px'],
 	            maxmin : true,
 	            shift : 4,
-	            title : '<i class="fa fa-file-image-o"></i>&nbsp;选择图片',
+	            title : '<i class="fa fa-file-image-o"></i>&nbsp;閫夋嫨鍥剧墖',
 	            success: function(){
 	                isLayerOpen=true;
 	            },
@@ -55,7 +55,7 @@ $(function() {
 	            area : ['500px', '500px'],
 	            maxmin : true,
 	            shift : 4,
-	            title : '<i class="fa fa-file-video-o"></i>&nbsp;选择文件',
+	            title : '<i class="fa fa-file-video-o"></i>&nbsp;閫夋嫨鏂囦欢',
 	            success: function(){
 	                isLayerOpen=true;
 	            },

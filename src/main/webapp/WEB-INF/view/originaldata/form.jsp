@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=GBK"
-	pageEncoding="GBK"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -19,13 +19,13 @@
 <script type="text/javascript"
 	src="${ctx }/resources/js/distpicker/distpicker.min.js"></script>
 
-<!-- ¸´Ñ¡¿ò£ºÑùÆ·²É¼¯ÊÕ²ØµØ£º¸öÈË¡¢¹«Ë¾¡¢¹Ý²Ø¡¢ÆäËü -->
+<!-- å¤é€‰æ¡†ï¼šæ ·å“é‡‡é›†æ”¶è—åœ°ï¼šä¸ªäººã€å…¬å¸ã€é¦†è—ã€å…¶å®ƒ -->
 <script type="text/javascript">
-	var boxObj = document.getElementsByName("gypScdDw"); //»ñÈ¡ËùÓÐµÄ¸´Ñ¡¿ò
-	var payment = "${originaldataEntity.gypScdDw}"; //ÓÃel±í´ïÊ½»ñÈ¡ÔÚ¿ØÖÆ²ã´æ·ÅµÄ¸´Ñ¡¿òµÄÖµÎª×Ö·û´®ÀàÐÍ
-	var pay = payment.split(","); //È¥µôËüÃÇÖ®¼äµÄ·Ö¸î·û¡°£¬¡±  
+	var boxObj = document.getElementsByName("gypScdDw"); //èŽ·å–æ‰€æœ‰çš„å¤é€‰æ¡†
+	var payment = "${originaldataEntity.gypScdDw}"; //ç”¨elè¡¨è¾¾å¼èŽ·å–åœ¨æŽ§åˆ¶å±‚å­˜æ”¾çš„å¤é€‰æ¡†çš„å€¼ä¸ºå­—ç¬¦ä¸²ç±»åž‹
+	var pay = payment.split(","); //åŽ»æŽ‰å®ƒä»¬ä¹‹é—´çš„åˆ†å‰²ç¬¦â€œï¼Œâ€  
 	for (i = 0; i < boxObj.length; i++) {
-		for (j = 0; j < pay.length; j++) { //Èç¹ûÖµÓëÐÞ¸ÄÇ°µÄÖµÏàµÈ
+		for (j = 0; j < pay.length; j++) { //å¦‚æžœå€¼ä¸Žä¿®æ”¹å‰çš„å€¼ç›¸ç­‰
 			if (boxObj[i].value == pay[j]) {
 				boxObj[i].checked = true;
 				break;
@@ -34,13 +34,13 @@
 	}
 </script>
 
-<!-- ¸´Ñ¡¿ò£ºÑùÆ·ÔøÊ¹ÓÃÕßÉí·Ý£º¹ó×å¡¢Æ½Ãñ¡¢É®ÂÂ¡¢²»Ïê -->
+<!-- å¤é€‰æ¡†ï¼šæ ·å“æ›¾ä½¿ç”¨è€…èº«ä»½ï¼šè´µæ—ã€å¹³æ°‘ã€åƒ§ä¾£ã€ä¸è¯¦ -->
 <script type="text/javascript">
-	var boxObj = document.getElementsByName("gypCyzSf"); //»ñÈ¡ËùÓÐµÄ¸´Ñ¡¿ò
-	var payment = "${originaldataEntity.gypCyzSf}"; //ÓÃel±í´ïÊ½»ñÈ¡ÔÚ¿ØÖÆ²ã´æ·ÅµÄ¸´Ñ¡¿òµÄÖµÎª×Ö·û´®ÀàÐÍ
-	var pay = payment.split(","); //È¥µôËüÃÇÖ®¼äµÄ·Ö¸î·û¡°£¬¡±  
+	var boxObj = document.getElementsByName("gypCyzSf"); //èŽ·å–æ‰€æœ‰çš„å¤é€‰æ¡†
+	var payment = "${originaldataEntity.gypCyzSf}"; //ç”¨elè¡¨è¾¾å¼èŽ·å–åœ¨æŽ§åˆ¶å±‚å­˜æ”¾çš„å¤é€‰æ¡†çš„å€¼ä¸ºå­—ç¬¦ä¸²ç±»åž‹
+	var pay = payment.split(","); //åŽ»æŽ‰å®ƒä»¬ä¹‹é—´çš„åˆ†å‰²ç¬¦â€œï¼Œâ€  
 	for (i = 0; i < boxObj.length; i++) {
-		for (j = 0; j < pay.length; j++) { //Èç¹ûÖµÓëÐÞ¸ÄÇ°µÄÖµÏàµÈ
+		for (j = 0; j < pay.length; j++) { //å¦‚æžœå€¼ä¸Žä¿®æ”¹å‰çš„å€¼ç›¸ç­‰
 			if (boxObj[i].value == pay[j]) {
 				boxObj[i].checked = true;
 				break;
@@ -49,13 +49,13 @@
 	}
 </script>
 
-<!-- ¸´Ñ¡¿ò£º×°ÊÎÇé¿ö¼°Æä¼òÒªÃèÊö£º´ÌÐå¡¢Ó¡È¾¡¢ÏâÇ¶¡¢µñ¿Ì¡¢°ü±ß¡¢·ìÖÆ»¨±ß¡¢±¦Ê¯¡¢ÆäËü×°ÊÎ·½Ê½ -->
+<!-- å¤é€‰æ¡†ï¼šè£…é¥°æƒ…å†µåŠå…¶ç®€è¦æè¿°ï¼šåˆºç»£ã€å°æŸ“ã€é•¶åµŒã€é›•åˆ»ã€åŒ…è¾¹ã€ç¼åˆ¶èŠ±è¾¹ã€å®çŸ³ã€å…¶å®ƒè£…é¥°æ–¹å¼ -->
 <script type="text/javascript">
-	var boxObj = document.getElementsByName("gypZsZsfs"); //»ñÈ¡ËùÓÐµÄ¸´Ñ¡¿ò
-	var payment = "${originaldataEntity.gypZsZsfs}"; //ÓÃel±í´ïÊ½»ñÈ¡ÔÚ¿ØÖÆ²ã´æ·ÅµÄ¸´Ñ¡¿òµÄÖµÎª×Ö·û´®ÀàÐÍ
-	var pay = payment.split(","); //È¥µôËüÃÇÖ®¼äµÄ·Ö¸î·û¡°£¬¡±  
+	var boxObj = document.getElementsByName("gypZsZsfs"); //èŽ·å–æ‰€æœ‰çš„å¤é€‰æ¡†
+	var payment = "${originaldataEntity.gypZsZsfs}"; //ç”¨elè¡¨è¾¾å¼èŽ·å–åœ¨æŽ§åˆ¶å±‚å­˜æ”¾çš„å¤é€‰æ¡†çš„å€¼ä¸ºå­—ç¬¦ä¸²ç±»åž‹
+	var pay = payment.split(","); //åŽ»æŽ‰å®ƒä»¬ä¹‹é—´çš„åˆ†å‰²ç¬¦â€œï¼Œâ€  
 	for (i = 0; i < boxObj.length; i++) {
-		for (j = 0; j < pay.length; j++) { //Èç¹ûÖµÓëÐÞ¸ÄÇ°µÄÖµÏàµÈ
+		for (j = 0; j < pay.length; j++) { //å¦‚æžœå€¼ä¸Žä¿®æ”¹å‰çš„å€¼ç›¸ç­‰
 			if (boxObj[i].value == pay[j]) {
 				boxObj[i].checked = true;
 				break;
@@ -64,13 +64,13 @@
 	}
 </script>
 
-<!-- ¸´Ñ¡¿ò£º×°ÊÎÇé¿ö¼°Æä¼òÒªÃèÊö-Ö÷ÒªÍ¼°¸£ºÖ²Îï»¨»Ü¡¢¶¯Îï¡¢×ÔÈ»¡¢¼¸ºÎ¡¢ÎÄ×Ö¡¢×Ú½ÌÐÅÑö¡¢ÆäËü -->
+<!-- å¤é€‰æ¡†ï¼šè£…é¥°æƒ…å†µåŠå…¶ç®€è¦æè¿°-ä¸»è¦å›¾æ¡ˆï¼šæ¤ç‰©èŠ±å‰ã€åŠ¨ç‰©ã€è‡ªç„¶ã€å‡ ä½•ã€æ–‡å­—ã€å®—æ•™ä¿¡ä»°ã€å…¶å®ƒ -->
 <script type="text/javascript">
-	var boxObj = document.getElementsByName("gypZsZta"); //»ñÈ¡ËùÓÐµÄ¸´Ñ¡¿ò
-	var payment = "${originaldataEntity.gypZsZta}"; //ÓÃel±í´ïÊ½»ñÈ¡ÔÚ¿ØÖÆ²ã´æ·ÅµÄ¸´Ñ¡¿òµÄÖµÎª×Ö·û´®ÀàÐÍ
-	var pay = payment.split(","); //È¥µôËüÃÇÖ®¼äµÄ·Ö¸î·û¡°£¬¡±  
+	var boxObj = document.getElementsByName("gypZsZta"); //èŽ·å–æ‰€æœ‰çš„å¤é€‰æ¡†
+	var payment = "${originaldataEntity.gypZsZta}"; //ç”¨elè¡¨è¾¾å¼èŽ·å–åœ¨æŽ§åˆ¶å±‚å­˜æ”¾çš„å¤é€‰æ¡†çš„å€¼ä¸ºå­—ç¬¦ä¸²ç±»åž‹
+	var pay = payment.split(","); //åŽ»æŽ‰å®ƒä»¬ä¹‹é—´çš„åˆ†å‰²ç¬¦â€œï¼Œâ€  
 	for (i = 0; i < boxObj.length; i++) {
-		for (j = 0; j < pay.length; j++) { //Èç¹ûÖµÓëÐÞ¸ÄÇ°µÄÖµÏàµÈ
+		for (j = 0; j < pay.length; j++) { //å¦‚æžœå€¼ä¸Žä¿®æ”¹å‰çš„å€¼ç›¸ç­‰
 			if (boxObj[i].value == pay[j]) {
 				boxObj[i].checked = true;
 				break;
@@ -79,13 +79,13 @@
 	}
 </script>
 
-<!-- ¸´Ñ¡¿ò£ºÖÆ×÷²ÄÁÏ-12£º½ðÊô¡¢Ê¯²Ä¡¢±¦Ê¯¡¢Æ¤¡¢Ã«¡¢¹Ç¡¢½Ç¡¢Ä¾²Ä¡¢ÆäËü -->
+<!-- å¤é€‰æ¡†ï¼šåˆ¶ä½œææ–™-12ï¼šé‡‘å±žã€çŸ³æã€å®çŸ³ã€çš®ã€æ¯›ã€éª¨ã€è§’ã€æœ¨æã€å…¶å®ƒ -->
 <script type="text/javascript">
-	var boxObj = document.getElementsByName("gypZzclCz"); //»ñÈ¡ËùÓÐµÄ¸´Ñ¡¿ò
-	var payment = "${originaldataEntity.gypZzclCz}"; //ÓÃel±í´ïÊ½»ñÈ¡ÔÚ¿ØÖÆ²ã´æ·ÅµÄ¸´Ñ¡¿òµÄÖµÎª×Ö·û´®ÀàÐÍ
-	var pay = payment.split(","); //È¥µôËüÃÇÖ®¼äµÄ·Ö¸î·û¡°£¬¡±  
+	var boxObj = document.getElementsByName("gypZzclCz"); //èŽ·å–æ‰€æœ‰çš„å¤é€‰æ¡†
+	var payment = "${originaldataEntity.gypZzclCz}"; //ç”¨elè¡¨è¾¾å¼èŽ·å–åœ¨æŽ§åˆ¶å±‚å­˜æ”¾çš„å¤é€‰æ¡†çš„å€¼ä¸ºå­—ç¬¦ä¸²ç±»åž‹
+	var pay = payment.split(","); //åŽ»æŽ‰å®ƒä»¬ä¹‹é—´çš„åˆ†å‰²ç¬¦â€œï¼Œâ€  
 	for (i = 0; i < boxObj.length; i++) {
-		for (j = 0; j < pay.length; j++) { //Èç¹ûÖµÓëÐÞ¸ÄÇ°µÄÖµÏàµÈ
+		for (j = 0; j < pay.length; j++) { //å¦‚æžœå€¼ä¸Žä¿®æ”¹å‰çš„å€¼ç›¸ç­‰
 			if (boxObj[i].value == pay[j]) {
 				boxObj[i].checked = true;
 				break;
@@ -94,13 +94,13 @@
 	}
 </script>
 
-<!-- ¸´Ñ¡¿ò£ºÊ¹ÓÃ³¡ºÏ¼°¹¦ÄÜÃèÊö-13£ºÈÕ³£Ê¹ÓÃ¡¢×Ú½ÌÐÅÑö»î¶¯¡¢ÃñË×ÀñÒÇ¡¢ÖØ´ó½ÚÈÕ¡¢ÆäËü -->
+<!-- å¤é€‰æ¡†ï¼šä½¿ç”¨åœºåˆåŠåŠŸèƒ½æè¿°-13ï¼šæ—¥å¸¸ä½¿ç”¨ã€å®—æ•™ä¿¡ä»°æ´»åŠ¨ã€æ°‘ä¿—ç¤¼ä»ªã€é‡å¤§èŠ‚æ—¥ã€å…¶å®ƒ -->
 <script type="text/javascript">
-	var boxObj = document.getElementsByName("gypSygnSych"); //»ñÈ¡ËùÓÐµÄ¸´Ñ¡¿ò
-	var payment = "${originaldataEntity.gypSygnSych}"; //ÓÃel±í´ïÊ½»ñÈ¡ÔÚ¿ØÖÆ²ã´æ·ÅµÄ¸´Ñ¡¿òµÄÖµÎª×Ö·û´®ÀàÐÍ
-	var pay = payment.split(","); //È¥µôËüÃÇÖ®¼äµÄ·Ö¸î·û¡°£¬¡±  
+	var boxObj = document.getElementsByName("gypSygnSych"); //èŽ·å–æ‰€æœ‰çš„å¤é€‰æ¡†
+	var payment = "${originaldataEntity.gypSygnSych}"; //ç”¨elè¡¨è¾¾å¼èŽ·å–åœ¨æŽ§åˆ¶å±‚å­˜æ”¾çš„å¤é€‰æ¡†çš„å€¼ä¸ºå­—ç¬¦ä¸²ç±»åž‹
+	var pay = payment.split(","); //åŽ»æŽ‰å®ƒä»¬ä¹‹é—´çš„åˆ†å‰²ç¬¦â€œï¼Œâ€  
 	for (i = 0; i < boxObj.length; i++) {
-		for (j = 0; j < pay.length; j++) { //Èç¹ûÖµÓëÐÞ¸ÄÇ°µÄÖµÏàµÈ
+		for (j = 0; j < pay.length; j++) { //å¦‚æžœå€¼ä¸Žä¿®æ”¹å‰çš„å€¼ç›¸ç­‰
 			if (boxObj[i].value == pay[j]) {
 				boxObj[i].checked = true;
 				break;
@@ -109,16 +109,16 @@
 	}
 </script>
 
-<!--ÁªÏµ·½Ê½ºÍ¹Ì»°Ð£Ñé-->
+<!--è”ç³»æ–¹å¼å’Œå›ºè¯æ ¡éªŒ-->
 <script type="text/javascript">
-	//ÁªÏµ·½Ê½Ð£Ñé
+	//è”ç³»æ–¹å¼æ ¡éªŒ
 	function checkTel(tel) {
 		var value = document.getElementById(tel).value;
 		RegularExp = /^[0-9]{11}$/;
 		if (RegularExp.test(value)) {
 			return true;
 		} else {
-			alert("ÊÖ»úºÅ¸ñÊ½²»ÕýÈ·£¡Ó¦¸ÃÎª11Î»³¤¶ÈµÄÊý×Ö,»ò¹Ì»°Ç°Ó¦ÓÐÇøºÅ");
+			alert("æ‰‹æœºå·æ ¼å¼ä¸æ­£ç¡®ï¼åº”è¯¥ä¸º11ä½é•¿åº¦çš„æ•°å­—,æˆ–å›ºè¯å‰åº”æœ‰åŒºå·");
 			document.getElementById(tel).value = "";
 			return false;
 		}
@@ -163,10 +163,10 @@
 <div class="page-header">
 	<h1>
 		<c:if test="${empty originaldataEntity}">
-		ÐÂÔöÔ­Ê¼Êý¾Ý
+		æ–°å¢žåŽŸå§‹æ•°æ®
 		</c:if>
 		<c:if test="${!empty originaldataEntity}">
-		±à¼­Ô­Ê¼Êý¾Ý
+		ç¼–è¾‘åŽŸå§‹æ•°æ®
 		</c:if>
 	</h1>
 </div>
@@ -189,120 +189,120 @@
 			</c:if>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypFoldId">ËùÊôÄ¿Â¼</label>
+					for="gypFoldId">æ‰€å±žç›®å½•</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypFoldName" id="gypFoldName"
-							type="text" value="${gypFoldName }" placeholder="ÇëÑ¡ÔñËùÊôÄ¿Â¼..."
+							type="text" value="${gypFoldName }" placeholder="è¯·é€‰æ‹©æ‰€å±žç›®å½•..."
 							required /> <input type="hidden" id="gypFoldId" name="gypFoldId"
 							value="${gypFoldId }">
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypBm">±àÂë</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypBm">ç¼–ç </label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypBm" id="gypBm" type="text"
-							value="${originaldataEntity.gypBm }" placeholder="±àÂë..."
+							value="${originaldataEntity.gypBm }" placeholder="ç¼–ç ..."
 							maxlength="20" required />
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypMcZm">Ö÷Ãû³Æ</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypMcZm">ä¸»åç§°</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypMcZm" id="gypMcZm"
 							type="text" value="${originaldataEntity.gypMcZm }"
-							placeholder="Ö÷Ãû³Æ..." maxlength="10" required />
+							placeholder="ä¸»åç§°..." maxlength="10" required />
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypMcYm">±ðÃû</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypMcYm">åˆ«å</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypMcYm" id="gypMcYm"
 							type="text" value="${originaldataEntity.gypMcYm }"
-							placeholder="±ðÃû..." maxlength="10" />
+							placeholder="åˆ«å..." maxlength="10" />
 					</div>
 				</div>
 			</div>
 
-			<!-- 4-ÑùÆ·²É¼¯ÊÕ²ØµØ===Start=== -->
+			<!-- 4-æ ·å“é‡‡é›†æ”¶è—åœ°===Start=== -->
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypScdDw">ÊÕ²ØµØÐÔÖÊ</label>
+					for="gypScdDw">æ”¶è—åœ°æ€§è´¨</label>
 				<div class="col-sm-9">
 					<div class="checkbox">
 						<%-- <label>
-						<input class="ace" name="gypScdDw" id="gypScdDw" type="radio" value="¸öÈË" ${originaldataEntity.gypScdDw eq "¸öÈË"?"checked":""} required/>
-						<span class="lbl">¸öÈË</span>
+						<input class="ace" name="gypScdDw" id="gypScdDw" type="radio" value="ä¸ªäºº" ${originaldataEntity.gypScdDw eq "ä¸ªäºº"?"checked":""} required/>
+						<span class="lbl">ä¸ªäºº</span>
 					</label> --%>
 						<label> <input class="ace" name="gypScdDw" id="gypScdDw"
-							type="checkbox" value="¸öÈË"
-							${originaldataEntity.gypScdDw eq "¸öÈË"?"checked":""} required /> <span
-							class="lbl">¸öÈË</span>
+							type="checkbox" value="ä¸ªäºº"
+							${originaldataEntity.gypScdDw eq "ä¸ªäºº"?"checked":""} required /> <span
+							class="lbl">ä¸ªäºº</span>
 						</label> <label> <input class="ace" name="gypScdDw" id="gypScdDw"
-							type="checkbox" value="¹«Ë¾"
-							${originaldataEntity.gypScdDw eq "¹«Ë¾"?"checked":""} required /> <span
-							class="lbl">¹«Ë¾</span>
+							type="checkbox" value="å…¬å¸"
+							${originaldataEntity.gypScdDw eq "å…¬å¸"?"checked":""} required /> <span
+							class="lbl">å…¬å¸</span>
 						</label> <label> <input class="ace" name="gypScdDw" id="gypScdDw"
-							type="checkbox" value="¹Ý²Ø"
-							${originaldataEntity.gypScdDw eq "¹Ý²Ø"?"checked":""} required /> <span
-							class="lbl">¹Ý²Ø</span>
+							type="checkbox" value="é¦†è—"
+							${originaldataEntity.gypScdDw eq "é¦†è—"?"checked":""} required /> <span
+							class="lbl">é¦†è—</span>
 						</label> <label> <input class="ace" name="gypScdDw" id="gypScdDw"
-							type="checkbox" value="ÆäËü"
-							${originaldataEntity.gypScdDw eq "ÆäËü"?"checked":""} required /> <span
-							class="lbl">ÆäËü</span>
+							type="checkbox" value="å…¶å®ƒ"
+							${originaldataEntity.gypScdDw eq "å…¶å®ƒ"?"checked":""} required /> <span
+							class="lbl">å…¶å®ƒ</span>
 						</label>
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypScdScrxm">ÑùÆ·¹éÊôÈË£¨µØ£©</label>
+					for="gypScdScrxm">æ ·å“å½’å±žäººï¼ˆåœ°ï¼‰</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypScdScrxm" id="gypScdScrxm"
 							type="text" value="${originaldataEntity.gypScdScrxm }"
-							placeholder="¹éÊôÈË£¨µØ£©..." maxlength="10" required />
+							placeholder="å½’å±žäººï¼ˆåœ°ï¼‰..." maxlength="10" required />
 					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypScdDq">ÑùÆ·¹éÊôÈËµØÇø</label>
+					for="gypScdDq">æ ·å“å½’å±žäººåœ°åŒº</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<select class="form-control" name="gypScdDq" id="gypScdDq">
-							<option>---ÇëÑ¡ÔñµØÇø---</option>
-							<option value="ºôºÍºÆÌØÊÐ"
-								${originaldataEntity.gypScdDq eq "ºôºÍºÆÌØÊÐ"?"selected":""}>ºôºÍºÆÌØÊÐ</option>
-							<option value="°üÍ·ÊÐ"
-								${originaldataEntity.gypScdDq eq "°üÍ·ÊÐ"?"selected":""}>°üÍ·ÊÐ</option>
-							<option value="ÎÚº£ÊÐ"
-								${originaldataEntity.gypScdDq eq "ÎÚº£ÊÐ"?"selected":""}>ÎÚº£ÊÐ</option>
-							<option value="³à·åÊÐ"
-								${originaldataEntity.gypScdDq eq "³à·åÊÐ"?"selected":""}>³à·åÊÐ</option>
-							<option value="Í¨ÁÉÊÐ"
-								${originaldataEntity.gypScdDq eq "Í¨ÁÉÊÐ"?"selected":""}>Í¨ÁÉÊÐ</option>
-							<option value="¶õ¶û¶àË¹ÊÐ"
-								${originaldataEntity.gypScdDq eq "¶õ¶û¶àË¹ÊÐ"?"selected":""}>¶õ¶û¶àË¹ÊÐ</option>
-							<option value="ºôÂ×±´¶ûÊÐ"
-								${originaldataEntity.gypScdDq eq "ºôÂ×±´¶ûÊÐ"?"selected":""}>ºôÂ×±´¶ûÊÐ</option>
-							<option value="ÎÚÀ¼²ì²¼ÊÐ"
-								${originaldataEntity.gypScdDq eq "ÎÚÀ¼²ì²¼ÊÐ"?"selected":""}>ÎÚÀ¼²ì²¼ÊÐ</option>
-							<option value="°ÍÑåÄ×¶ûÊÐ"
-								${originaldataEntity.gypScdDq eq "°ÍÑåÄ×¶ûÊÐ"?"selected":""}>°ÍÑåÄ×¶ûÊÐ</option>
-							<option value="ÐË°²ÃË"
-								${originaldataEntity.gypScdDq eq "ÐË°²ÃË"?"selected":""}>ÐË°²ÃË</option>
-							<option value="°¢À­ÉÆÃË"
-								${originaldataEntity.gypScdDq eq "°¢À­ÉÆÃË"?"selected":""}>°¢À­ÉÆÃË</option>
-							<option value="ÎýÁÖ¹ùÀÕÃË"
-								${originaldataEntity.gypScdDq eq "ÎýÁÖ¹ùÀÕÃË"?"selected":""}>ÎýÁÖ¹ùÀÕÃË</option>
+							<option>---è¯·é€‰æ‹©åœ°åŒº---</option>
+							<option value="å‘¼å’Œæµ©ç‰¹å¸‚"
+								${originaldataEntity.gypScdDq eq "å‘¼å’Œæµ©ç‰¹å¸‚"?"selected":""}>å‘¼å’Œæµ©ç‰¹å¸‚</option>
+							<option value="åŒ…å¤´å¸‚"
+								${originaldataEntity.gypScdDq eq "åŒ…å¤´å¸‚"?"selected":""}>åŒ…å¤´å¸‚</option>
+							<option value="ä¹Œæµ·å¸‚"
+								${originaldataEntity.gypScdDq eq "ä¹Œæµ·å¸‚"?"selected":""}>ä¹Œæµ·å¸‚</option>
+							<option value="èµ¤å³°å¸‚"
+								${originaldataEntity.gypScdDq eq "èµ¤å³°å¸‚"?"selected":""}>èµ¤å³°å¸‚</option>
+							<option value="é€šè¾½å¸‚"
+								${originaldataEntity.gypScdDq eq "é€šè¾½å¸‚"?"selected":""}>é€šè¾½å¸‚</option>
+							<option value="é„‚å°”å¤šæ–¯å¸‚"
+								${originaldataEntity.gypScdDq eq "é„‚å°”å¤šæ–¯å¸‚"?"selected":""}>é„‚å°”å¤šæ–¯å¸‚</option>
+							<option value="å‘¼ä¼¦è´å°”å¸‚"
+								${originaldataEntity.gypScdDq eq "å‘¼ä¼¦è´å°”å¸‚"?"selected":""}>å‘¼ä¼¦è´å°”å¸‚</option>
+							<option value="ä¹Œå…°å¯Ÿå¸ƒå¸‚"
+								${originaldataEntity.gypScdDq eq "ä¹Œå…°å¯Ÿå¸ƒå¸‚"?"selected":""}>ä¹Œå…°å¯Ÿå¸ƒå¸‚</option>
+							<option value="å·´å½¦æ·–å°”å¸‚"
+								${originaldataEntity.gypScdDq eq "å·´å½¦æ·–å°”å¸‚"?"selected":""}>å·´å½¦æ·–å°”å¸‚</option>
+							<option value="å…´å®‰ç›Ÿ"
+								${originaldataEntity.gypScdDq eq "å…´å®‰ç›Ÿ"?"selected":""}>å…´å®‰ç›Ÿ</option>
+							<option value="é˜¿æ‹‰å–„ç›Ÿ"
+								${originaldataEntity.gypScdDq eq "é˜¿æ‹‰å–„ç›Ÿ"?"selected":""}>é˜¿æ‹‰å–„ç›Ÿ</option>
+							<option value="é”¡æž—éƒ­å‹’ç›Ÿ"
+								${originaldataEntity.gypScdDq eq "é”¡æž—éƒ­å‹’ç›Ÿ"?"selected":""}>é”¡æž—éƒ­å‹’ç›Ÿ</option>
 						</select>
 					</div>
 				</div>
@@ -310,17 +310,17 @@
 
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypScdLxfs">ÁªÏµ·½Ê½</label>
+					for="gypScdLxfs">è”ç³»æ–¹å¼</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypScdLxfs" id="gypScdLxfs"
 							type="text" value="${originaldataEntity.gypScdLxfs }"
-							placeholder="ÁªÏµ·½Ê½..." onblur="checkTel('gypScdLxfs')" maxlength="20" />
+							placeholder="è”ç³»æ–¹å¼..." onblur="checkTel('gypScdLxfs')" maxlength="20" />
 					</div>
 				</div>
 			</div>
 			<%-- <div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypScdScdz">ÊÕ²ØµØÖ·</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypScdScdz">æ”¶è—åœ°å€</label>
 				<div class="col-sm-9">
 				<div data-toggle="distpicker" class="clearfix" required>
 				  <c:set var="gypScdScdz" value="${fn:split(originaldataEntity.gypScdScdz, '-')}" />
@@ -333,20 +333,20 @@
 			</div> --%>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypScdScdz">ÊÕ²ØµØÖ·</label>
+					for="gypScdScdz">æ”¶è—åœ°å€</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypScdScdz" id="gypScdScdz"
 							type="text" value="${originaldataEntity.gypScdScdz }"
-							placeholder="ÊÕ²ØµØÖ·..." maxlength="20" />
+							placeholder="æ”¶è—åœ°å€..." maxlength="20" />
 					</div>
 				</div>
 			</div>
 			<%-- <div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypScdSjnd">ÊÕ¼¯Äê´ú</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypScdSjnd">æ”¶é›†å¹´ä»£</label>
 				<div class="col-sm-9">
 				<div class="input-group">
-					<input class="form-control form_datetime" name="gypScdSjnd" id="gypScdSjnd" type="text" placeholder="ÊÕ¼¯Äê´ú..."
+					<input class="form-control form_datetime" name="gypScdSjnd" id="gypScdSjnd" type="text" placeholder="æ”¶é›†å¹´ä»£..."
 						value="<fmt:formatDate value="${originaldataEntity.gypScdSjnd}" type="date"/>" required/>
 					<span class="input-group-addon">
 						<i class="fa fa-calendar bigger-110"></i>
@@ -356,7 +356,7 @@
 			</div> --%>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypScdSynx">Ê¹ÓÃÄêÏÞ</label>
+					for="gypScdSynx">ä½¿ç”¨å¹´é™</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="input-mini" name="gypScdSynx" id="gypScdSynx"
@@ -364,67 +364,67 @@
 					</div>
 				</div>
 			</div>
-			<!-- 4-ÑùÆ·²É¼¯ÊÕ²ØµØ===End=== -->
+			<!-- 4-æ ·å“é‡‡é›†æ”¶è—åœ°===End=== -->
 
-			<!-- 5-ÑùÆ·ÔøÊ¹ÓÃÕß===Start=== -->
+			<!-- 5-æ ·å“æ›¾ä½¿ç”¨è€…===Start=== -->
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypCyzSf">ÔøÓÃÕßÉí·Ý</label>
+					for="gypCyzSf">æ›¾ç”¨è€…èº«ä»½</label>
 				<div class="col-sm-9">
 					<div class="checkbox">
 						<label> <input class="ace" name="gypCyzSf" id="gypCyzSf"
-							type="checkbox" value="¹ó×å"
-							${originaldataEntity.gypCyzSf eq "¹ó×å"?"checked":""} required /> <span
-							class="lbl">¹ó×å</span>
+							type="checkbox" value="è´µæ—"
+							${originaldataEntity.gypCyzSf eq "è´µæ—"?"checked":""} required /> <span
+							class="lbl">è´µæ—</span>
 						</label> <label> <input class="ace" name="gypCyzSf" id="gypCyzSf"
-							type="checkbox" value="Æ½Ãñ"
-							${originaldataEntity.gypCyzSf eq "Æ½Ãñ"?"checked":""} required /> <span
-							class="lbl">Æ½Ãñ</span>
+							type="checkbox" value="å¹³æ°‘"
+							${originaldataEntity.gypCyzSf eq "å¹³æ°‘"?"checked":""} required /> <span
+							class="lbl">å¹³æ°‘</span>
 						</label> <label> <input class="ace" name="gypCyzSf" id="gypCyzSf"
-							type="checkbox" value="É®ÂÂ"
-							${originaldataEntity.gypCyzSf eq "É®ÂÂ"?"checked":""} required /> <span
-							class="lbl">É®ÂÂ</span>
+							type="checkbox" value="åƒ§ä¾£"
+							${originaldataEntity.gypCyzSf eq "åƒ§ä¾£"?"checked":""} required /> <span
+							class="lbl">åƒ§ä¾£</span>
 						</label> <label> <input class="ace" name="gypCyzSf" id="gypCyzSf"
-							type="checkbox" value="²»Ïé"
-							${originaldataEntity.gypCyzSf eq "²»Ïé"?"checked":""} required /> <span
-							class="lbl">²»Ïé</span>
+							type="checkbox" value="ä¸ç¥¥"
+							${originaldataEntity.gypCyzSf eq "ä¸ç¥¥"?"checked":""} required /> <span
+							class="lbl">ä¸ç¥¥</span>
 						</label>
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypCyzMz">ÔøÓÃÕßÃñ×å</label>
+					for="gypCyzMz">æ›¾ç”¨è€…æ°‘æ—</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypCyzMz" id="gypCyzMz"
 							type="text" value="${originaldataEntity.gypCyzMz }"
-							placeholder="ÔøÓÃÕßÃñ×å..." maxlength="4" />
+							placeholder="æ›¾ç”¨è€…æ°‘æ—..." maxlength="4" />
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypCyzXb">ÔøÓÃÕßÐÔ±ð</label>
+					for="gypCyzXb">æ›¾ç”¨è€…æ€§åˆ«</label>
 				<div class="col-sm-9">
 					<div class="radio">
 						<label> <input class="ace" name="gypCyzXb" id="gypCyzXb"
-							type="radio" value="ÄÐ"
-							${originaldataEntity.gypCyzXb eq "ÄÐ"?"checked":""} /> <span
-							class="lbl">ÄÐ</span>
+							type="radio" value="ç”·"
+							${originaldataEntity.gypCyzXb eq "ç”·"?"checked":""} /> <span
+							class="lbl">ç”·</span>
 						</label> <label> <input class="ace" name="gypCyzXb" id="gypCyzXb"
-							type="radio" value="Å®"
-							${originaldataEntity.gypCyzXb eq "Å®"?"checked":""} /> <span
-							class="lbl">Å®</span>
+							type="radio" value="å¥³"
+							${originaldataEntity.gypCyzXb eq "å¥³"?"checked":""} /> <span
+							class="lbl">å¥³</span>
 						</label>
 					</div>
 				</div>
 			</div>
-			<!-- 5-ÑùÆ·ÔøÊ¹ÓÃÕß===End=== -->
+			<!-- 5-æ ·å“æ›¾ä½¿ç”¨è€…===End=== -->
 
-			<!-- 6-ÑùÆ·À´Ô´ÓëÊÕ²ØµØ===Start=== -->
+			<!-- 6-æ ·å“æ¥æºä¸Žæ”¶è—åœ°===Start=== -->
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypLyd">À´Ô´µØ</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypLyd">æ¥æºåœ°</label>
 				<div class="col-sm-9">
 					<div data-toggle="distpicker" class="clearfix" required>
 						<c:set var="gypLyd"
@@ -440,106 +440,106 @@
 					</div>
 				</div>
 			</div>
-			<!-- 6-ÑùÆ·À´Ô´ÓëÊÕ²ØµØ===End=== -->
+			<!-- 6-æ ·å“æ¥æºä¸Žæ”¶è—åœ°===End=== -->
 
-			<!-- 7-×°ÊÎÇé¿ö¼°Æä¼òÒªÃèÊö===Start=== -->
+			<!-- 7-è£…é¥°æƒ…å†µåŠå…¶ç®€è¦æè¿°===Start=== -->
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZsZsfs">×°ÊÎ·½Ê½</label>
+					for="gypZsZsfs">è£…é¥°æ–¹å¼</label>
 				<div class="col-sm-9">
 					<div class="checkbox">
 						<label> <input class="ace" name="gypZsZsfs" id="gypZsZsfs"
-							type="checkbox" value="´ÌÐå"
-							${originaldataEntity.gypZsZsfs eq "´ÌÐå"?"checked":""} required />
-							<span class="lbl">´ÌÐå</span>
+							type="checkbox" value="åˆºç»£"
+							${originaldataEntity.gypZsZsfs eq "åˆºç»£"?"checked":""} required />
+							<span class="lbl">åˆºç»£</span>
 						</label> <label> <input class="ace" name="gypZsZsfs"
-							id="gypZsZsfs" type="checkbox" value="Ó¡È¾"
-							${originaldataEntity.gypZsZsfs eq "Ó¡È¾"?"checked":""} required />
-							<span class="lbl">Ó¡È¾</span>
+							id="gypZsZsfs" type="checkbox" value="å°æŸ“"
+							${originaldataEntity.gypZsZsfs eq "å°æŸ“"?"checked":""} required />
+							<span class="lbl">å°æŸ“</span>
 						</label> <label> <input class="ace" name="gypZsZsfs"
-							id="gypZsZsfs" type="checkbox" value="ÏâÇ¶"
-							${originaldataEntity.gypZsZsfs eq "ÏâÇ¶"?"checked":""} required />
-							<span class="lbl">ÏâÇ¶</span>
+							id="gypZsZsfs" type="checkbox" value="é•¶åµŒ"
+							${originaldataEntity.gypZsZsfs eq "é•¶åµŒ"?"checked":""} required />
+							<span class="lbl">é•¶åµŒ</span>
 						</label> <label> <input class="ace" name="gypZsZsfs"
-							id="gypZsZsfs" type="checkbox" value="µñ¿Ì"
-							${originaldataEntity.gypZsZsfs eq "µñ¿Ì"?"checked":""} required />
-							<span class="lbl">µñ¿Ì</span>
+							id="gypZsZsfs" type="checkbox" value="é›•åˆ»"
+							${originaldataEntity.gypZsZsfs eq "é›•åˆ»"?"checked":""} required />
+							<span class="lbl">é›•åˆ»</span>
 						</label> <label> <input class="ace" name="gypZsZsfs"
-							id="gypZsZsfs" type="checkbox" value="°ü±ß"
-							${originaldataEntity.gypZsZsfs eq "°ü±ß"?"checked":""} required />
-							<span class="lbl">°ü±ß</span>
+							id="gypZsZsfs" type="checkbox" value="åŒ…è¾¹"
+							${originaldataEntity.gypZsZsfs eq "åŒ…è¾¹"?"checked":""} required />
+							<span class="lbl">åŒ…è¾¹</span>
 						</label> <label> <input class="ace" name="gypZsZsfs"
-							id="gypZsZsfs" type="checkbox" value="·ìÖÆ»¨±ß"
-							${originaldataEntity.gypZsZsfs eq "·ìÖÆ»¨±ß"?"checked":""} required />
-							<span class="lbl">·ìÖÆ»¨±ß</span>
+							id="gypZsZsfs" type="checkbox" value="ç¼åˆ¶èŠ±è¾¹"
+							${originaldataEntity.gypZsZsfs eq "ç¼åˆ¶èŠ±è¾¹"?"checked":""} required />
+							<span class="lbl">ç¼åˆ¶èŠ±è¾¹</span>
 						</label> <label> <input class="ace" name="gypZsZsfs"
-							id="gypZsZsfs" type="checkbox" value="±¦Ê¯"
-							${originaldataEntity.gypZsZsfs eq "±¦Ê¯"?"checked":""} required />
-							<span class="lbl">±¦Ê¯</span>
+							id="gypZsZsfs" type="checkbox" value="å®çŸ³"
+							${originaldataEntity.gypZsZsfs eq "å®çŸ³"?"checked":""} required />
+							<span class="lbl">å®çŸ³</span>
 						</label> <label> <input class="ace" name="gypZsZsfs"
-							id="gypZsZsfs" type="checkbox" value="ÆäËü×°ÊÎ·½Ê½"
-							${originaldataEntity.gypZsZsfs eq "ÆäËü×°ÊÎ·½Ê½"?"checked":""} required />
-							<span class="lbl">ÆäËü×°ÊÎ·½Ê½</span>
+							id="gypZsZsfs" type="checkbox" value="å…¶å®ƒè£…é¥°æ–¹å¼"
+							${originaldataEntity.gypZsZsfs eq "å…¶å®ƒè£…é¥°æ–¹å¼"?"checked":""} required />
+							<span class="lbl">å…¶å®ƒè£…é¥°æ–¹å¼</span>
 						</label>
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZsZta">×°ÊÎ-Ö÷Í¼°¸</label>
+					for="gypZsZta">è£…é¥°-ä¸»å›¾æ¡ˆ</label>
 				<div class="col-sm-9">
 					<div class="checkbox">
 						<label> <input class="ace" name="gypZsZta" id="gypZsZta"
-							type="checkbox" value="Ö²Îï»¨»Ü"
-							${originaldataEntity.gypZsZta eq "Ö²Îï»¨»Ü"?"checked":""} required />
-							<span class="lbl">Ö²Îï»¨»Ü</span>
+							type="checkbox" value="æ¤ç‰©èŠ±å‰"
+							${originaldataEntity.gypZsZta eq "æ¤ç‰©èŠ±å‰"?"checked":""} required />
+							<span class="lbl">æ¤ç‰©èŠ±å‰</span>
 						</label> <label> <input class="ace" name="gypZsZta" id="gypZsZta"
-							type="checkbox" value="¶¯Îï"
-							${originaldataEntity.gypZsZta eq "¶¯Îï"?"checked":""} required /> <span
-							class="lbl">¶¯Îï</span>
+							type="checkbox" value="åŠ¨ç‰©"
+							${originaldataEntity.gypZsZta eq "åŠ¨ç‰©"?"checked":""} required /> <span
+							class="lbl">åŠ¨ç‰©</span>
 						</label> <label> <input class="ace" name="gypZsZta" id="gypZsZta"
-							type="checkbox" value="×ÔÈ»"
-							${originaldataEntity.gypZsZta eq "×ÔÈ»"?"checked":""} required /> <span
-							class="lbl">×ÔÈ»</span>
+							type="checkbox" value="è‡ªç„¶"
+							${originaldataEntity.gypZsZta eq "è‡ªç„¶"?"checked":""} required /> <span
+							class="lbl">è‡ªç„¶</span>
 						</label> <label> <input class="ace" name="gypZsZta" id="gypZsZta"
-							type="checkbox" value="¼¸ºÎ"
-							${originaldataEntity.gypZsZta eq "¼¸ºÎ"?"checked":""} required /> <span
-							class="lbl">¼¸ºÎ</span>
+							type="checkbox" value="å‡ ä½•"
+							${originaldataEntity.gypZsZta eq "å‡ ä½•"?"checked":""} required /> <span
+							class="lbl">å‡ ä½•</span>
 						</label> <label> <input class="ace" name="gypZsZta" id="gypZsZta"
-							type="checkbox" value="ÎÄ×Ö"
-							${originaldataEntity.gypZsZta eq "ÎÄ×Ö"?"checked":""} required /> <span
-							class="lbl">ÎÄ×Ö</span>
+							type="checkbox" value="æ–‡å­—"
+							${originaldataEntity.gypZsZta eq "æ–‡å­—"?"checked":""} required /> <span
+							class="lbl">æ–‡å­—</span>
 						</label> <label> <input class="ace" name="gypZsZta" id="gypZsZta"
-							type="checkbox" value="×Ú½ÌÐÅÑö"
-							${originaldataEntity.gypZsZta eq "×Ú½ÌÐÅÑö"?"checked":""} required />
-							<span class="lbl">×Ú½ÌÐÅÑö</span>
+							type="checkbox" value="å®—æ•™ä¿¡ä»°"
+							${originaldataEntity.gypZsZta eq "å®—æ•™ä¿¡ä»°"?"checked":""} required />
+							<span class="lbl">å®—æ•™ä¿¡ä»°</span>
 						</label> <label> <input class="ace" name="gypZsZta" id="gypZsZta"
-							type="checkbox" value="ÆäËü"
-							${originaldataEntity.gypZsZta eq "ÆäËü"?"checked":""} required /> <span
-							class="lbl">ÆäËü</span>
+							type="checkbox" value="å…¶å®ƒ"
+							${originaldataEntity.gypZsZta eq "å…¶å®ƒ"?"checked":""} required /> <span
+							class="lbl">å…¶å®ƒ</span>
 						</label>
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypZsMs">×°ÊÎÃèÊö</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypZsMs">è£…é¥°æè¿°</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
-						<input class="form-control" name="gypZsMs" id="gypZsMs"
+						<textarea class="form-control" name="gypZsMs" id="gypZsMs"
 							type="text" value="${originaldataEntity.gypZsMs }"
-							placeholder="×°ÊÎÃèÊö..." maxlength="50" required />
+							placeholder="è£…é¥°æè¿°..." maxlength="1000" required />
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZsGjzp">×°ÊÎ¹¤¾ßÕÕ(ÍêÕû)</label>
+					for="gypZsGjzp">è£…é¥°å·¥å…·ç…§(å®Œæ•´)</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control picture-upload" name="gypZsGjzp"
 							id="gypZsGjzp" type="text"
 							value="${originaldataEntity.gypZsGjzp }"
-							placeholder="×°ÊÎ¹¤¾ßÕÕÆ¬(ÍêÕû)..." /> <span class="input-group-addon">
+							placeholder="è£…é¥°å·¥å…·ç…§ç‰‡(å®Œæ•´)..." /> <span class="input-group-addon">
 							<i class="fa fa-file-image-o bigger-110"></i>
 						</span>
 					</div>
@@ -547,28 +547,28 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZsGjzpjb">×°ÊÎ¹¤¾ßÕÕ(¾Ö²¿)</label>
+					for="gypZsGjzpjb">è£…é¥°å·¥å…·ç…§(å±€éƒ¨)</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control picture-upload" name="gypZsGjzpjb"
 							id="gypZsGjzpjb" type="text"
 							value="${originaldataEntity.gypZsGjzpjb }"
-							placeholder="×°ÊÎ¹¤¾ßÕÕÆ¬(¾Ö²¿)..." /> <span class="input-group-addon">
+							placeholder="è£…é¥°å·¥å…·ç…§ç‰‡(å±€éƒ¨)..." /> <span class="input-group-addon">
 							<i class="fa fa-file-image-o bigger-110"></i>
 						</span>
 					</div>
 				</div>
 			</div>
-			<!-- 7-×°ÊÎÇé¿ö¼°Æä¼òÒªÃèÊö===End=== -->
+			<!-- 7-è£…é¥°æƒ…å†µåŠå…¶ç®€è¦æè¿°===End=== -->
 
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypGgxtZtgg">×ÜÌå¹æ¸ñ</label>
+					for="gypGgxtZtgg">æ€»ä½“è§„æ ¼</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control picture-upload" name="gypGgxtZtgg"
 							id="gypGgxtZtgg" type="text"
-							value="${originaldataEntity.gypGgxtZtgg }" placeholder="×ÜÌå¹æ¸ñ..." />
+							value="${originaldataEntity.gypGgxtZtgg }" placeholder="æ€»ä½“è§„æ ¼..." />
 						<span class="input-group-addon"> <i
 							class="fa fa-file-image-o bigger-110"></i>
 						</span>
@@ -577,12 +577,12 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypGgxtJbgg">¾Ö²¿¹æ¸ñ</label>
+					for="gypGgxtJbgg">å±€éƒ¨è§„æ ¼</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control picture-upload" name="gypGgxtJbgg"
 							id="gypGgxtJbgg" type="text"
-							value="${originaldataEntity.gypGgxtJbgg }" placeholder="¾Ö²¿¹æ¸ñ..." />
+							value="${originaldataEntity.gypGgxtJbgg }" placeholder="å±€éƒ¨è§„æ ¼..." />
 						<span class="input-group-addon"> <i
 							class="fa fa-file-image-o bigger-110"></i>
 						</span>
@@ -590,15 +590,15 @@
 				</div>
 			</div>
 
-			<!-- 9-¶àÊÓ½ÇÍ¼ÐÎÍ¼Ïñ===Start=== -->
+			<!-- 9-å¤šè§†è§’å›¾å½¢å›¾åƒ===Start=== -->
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypDstTp">¶àÊÓÍ¼-Í¼Æ¬ </label>
+					for="gypDstTp">å¤šè§†å›¾-å›¾ç‰‡ </label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control picture-upload" name="gypDstTp"
 							id="gypDstTp" type="text" value="${originaldataEntity.gypDstTp }"
-							placeholder="¶àÊÓÍ¼-Í¼Æ¬ ..." /> <span class="input-group-addon">
+							placeholder="å¤šè§†å›¾-å›¾ç‰‡ ..." /> <span class="input-group-addon">
 							<i class="fa fa-file-image-o bigger-110"></i>
 						</span>
 					</div>
@@ -606,29 +606,29 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypDstSst">¶àÊÓÍ¼-ÈýÊÓÍ¼(ÊÓÆµ)</label>
+					for="gypDstSst">å¤šè§†å›¾-ä¸‰è§†å›¾(è§†é¢‘)</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control media-upload" name="gypDstSst"
 							id="gypDstSst" type="text"
 							value="${originaldataEntity.gypDstSst }"
-							placeholder="¶àÊÓÍ¼-ÈýÊÓÍ¼(ÊÓÆµ) ..." /> <span class="input-group-addon">
+							placeholder="å¤šè§†å›¾-ä¸‰è§†å›¾(è§†é¢‘) ..." /> <span class="input-group-addon">
 							<i class="fa fa-file-video-o bigger-110"></i>
 						</span>
 					</div>
 				</div>
 			</div>
-			<!-- 9-¶àÊÓ½ÇÍ¼ÐÎÍ¼Ïñ===End=== -->
+			<!-- 9-å¤šè§†è§’å›¾å½¢å›¾åƒ===End=== -->
 
-			<!-- 10-¼¼ÒÕ´«³ÐÈË===Start=== -->
+			<!-- 10-æŠ€è‰ºä¼ æ‰¿äºº===Start=== -->
 			<%-- <div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypCcx">´«³ÐÈË</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypCcx">ä¼ æ‰¿äºº</label>
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<select class="form-control" id="gypCcx" name="gypCcx"
 						style="width: 100%" required>
 						<c:if test="${empty originaldataEntity}">
-						<option value="" selected="selected">Ñ¡Ôñ´«³ÐÈË</option>
+						<option value="" selected="selected">é€‰æ‹©ä¼ æ‰¿äºº</option>
 						</c:if>
 						<c:forEach var="item" items="${ccrList }">
 							<option value="${item.id }"
@@ -638,27 +638,27 @@
 				</div>
 				</div>
 			</div> --%>
-			<!-- 10-¼¼ÒÕ´«³ÐÈË===End=== -->
+			<!-- 10-æŠ€è‰ºä¼ æ‰¿äºº===End=== -->
 
-			<!-- 11-ÖÆ×÷¹¤¾ß===Start=== -->
+			<!-- 11-åˆ¶ä½œå·¥å…·===Start=== -->
 			<%-- <div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypZzgjCggj">ÖÆ×÷¹¤¾ß-ÊÖ¹¤¹¤¾ß</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypZzgjCggj">åˆ¶ä½œå·¥å…·-æ‰‹å·¥å·¥å…·</label>
 				<div class="col-sm-9">
 				<div class="clearfix">
 					<input class="form-control" name="gypZzgjCggj" id="gypZzgjCggj" type="text"
-						value="${originaldataEntity.gypZzgjCggj }" placeholder="ÖÆ×÷¹¤¾ß-³£¹æ¹¤¾ß ..." required/>
+						value="${originaldataEntity.gypZzgjCggj }" placeholder="åˆ¶ä½œå·¥å…·-å¸¸è§„å·¥å…· ..." required/>
 				</div>
 				</div>
 			</div> --%>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZzgjCggj">ÖÆ×÷¹¤¾ß-ÊÖ¹¤¹¤¾ß</label>
+					for="gypZzgjCggj">åˆ¶ä½œå·¥å…·-æ‰‹å·¥å·¥å…·</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control picture-upload" name="gypZzgjCggj"
 							id="gypZzgjCggj" type="text"
 							value="${originaldataEntity.gypZzgjCggj }"
-							placeholder="ÖÆ×÷¹¤¾ß-ÊÖ¹¤¹¤¾ß..." /> <span class="input-group-addon">
+							placeholder="åˆ¶ä½œå·¥å…·-æ‰‹å·¥å·¥å…·..." /> <span class="input-group-addon">
 							<i class="fa fa-file-image-o bigger-110"></i>
 						</span>
 					</div>
@@ -667,117 +667,117 @@
 
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZzgjZygj">ÖÆ×÷¹¤¾ß-°ëÊÖ¹¤¹¤¾ß</label>
+					for="gypZzgjZygj">åˆ¶ä½œå·¥å…·-åŠæ‰‹å·¥å·¥å…·</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control picture-upload" name="gypZzgjZygj"
 							id="gypZzgjZygj" type="text"
 							value="${originaldataEntity.gypZzgjZygj }"
-							placeholder="ÖÆ×÷¹¤¾ß-°ëÊÖ¹¤¹¤¾ß..." /> <span class="input-group-addon">
+							placeholder="åˆ¶ä½œå·¥å…·-åŠæ‰‹å·¥å·¥å…·..." /> <span class="input-group-addon">
 							<i class="fa fa-file-image-o bigger-110"></i>
 						</span>
 					</div>
 				</div>
 			</div>
-			<!-- 11-ÖÆ×÷¹¤¾ß===End=== -->
+			<!-- 11-åˆ¶ä½œå·¥å…·===End=== -->
 
-			<!-- 12-ÖÆ×÷²ÄÁÏ===Start=== -->
+			<!-- 12-åˆ¶ä½œææ–™===Start=== -->
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZzclCz">ÖÆ×÷²ÄÁÏ²ÄÖÊ</label>
+					for="gypZzclCz">åˆ¶ä½œææ–™æè´¨</label>
 				<div class="col-sm-9">
 					<div class="checkbox">
 						<label> <input class="ace" name="gypZzclCz" id="gypZzclCz"
-							type="checkbox" value="½ðÊô"
-							${originaldataEntity.gypZzclCz eq "½ðÊô"?"checked":""} required />
-							<span class="lbl">½ðÊô</span>
+							type="checkbox" value="é‡‘å±ž"
+							${originaldataEntity.gypZzclCz eq "é‡‘å±ž"?"checked":""} required />
+							<span class="lbl">é‡‘å±ž</span>
 						</label> <label> <input class="ace" name="gypZzclCz"
-							id="gypZzclCz" type="checkbox" value="Ê¯²Ä¡¢±¦Ê¯"
-							${originaldataEntity.gypZzclCz eq "Ê¯²Ä¡¢±¦Ê¯"?"checked":""} required />
-							<span class="lbl">Ê¯²Ä¡¢±¦Ê¯</span>
+							id="gypZzclCz" type="checkbox" value="çŸ³æã€å®çŸ³"
+							${originaldataEntity.gypZzclCz eq "çŸ³æã€å®çŸ³"?"checked":""} required />
+							<span class="lbl">çŸ³æã€å®çŸ³</span>
 						</label> <label> <input class="ace" name="gypZzclCz"
-							id="gypZzclCz" type="checkbox" value="Æ¤¡¢Ã«"
-							${originaldataEntity.gypZzclCz eq "Æ¤¡¢Ã«"?"checked":""} required />
-							<span class="lbl">Æ¤¡¢Ã«</span>
+							id="gypZzclCz" type="checkbox" value="çš®ã€æ¯›"
+							${originaldataEntity.gypZzclCz eq "çš®ã€æ¯›"?"checked":""} required />
+							<span class="lbl">çš®ã€æ¯›</span>
 						</label> <label> <input class="ace" name="gypZzclCz"
-							id="gypZzclCz" type="checkbox" value="¹Ç¡¢½Ç"
-							${originaldataEntity.gypZzclCz eq "¹Ç¡¢½Ç"?"checked":""} required />
-							<span class="lbl">¹Ç¡¢½Ç</span>
+							id="gypZzclCz" type="checkbox" value="éª¨ã€è§’"
+							${originaldataEntity.gypZzclCz eq "éª¨ã€è§’"?"checked":""} required />
+							<span class="lbl">éª¨ã€è§’</span>
 						</label>
 						<%-- <label>
-						<input class="ace" name="gypZzclCz" id="gypZzclCz" type="checkbox" value="²¼ÁÏ" ${originaldataEntity.gypZzclCz eq "²¼ÁÏ"?"checked":""} required/>
-						<span class="lbl">²¼ÁÏ</span>
+						<input class="ace" name="gypZzclCz" id="gypZzclCz" type="checkbox" value="å¸ƒæ–™" ${originaldataEntity.gypZzclCz eq "å¸ƒæ–™"?"checked":""} required/>
+						<span class="lbl">å¸ƒæ–™</span>
 					</label> --%>
 						<%-- <label>
-						<input class="ace" name="gypZzclCz" id="gypZzclCz" type="checkbox" value="Âé¡¢Éþ" ${originaldataEntity.gypZzclCz eq "Âé¡¢Éþ"?"checked":""} required/>
-						<span class="lbl">Âé¡¢Éþ</span>
+						<input class="ace" name="gypZzclCz" id="gypZzclCz" type="checkbox" value="éº»ã€ç»³" ${originaldataEntity.gypZzclCz eq "éº»ã€ç»³"?"checked":""} required/>
+						<span class="lbl">éº»ã€ç»³</span>
 					</label> --%>
 						<label> <input class="ace" name="gypZzclCz" id="gypZzclCz"
-							type="checkbox" value="Ä¾²Ä"
-							${originaldataEntity.gypZzclCz eq "Ä¾²Ä"?"checked":""} required />
-							<span class="lbl">Ä¾²Ä</span>
+							type="checkbox" value="æœ¨æ"
+							${originaldataEntity.gypZzclCz eq "æœ¨æ"?"checked":""} required />
+							<span class="lbl">æœ¨æ</span>
 						</label> <label> <input class="ace" name="gypZzclCz"
-							id="gypZzclCz" type="checkbox" value="ÆäËü"
-							${originaldataEntity.gypZzclCz eq "ÆäËü"?"checked":""} required />
-							<span class="lbl">ÆäËü</span>
+							id="gypZzclCz" type="checkbox" value="å…¶å®ƒ"
+							${originaldataEntity.gypZzclCz eq "å…¶å®ƒ"?"checked":""} required />
+							<span class="lbl">å…¶å®ƒ</span>
 						</label>
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZzclClmc">ÖÆ×÷²ÄÁÏÕÕÆ¬</label>
+					for="gypZzclClmc">åˆ¶ä½œææ–™ç…§ç‰‡</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control picture-upload" name="gypZzclClmc"
 							id="gypZzclClmc" type="text"
 							value="${originaldataEntity.gypZzclClmc }"
-							placeholder="ÖÆ×÷²ÄÁÏÃû³Æ ..." /> <span class="input-group-addon">
+							placeholder="åˆ¶ä½œææ–™åç§° ..." /> <span class="input-group-addon">
 							<i class="fa fa-file-image-o bigger-110"></i>
 						</span>
 					</div>
 				</div>
 			</div>
-			<!-- 12-ÖÆ×÷²ÄÁÏ===End=== -->
+			<!-- 12-åˆ¶ä½œææ–™===End=== -->
 
-			<!-- 13-Ê¹ÓÃ³¡ºÏ¼°¹¦ÄÜÃèÊö===Start=== -->
+			<!-- 13-ä½¿ç”¨åœºåˆåŠåŠŸèƒ½æè¿°===Start=== -->
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypSygnSych">Ê¹ÓÃ³¡ºÏ</label>
+					for="gypSygnSych">ä½¿ç”¨åœºåˆ</label>
 				<div class="col-sm-9">
 					<div class="checkbox">
 						<label> <input class="ace" name="gypSygnSych"
-							id="gypSygnSych" type="checkbox" value="ÈÕ³£Ê¹ÓÃ"
-							${originaldataEntity.gypSygnSych eq "ÈÕ³£Ê¹ÓÃ"?"checked":""} required />
-							<span class="lbl">ÈÕ³£Ê¹ÓÃ</span>
+							id="gypSygnSych" type="checkbox" value="æ—¥å¸¸ä½¿ç”¨"
+							${originaldataEntity.gypSygnSych eq "æ—¥å¸¸ä½¿ç”¨"?"checked":""} required />
+							<span class="lbl">æ—¥å¸¸ä½¿ç”¨</span>
 						</label> <label> <input class="ace" name="gypSygnSych"
-							id="gypSygnSych" type="checkbox" value="×Ú½ÌÐÅÑö»î¶¯"
-							${originaldataEntity.gypSygnSych eq "×Ú½ÌÐÅÑö»î¶¯"?"checked":""}
-							required /> <span class="lbl">×Ú½ÌÐÅÑö»î¶¯</span>
+							id="gypSygnSych" type="checkbox" value="å®—æ•™ä¿¡ä»°æ´»åŠ¨"
+							${originaldataEntity.gypSygnSych eq "å®—æ•™ä¿¡ä»°æ´»åŠ¨"?"checked":""}
+							required /> <span class="lbl">å®—æ•™ä¿¡ä»°æ´»åŠ¨</span>
 						</label> <label> <input class="ace" name="gypSygnSych"
-							id="gypSygnSych" type="checkbox" value="ÃñË×ÀñÒÇ"
-							${originaldataEntity.gypSygnSych eq "ÃñË×ÀñÒÇ"?"checked":""} required />
-							<span class="lbl">ÃñË×ÀñÒÇ</span>
+							id="gypSygnSych" type="checkbox" value="æ°‘ä¿—ç¤¼ä»ª"
+							${originaldataEntity.gypSygnSych eq "æ°‘ä¿—ç¤¼ä»ª"?"checked":""} required />
+							<span class="lbl">æ°‘ä¿—ç¤¼ä»ª</span>
 						</label> <label> <input class="ace" name="gypSygnSych"
-							id="gypSygnSych" type="checkbox" value="ÖØ´ó½ÚÈÕ"
-							${originaldataEntity.gypSygnSych eq "ÖØ´ó½ÚÈÕ"?"checked":""} required />
-							<span class="lbl">ÖØ´ó½ÚÈÕ</span>
+							id="gypSygnSych" type="checkbox" value="é‡å¤§èŠ‚æ—¥"
+							${originaldataEntity.gypSygnSych eq "é‡å¤§èŠ‚æ—¥"?"checked":""} required />
+							<span class="lbl">é‡å¤§èŠ‚æ—¥</span>
 						</label> <label> <input class="ace" name="gypSygnSych"
-							id="gypSygnSych" type="checkbox" value="ÆäËü"
-							${originaldataEntity.gypSygnSych eq "ÆäËü"?"checked":""} required />
-							<span class="lbl">ÆäËü</span>
+							id="gypSygnSych" type="checkbox" value="å…¶å®ƒ"
+							${originaldataEntity.gypSygnSych eq "å…¶å®ƒ"?"checked":""} required />
+							<span class="lbl">å…¶å®ƒ</span>
 						</label>
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypSygnSysp">Ê¹ÓÃÊÓÆµ</label>
+					for="gypSygnSysp">ä½¿ç”¨è§†é¢‘</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control media-upload" name="gypSygnSysp"
 							id="gypSygnSysp" type="text"
-							value="${originaldataEntity.gypSygnSysp }" placeholder="Ê¹ÓÃÊÓÆµ ..." />
+							value="${originaldataEntity.gypSygnSysp }" placeholder="ä½¿ç”¨è§†é¢‘ ..." />
 						<span class="input-group-addon"> <i
 							class="fa fa-file-video-o bigger-110"></i>
 						</span>
@@ -786,29 +786,29 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypSygnSyyp">Ê¹ÓÃÒôÆµ</label>
+					for="gypSygnSyyp">ä½¿ç”¨éŸ³é¢‘</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control media-upload" name="gypSygnSyyp"
 							id="gypSygnSyyp" type="text"
-							value="${originaldataEntity.gypSygnSyyp }" placeholder="Ê¹ÓÃÒôÆµ ..." />
+							value="${originaldataEntity.gypSygnSyyp }" placeholder="ä½¿ç”¨éŸ³é¢‘ ..." />
 						<span class="input-group-addon"> <i
 							class="fa fa-file-video-o bigger-110"></i>
 						</span>
 					</div>
 				</div>
 			</div>
-			<!-- 13-Ê¹ÓÃ³¡ºÏ¼°¹¦ÄÜÃèÊö===End=== -->
+			<!-- 13-ä½¿ç”¨åœºåˆåŠåŠŸèƒ½æè¿°===End=== -->
 
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZzlcZzsp">ÖÆ×÷Á÷³Ì-ÖÆ×÷ÊÓÆµ</label>
+					for="gypZzlcZzsp">åˆ¶ä½œæµç¨‹-åˆ¶ä½œè§†é¢‘</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control media-upload" name="gypZzlcZzsp"
 							id="gypZzlcZzsp" type="text"
 							value="${originaldataEntity.gypZzlcZzsp }"
-							placeholder="ÖÆ×÷Á÷³Ì-ÖÆ×÷ÊÓÆµ ..." /> <span class="input-group-addon">
+							placeholder="åˆ¶ä½œæµç¨‹-åˆ¶ä½œè§†é¢‘ ..." /> <span class="input-group-addon">
 							<i class="fa fa-file-video-o bigger-110"></i>
 						</span>
 					</div>
@@ -816,13 +816,13 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypZzlcZzyp">ÖÆ×÷Á÷³Ì-ÖÆ×÷ÒôÆµ</label>
+					for="gypZzlcZzyp">åˆ¶ä½œæµç¨‹-åˆ¶ä½œéŸ³é¢‘</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control media-upload" name="gypZzlcZzyp"
 							id="gypZzlcZzyp" type="text"
 							value="${originaldataEntity.gypZzlcZzyp }"
-							placeholder="ÖÆ×÷Á÷³Ì-ÖÆ×÷ÒôÆµ ..." /> <span class="input-group-addon">
+							placeholder="åˆ¶ä½œæµç¨‹-åˆ¶ä½œéŸ³é¢‘ ..." /> <span class="input-group-addon">
 							<i class="fa fa-file-video-o bigger-110"></i>
 						</span>
 					</div>
@@ -830,12 +830,12 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypSycsCssp">´«ËµÊÓÆµ</label>
+					for="gypSycsCssp">ä¼ è¯´è§†é¢‘</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control media-upload" name="gypSycsCssp"
 							id="gypSycsCssp" type="text"
-							value="${originaldataEntity.gypSycsCssp }" placeholder="´«ËµÊÓÆµ..." />
+							value="${originaldataEntity.gypSycsCssp }" placeholder="ä¼ è¯´è§†é¢‘..." />
 						<span class="input-group-addon"> <i
 							class="fa fa-file-video-o bigger-110"></i>
 						</span>
@@ -844,12 +844,12 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypSycsCsyp">´«ËµÒôÆµ</label>
+					for="gypSycsCsyp">ä¼ è¯´éŸ³é¢‘</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control media-upload" name="gypSycsCsyp"
 							id="gypSycsCsyp" type="text"
-							value="${originaldataEntity.gypSycsCsyp }" placeholder="´«ËµÒôÆµ..." />
+							value="${originaldataEntity.gypSycsCsyp }" placeholder="ä¼ è¯´éŸ³é¢‘..." />
 						<span class="input-group-addon"> <i
 							class="fa fa-file-video-o bigger-110"></i>
 						</span>
@@ -858,79 +858,79 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypDyrXm">µ÷ÑÐÈËÐÕÃû</label>
+					for="gypDyrXm">è°ƒç ”äººå§“å</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypDyrXm" id="gypDyrXm"
 							type="text" value="${originaldataEntity.gypDyrXm }"
-							placeholder="µ÷ÑÐÈËÐÕÃû..." required />
+							placeholder="è°ƒç ”äººå§“å..." required />
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypDyrLxfs">µ÷ÑÐÈËÁªÏµ·½Ê½</label>
+					for="gypDyrLxfs">è°ƒç ”äººè”ç³»æ–¹å¼</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypDyrLxfs" id="gypDyrLxfs"
 							type="text" value="${originaldataEntity.gypDyrLxfs }"
-							placeholder="µ÷ÑÐÈËÁªÏµ·½Ê½..." onblur="checkTel('gypDyrLxfs')" maxlength="20"/>
+							placeholder="è°ƒç ”äººè”ç³»æ–¹å¼..." onblur="checkTel('gypDyrLxfs')" maxlength="20"/>
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypDyrDw">µ÷ÑÐÈËµ¥Î»</label>
+					for="gypDyrDw">è°ƒç ”äººå•ä½</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypDyrDw" id="gypDyrDw"
 							type="text" value="${originaldataEntity.gypDyrDw }"
-							placeholder="µ÷ÑÐÈËµ¥Î»..." maxlength="20" />
+							placeholder="è°ƒç ”äººå•ä½..." maxlength="20" />
 					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypDyrWzzlr">ÎÄ×ÖÕûÀíÈËÐÕÃû</label>
+					for="gypDyrWzzlr">æ–‡å­—æ•´ç†äººå§“å</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypDyrWzzlr" id="gypDyrWzzlr"
 							type="text" value="${originaldataEntity.gypDyrWzzlr}"
-							placeholder="ÎÄ×ÖÕûÀíÈËÐÕÃû..." maxlength="10" />
+							placeholder="æ–‡å­—æ•´ç†äººå§“å..." maxlength="10" />
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypDyrTpclr">Í¼Æ¬´¦ÀíÈËÐÕÃû</label>
+					for="gypDyrTpclr">å›¾ç‰‡å¤„ç†äººå§“å</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypDyrTpclr" id="gypDyrTpclr"
 							type="text" value="${originaldataEntity.gypDyrTpclr}"
-							placeholder="Í¼Æ¬´¦ÀíÈËÐÕÃû..." maxlength="10" />
+							placeholder="å›¾ç‰‡å¤„ç†äººå§“å..." maxlength="10" />
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypDyrSpclr">ÊÓÆµ´¦ÀíÈËÐÕÃû</label>
+					for="gypDyrSpclr">è§†é¢‘å¤„ç†äººå§“å</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypDyrSpclr" id="gypDyrSpclr"
 							type="text" value="${originaldataEntity.gypDyrSpclr}"
-							placeholder="ÊÓÆµ´¦ÀíÈËÐÕÃû..." maxlength="10" />
+							placeholder="è§†é¢‘å¤„ç†äººå§“å..." maxlength="10" />
 					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="control-label col-sm-2 no-padding-right"
-					for="gypDyrTbsj">Ìî±íÊ±¼ä</label>
+					for="gypDyrTbsj">å¡«è¡¨æ—¶é—´</label>
 				<div class="col-sm-9">
 					<div class="input-group">
 						<input class="form-control form_datetime" name="gypDyrTbsj"
-							id="gypDyrTbsj" type="text" placeholder="Ìî±íÊ±¼ä..."
+							id="gypDyrTbsj" type="text" placeholder="å¡«è¡¨æ—¶é—´..."
 							value="<fmt:formatDate value="${originaldataEntity.gypDyrTbsj}" type="date"/>"
 							required /> <span class="input-group-addon"> <i
 							class="fa fa-calendar bigger-110"></i>
@@ -939,11 +939,11 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2 no-padding-right" for="gypBz">±¸×¢</label>
+				<label class="control-label col-sm-2 no-padding-right" for="gypBz">å¤‡æ³¨</label>
 				<div class="col-sm-9">
 					<div class="clearfix">
 						<input class="form-control" name="gypBz" id="gypBz" type="text"
-							value="${originaldataEntity.gypBz }" placeholder="±¸×¢..."
+							value="${originaldataEntity.gypBz }" placeholder="å¤‡æ³¨..."
 							maxlength="50" />
 					</div>
 				</div>
@@ -958,16 +958,16 @@
 		class="btn btn-success btn-sm">
 		<i class="fa fa-user-plus"></i>&nbsp;
 		<c:if test="${empty originaldataEntity}">
-		Ìí¼Ó
+		æ·»åŠ 
 		</c:if>
 		<c:if test="${!empty originaldataEntity}">
-		±£´æ
+		ä¿å­˜
 		</c:if>
 	</button>
 	<button id="btn" type="button"
 <%--		onclick="webside.common.loadPage('/originaldata/treelistUI.html<c:if test="${!empty originaldataEntity}">?page=${page.pageNum }&rows=${page.pageSize }&sidx=${page.orderByColumn }&sord=${page.orderByType }</c:if>')"--%>
 			onclick="webside.common.loadPage('/originaldata/dtreelistUI.html')"
 		class="btn btn-info btn-sm">
-		<i class="fa fa-undo"></i>&nbsp;·µ»Ø
+		<i class="fa fa-undo"></i>&nbsp;è¿”å›ž
 	</button>
 </div>

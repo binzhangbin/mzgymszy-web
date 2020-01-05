@@ -1,20 +1,20 @@
 var dtGridColumns = [{
     id : 'triggerName',
-    title : 'triggerÃû³Æ',
+    title : 'triggeråç§°',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs'
 }, {
     id : 'triggerGroup',
-    title : 'trigger×é',
+    title : 'triggerç»„',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs'
 }, {
     id : 'triggerStatus',
-    title : 'ÈÎÎñ×´Ì¬',
+    title : 'ä»»åŠ¡çŠ¶æ€',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
@@ -22,36 +22,36 @@ var dtGridColumns = [{
     resolution : function(value, record, column, grid, dataNo, columnNo) {
         if(value == 'NONE')
         {
-            return '<span class="label label-sm label-pink arrowed arrowed-right">Î´Öª</span>';
+            return '<span class="label label-sm label-pink arrowed arrowed-right">æœªçŸ¥</span>';
         }else if (value=='NORMAL') 
         {
-            return '<span class="label label-sm label-info arrowed arrowed-right">Õı³£</span>';
+            return '<span class="label label-sm label-info arrowed arrowed-right">æ­£å¸¸</span>';
         } else if(value == 'PAUSED')
         {
-            return '<span class="label label-sm label-warning arrowed arrowed-right">ÒÑÔİÍ£</span>';
+            return '<span class="label label-sm label-warning arrowed arrowed-right">å·²æš‚åœ</span>';
         }else if(value == 'COMPLETE')
         {
-            return '<span class="label label-sm label-success arrowed arrowed-right">ÒÑÍê³É</span>';
+            return '<span class="label label-sm label-success arrowed arrowed-right">å·²å®Œæˆ</span>';
         }else if(value == 'ERROR')
         {
-            return '<span class="label label-sm label-danger arrowed arrowed-right">Òì³£</span>';
+            return '<span class="label label-sm label-danger arrowed arrowed-right">å¼‚å¸¸</span>';
         }else if(value == 'BLOCKED')
         {
-            return '<span class="label label-sm label-light arrowed arrowed-right">µÈ´ıÔËĞĞ</span>';
+            return '<span class="label label-sm label-light arrowed arrowed-right">ç­‰å¾…è¿è¡Œ</span>';
         }else
         {
-            return '<span class="label label-sm label-pink arrowed arrowed-right">Î´Öª</span>';
+            return '<span class="label label-sm label-pink arrowed arrowed-right">æœªçŸ¥</span>';
         }
     }
 }, {
     id : 'cronExpression',
-    title : 'cron±í´ïÊ½',
+    title : 'cronè¡¨è¾¾å¼',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'nextFireTime',
-    title : 'ÏÂ´Î´¥·¢Ê±¼ä',
+    title : 'ä¸‹æ¬¡è§¦å‘æ—¶é—´',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype : 'string',
@@ -68,7 +68,7 @@ var dtGridColumns = [{
     }
 }, {
     id : 'startDate',
-    title : 'Ö´ĞĞ¿ªÊ¼Ê±¼ä',
+    title : 'æ‰§è¡Œå¼€å§‹æ—¶é—´',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype : 'string',
@@ -85,7 +85,7 @@ var dtGridColumns = [{
     }
 }, {
     id : 'endDate',
-    title : 'Ö´ĞĞ½áÊøÊ±¼ä',
+    title : 'æ‰§è¡Œç»“æŸæ—¶é—´',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype : 'string',
@@ -102,7 +102,7 @@ var dtGridColumns = [{
     }
 }];
 
-//¶¯Ì¬ÉèÖÃjqGridµÄrowNum
+//åŠ¨æ€è®¾ç½®jqGridçš„rowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -110,8 +110,8 @@ var dtGridOption = {
     lang : 'zh-cn',
     ajaxLoad : true,
     loadAll : true,
-    postParams : true,//ÊÇ·ñ´«µİ²ÎÊı,Ö»ÔÚloadAll=trueÊ±ÓĞĞ§
-    isreload : true,//Ë¢ĞÂÊ±ÊÇ·ñÖØĞÂ´Ó·şÎñÆ÷»ñÈ¡Êı¾İ,Ö»ÔÚloadAll=trueÊ±ÓĞĞ§
+    postParams : true,//æ˜¯å¦ä¼ é€’å‚æ•°,åªåœ¨loadAll=trueæ—¶æœ‰æ•ˆ
+    isreload : true,//åˆ·æ–°æ—¶æ˜¯å¦é‡æ–°ä»æœåŠ¡å™¨è·å–æ•°æ®,åªåœ¨loadAll=trueæ—¶æœ‰æ•ˆ
     check : true,
     checkWidth :'37px',
     extraWidth : '37px',
@@ -133,8 +133,8 @@ $(function() {
 });
 
 /**
- * ×Ô¶¨Òå²éÑ¯
- * ÕâÀï²»´«Èë·ÖÒ³ĞÅÏ¢£¬·ÀÖ¹É¾³ı¼ÇÂ¼ºóÖØĞÂ¼ÆËãµÄÒ³Âë±Èµ±Ç°Ò³ÂëĞ¡¶øµ¼ÖÂ¼ÆËãÒì³£
+ * è‡ªå®šä¹‰æŸ¥è¯¢
+ * è¿™é‡Œä¸ä¼ å…¥åˆ†é¡µä¿¡æ¯ï¼Œé˜²æ­¢åˆ é™¤è®°å½•åé‡æ–°è®¡ç®—çš„é¡µç æ¯”å½“å‰é¡µç å°è€Œå¯¼è‡´è®¡ç®—å¼‚å¸¸
  */
 function customSearch() {
     grid.parameters = new Object();

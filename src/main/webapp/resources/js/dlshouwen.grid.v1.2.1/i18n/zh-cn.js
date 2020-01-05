@@ -10,10 +10,10 @@
 	}
 	$.fn.dlshouwen.grid.lang['zh-cn'] = {
 		errors : {
-			ajaxLoadError : 'Êı¾İ¼ÓÔØÊ§°Ü£¬Çë¼ì²éÄúµÄÌõ¼şÅäÖÃÊÇ·ñ´æÔÚ´íÎó¡£'
+			ajaxLoadError : 'æ•°æ®åŠ è½½å¤±è´¥ï¼Œè¯·æ£€æŸ¥æ‚¨çš„æ¡ä»¶é…ç½®æ˜¯å¦å­˜åœ¨é”™è¯¯ã€‚'
 		},
 		buttons : {
-			close : '<i class="fa fa-times"></i>&nbsp;&nbsp;¹Ø±Õ'
+			close : '<i class="fa fa-times"></i>&nbsp;&nbsp;å…³é—­'
 		},
 		extraColumn : {
 			open : '<i class="fa fa-plus"></i>',
@@ -25,240 +25,240 @@
 		},
 		toolbar : {
 			refresh : '<i class="fa fa-refresh"></i>',
-			refreshTitle : 'Ë¢ĞÂÊı¾İ',
+			refreshTitle : 'åˆ·æ–°æ•°æ®',
 			fastQuery : '<i class="fa fa-search"></i>',
-			fastQueryTitle : '¿ìËÙ²éÑ¯',
+			fastQueryTitle : 'å¿«é€ŸæŸ¥è¯¢',
 			advanceQuery : '<i class="fa fa-filter"></i>',
-			advanceQueryTitle : '¸ß¼¶²éÑ¯',
+			advanceQueryTitle : 'é«˜çº§æŸ¥è¯¢',
 			exportExcel : '<i class="fa fa-file-excel-o"></i> EXCEL',
-			exportExcelTitle : 'µ¼³öEXCELÎÄ¼ş',
+			exportExcelTitle : 'å¯¼å‡ºEXCELæ–‡ä»¶',
 			exportCsv : '<i class="fa fa-file-o"></i> CSV',
-			exportCsvTitle : 'µ¼³öCSVÎÄ¼ş',
+			exportCsvTitle : 'å¯¼å‡ºCSVæ–‡ä»¶',
 			exportPdf : '<i class="fa fa-file-pdf-o"></i> PDF',
-			exportPdfTitle : 'µ¼³öPDFÎÄ¼ş',
+			exportPdfTitle : 'å¯¼å‡ºPDFæ–‡ä»¶',
 			exportTxt : '<i class="fa fa-file-o"></i> TXT',
-			exportTxtTitle : 'µ¼³öTXTÎÄ¼ş',
+			exportTxtTitle : 'å¯¼å‡ºTXTæ–‡ä»¶',
 			print : '<i class="fa fa-print"></i>',
-			printTitle : '´òÓ¡'
+			printTitle : 'æ‰“å°'
 		},
 		pageInfo : {
-			nothing : 'ÎŞ²éÑ¯¼ÇÂ¼...',
-			info : '²éÑ¯³ö {recordCount} Ìõ¼ÇÂ¼£¬Ã¿Ò³ {pageSize} Ìõ£¬¹²  {pageCount} Ò³',
+			nothing : 'æ— æŸ¥è¯¢è®°å½•...',
+			info : 'æŸ¥è¯¢å‡º {recordCount} æ¡è®°å½•ï¼Œæ¯é¡µ {pageSize} æ¡ï¼Œå…±  {pageCount} é¡µ',
 			firstPage : '<i class="fa fa-angle-double-left"></i>',
 			prevPage : '<i class="fa fa-angle-left"></i>',
 			nextPage : '<i class="fa fa-angle-right"></i>',
 			lastPage : '<i class="fa fa-angle-double-right"></i>',
-			firstPageTitle : 'µÚÒ»Ò³',
-			prevPageTitle : 'ÉÏÒ»Ò³',
-			nextPageTitle : 'ÏÂÒ»Ò³',
-			lastPageTitle : '×îºóÒ»Ò³',
-			alreadyFirstPage : 'ÒÑ¾­ÊÇµÚÒ»Ò³ÁË',
-			alreadyLastPage : 'ÒÑ¾­ÊÇ×îºóÒ»Ò³ÁË',
+			firstPageTitle : 'ç¬¬ä¸€é¡µ',
+			prevPageTitle : 'ä¸Šä¸€é¡µ',
+			nextPageTitle : 'ä¸‹ä¸€é¡µ',
+			lastPageTitle : 'æœ€åä¸€é¡µ',
+			alreadyFirstPage : 'å·²ç»æ˜¯ç¬¬ä¸€é¡µäº†',
+			alreadyLastPage : 'å·²ç»æ˜¯æœ€åä¸€é¡µäº†',
 			nowPage : '{nowPage}',
-			nowPageTitle : 'µÚ {nowPage} Ò³',
+			nowPageTitle : 'ç¬¬ {nowPage} é¡µ',
 			errors : {
-				notANumber : 'ÄúÊäÈëµÄÄÚÈİ²»ÊÇÊı×Ö',
-				maxPageSize : 'Ã¿Ò³ÏÔÊ¾ÊıÁ¿²»µÃ³¬¹ı {pageSizeLimit} Ìõ£¬ÒÑ»¹Ô­ÎªÔ­ÉèÖÃ'
+				notANumber : 'æ‚¨è¾“å…¥çš„å†…å®¹ä¸æ˜¯æ•°å­—',
+				maxPageSize : 'æ¯é¡µæ˜¾ç¤ºæ•°é‡ä¸å¾—è¶…è¿‡ {pageSizeLimit} æ¡ï¼Œå·²è¿˜åŸä¸ºåŸè®¾ç½®'
 			}
 		},
 		fastQuery : {
-			title : '<i class="fa fa-search"></i>&nbsp;&nbsp;¿ìËÙ²éÑ¯',
-			codeTableSelectAll : 'È«²¿',
-			input : 'ÇëÊäÈë',
-			selectStart : 'ÇëÑ¡Ôñ¿ªÊ¼',
-			selectEnd : 'ÇëÑ¡Ôñ½áÊø',
-			inputStart : 'ÇëÊäÈë¿ªÊ¼',
-			inputEnd : 'ÇëÊäÈë½áÊø',
+			title : '<i class="fa fa-search"></i>&nbsp;&nbsp;å¿«é€ŸæŸ¥è¯¢',
+			codeTableSelectAll : 'å…¨éƒ¨',
+			input : 'è¯·è¾“å…¥',
+			selectStart : 'è¯·é€‰æ‹©å¼€å§‹',
+			selectEnd : 'è¯·é€‰æ‹©ç»“æŸ',
+			inputStart : 'è¯·è¾“å…¥å¼€å§‹',
+			inputEnd : 'è¯·è¾“å…¥ç»“æŸ',
 			buttons : {
-				reset : '<i class="fa fa-reply"></i>&nbsp;&nbsp;²ÎÊıÖØÖÃ',
-				query : '<i class="fa fa-search"></i>&nbsp;&nbsp;Ö´ĞĞ²éÑ¯'
+				reset : '<i class="fa fa-reply"></i>&nbsp;&nbsp;å‚æ•°é‡ç½®',
+				query : '<i class="fa fa-search"></i>&nbsp;&nbsp;æ‰§è¡ŒæŸ¥è¯¢'
 			}
 		},
 		advanceQuery : {
-			title : '<i class="fa fa-search"></i>&nbsp;&nbsp;¸ß¼¶²éÑ¯',
+			title : '<i class="fa fa-search"></i>&nbsp;&nbsp;é«˜çº§æŸ¥è¯¢',
 			plan : {
-				title : '²éÑ¯·½°¸',
-				advanceQueryName : '·½°¸Ãû³Æ£º',
-				advanceQueryNamePlaceHoder : 'ÇëÊäÈë·½°¸Ãû³Æ',
-				remark : '±¸×¢£º',
-				remarkPlaceHoder : 'ÇëÊäÈë±¸×¢',
+				title : 'æŸ¥è¯¢æ–¹æ¡ˆ',
+				advanceQueryName : 'æ–¹æ¡ˆåç§°ï¼š',
+				advanceQueryNamePlaceHoder : 'è¯·è¾“å…¥æ–¹æ¡ˆåç§°',
+				remark : 'å¤‡æ³¨ï¼š',
+				remarkPlaceHoder : 'è¯·è¾“å…¥å¤‡æ³¨',
 				buttons : {
-					addAdvanceQuery : '<i class="fa fa-plus"></i>&nbsp;&nbsp;ĞÂÔö',
-					addAdvanceQueryTitle : 'ĞÂÔö¸ß¼¶²éÑ¯·½°¸',
-					editAdvanceQuery : '<i class="fa fa-pencil"></i>&nbsp;&nbsp;±à¼­',
-					editAdvanceQueryTitle : '±à¼­¸ß¼¶²éÑ¯·½°¸',
-					copyAdvanceQuery : '<i class="fa fa-copy"></i>&nbsp;&nbsp;¸´ÖÆ',
-					copyAdvanceQueryTitle : '¸´ÖÆ¸ß¼¶²éÑ¯·½°¸',
-					deleteAdvanceQuery : '<i class="fa fa-trash-o"></i>&nbsp;&nbsp;É¾³ı',
-					deleteAdvanceQueryTitle : 'É¾³ı¸ß¼¶²éÑ¯·½°¸'
+					addAdvanceQuery : '<i class="fa fa-plus"></i>&nbsp;&nbsp;æ–°å¢',
+					addAdvanceQueryTitle : 'æ–°å¢é«˜çº§æŸ¥è¯¢æ–¹æ¡ˆ',
+					editAdvanceQuery : '<i class="fa fa-pencil"></i>&nbsp;&nbsp;ç¼–è¾‘',
+					editAdvanceQueryTitle : 'ç¼–è¾‘é«˜çº§æŸ¥è¯¢æ–¹æ¡ˆ',
+					copyAdvanceQuery : '<i class="fa fa-copy"></i>&nbsp;&nbsp;å¤åˆ¶',
+					copyAdvanceQueryTitle : 'å¤åˆ¶é«˜çº§æŸ¥è¯¢æ–¹æ¡ˆ',
+					deleteAdvanceQuery : '<i class="fa fa-trash-o"></i>&nbsp;&nbsp;åˆ é™¤',
+					deleteAdvanceQueryTitle : 'åˆ é™¤é«˜çº§æŸ¥è¯¢æ–¹æ¡ˆ'
 				}
 			},
 			condition : {
-				title : '²éÑ¯Ìõ¼ş',
+				title : 'æŸ¥è¯¢æ¡ä»¶',
 				table : {
-					sequence : 'ĞòºÅ',
-					operation : '²Ù×÷',
-					leftParentheses : '×óÀ¨ºÅ',
-					field : '×Ö¶Î',
-					condition : 'Ìõ¼ş',
-					value : 'Öµ',
-					rightParentheses : 'ÓÒÀ¨ºÅ',
-					logic : 'Âß¼­',
+					sequence : 'åºå·',
+					operation : 'æ“ä½œ',
+					leftParentheses : 'å·¦æ‹¬å·',
+					field : 'å­—æ®µ',
+					condition : 'æ¡ä»¶',
+					value : 'å€¼',
+					rightParentheses : 'å³æ‹¬å·',
+					logic : 'é€»è¾‘',
 					buttons : {
 						up : '<i class="fa fa-arrow-circle-up"></i>',
-						upTitle : 'Ìõ¼şÉÏÒÆ',
+						upTitle : 'æ¡ä»¶ä¸Šç§»',
 						down : '<i class="fa fa-arrow-circle-down"></i>',
-						downTitle : 'Ìõ¼şÏÂÒÆ',
+						downTitle : 'æ¡ä»¶ä¸‹ç§»',
 						'delete' : '<i class="fa fa-times"></i>',
-						deleteTitle : 'É¾³ıÌõ¼ş'
+						deleteTitle : 'åˆ é™¤æ¡ä»¶'
 					}
 				},
 				buttons : {
-					insert : '<i class="fa fa-plus"></i>&nbsp;&nbsp;ĞÂÔöÒ»ĞĞ',
-					insertTitle : 'ĞÂÔöÒ»ĞĞ',
-					clear : '<i class="fa fa-eraser"></i>&nbsp;&nbsp;Çå¿ÕÌõ¼ş',
-					clearTitle : 'Çå¿ÕÌõ¼ş'
+					insert : '<i class="fa fa-plus"></i>&nbsp;&nbsp;æ–°å¢ä¸€è¡Œ',
+					insertTitle : 'æ–°å¢ä¸€è¡Œ',
+					clear : '<i class="fa fa-eraser"></i>&nbsp;&nbsp;æ¸…ç©ºæ¡ä»¶',
+					clearTitle : 'æ¸…ç©ºæ¡ä»¶'
 				},
 				errors : {
-					fieldMustSelect : '²éÑ¯Ìõ¼şÖĞµÚ {sequence} ĞĞµÄ×Ö¶ÎĞÅÏ¢±ØĞëÑ¡Ôñ£¡',
-					conditionMustSelect : '²éÑ¯Ìõ¼şÖĞµÚ {sequence} ĞĞµÄÌõ¼şĞÅÏ¢±ØĞëÑ¡Ôñ£¡',
-					conditionError : 'ÄúµÄÌõ¼şÓĞÎó£¬ÇëºËÊµºó½øĞĞ²éÑ¯¡£'
+					fieldMustSelect : 'æŸ¥è¯¢æ¡ä»¶ä¸­ç¬¬ {sequence} è¡Œçš„å­—æ®µä¿¡æ¯å¿…é¡»é€‰æ‹©ï¼',
+					conditionMustSelect : 'æŸ¥è¯¢æ¡ä»¶ä¸­ç¬¬ {sequence} è¡Œçš„æ¡ä»¶ä¿¡æ¯å¿…é¡»é€‰æ‹©ï¼',
+					conditionError : 'æ‚¨çš„æ¡ä»¶æœ‰è¯¯ï¼Œè¯·æ ¸å®åè¿›è¡ŒæŸ¥è¯¢ã€‚'
 				}
 			},
 			sort : {
-				title : 'ÅÅĞòÌõ¼ş',
+				title : 'æ’åºæ¡ä»¶',
 				logic : {
-					asc : 'ÉıĞò',
-					desc : '½µĞò'
+					asc : 'å‡åº',
+					desc : 'é™åº'
 				},
 				table : {
-					sequence : 'ĞòºÅ',
-					operation : '²Ù×÷',
-					field : '×Ö¶Î',
-					logic : 'Âß¼­',
+					sequence : 'åºå·',
+					operation : 'æ“ä½œ',
+					field : 'å­—æ®µ',
+					logic : 'é€»è¾‘',
 					buttons : {
 						up : '<i class="fa fa-arrow-circle-up"></i>',
-						upTitle : 'ÅÅĞòÉÏÒÆ',
+						upTitle : 'æ’åºä¸Šç§»',
 						down : '<i class="fa fa-arrow-circle-down"></i>',
-						downTitle : 'ÅÅĞòÏÂÒÆ',
+						downTitle : 'æ’åºä¸‹ç§»',
 						'delete' : '<i class="fa fa-times"></i>',
-						deleteTitle : 'É¾³ıÅÅĞò'
+						deleteTitle : 'åˆ é™¤æ’åº'
 					}
 				},
 				buttons : {
-					insert : '<i class="fa fa-plus"></i>&nbsp;&nbsp;ĞÂÔöÒ»ĞĞ',
-					insertTitle : 'ĞÂÔöÒ»ĞĞ',
-					clear : '<i class="fa fa-eraser"></i>&nbsp;&nbsp;Çå¿ÕÌõ¼ş',
-					clearTitle : 'Çå¿ÕÌõ¼ş'
+					insert : '<i class="fa fa-plus"></i>&nbsp;&nbsp;æ–°å¢ä¸€è¡Œ',
+					insertTitle : 'æ–°å¢ä¸€è¡Œ',
+					clear : '<i class="fa fa-eraser"></i>&nbsp;&nbsp;æ¸…ç©ºæ¡ä»¶',
+					clearTitle : 'æ¸…ç©ºæ¡ä»¶'
 				},
 				errors : {
-					fieldMustSelect : 'ÅÅĞòÌõ¼şÖĞµÚ {sequence} ĞĞµÄ×Ö¶ÎĞÅÏ¢±ØĞëÑ¡Ôñ£¡',
-					logicMustSelect : 'ÅÅĞòÌõ¼şÖĞµÚ {sequence} ĞĞµÄÅÅĞòÂß¼­±ØĞëÑ¡Ôñ£¡'
+					fieldMustSelect : 'æ’åºæ¡ä»¶ä¸­ç¬¬ {sequence} è¡Œçš„å­—æ®µä¿¡æ¯å¿…é¡»é€‰æ‹©ï¼',
+					logicMustSelect : 'æ’åºæ¡ä»¶ä¸­ç¬¬ {sequence} è¡Œçš„æ’åºé€»è¾‘å¿…é¡»é€‰æ‹©ï¼'
 				}
 			},
 			buttons : {
-				query : '<i class="fa fa-search"></i>&nbsp;&nbsp;Ö´ĞĞ²éÑ¯'
+				query : '<i class="fa fa-search"></i>&nbsp;&nbsp;æ‰§è¡ŒæŸ¥è¯¢'
 			}
 		},
 		print : {
-			title : '<i class="fa fa-print"></i>&nbsp;&nbsp;´òÓ¡Ñ¡Ïî',
+			title : '<i class="fa fa-print"></i>&nbsp;&nbsp;æ‰“å°é€‰é¡¹',
 			table : {
-				column : 'ÁĞ',
-				operation : '²Ù×÷',
+				column : 'åˆ—',
+				operation : 'æ“ä½œ',
 				buttons : {
-					up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ÉÏÒÆ',
-					upTitle : 'ÉÏÒÆ',
-					down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ÏÂÒÆ',
-					downTitle : 'ÏÂÒÆ'
+					up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ä¸Šç§»',
+					upTitle : 'ä¸Šç§»',
+					down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ä¸‹ç§»',
+					downTitle : 'ä¸‹ç§»'
 				}
 			},
 			buttons : {
-				print : '<i class="fa fa-print"></i>&nbsp;&nbsp;Ö´ĞĞ´òÓ¡'
+				print : '<i class="fa fa-print"></i>&nbsp;&nbsp;æ‰§è¡Œæ‰“å°'
 			}
 		},
 		'export' : {
 			excel : {
-				title : '<i class="fa fa-download"></i>&nbsp;&nbsp;µ¼³öEXCELÑ¡Ïî',
+				title : '<i class="fa fa-download"></i>&nbsp;&nbsp;å¯¼å‡ºEXCELé€‰é¡¹',
 				exportType : {
-					title : 'µ¼³ö·½Ê½£º',
-					now : 'µ¼³öµ±Ç°Êı¾İ',
-					all : 'µ¼³öÈ«²¿Êı¾İ'
+					title : 'å¯¼å‡ºæ–¹å¼ï¼š',
+					now : 'å¯¼å‡ºå½“å‰æ•°æ®',
+					all : 'å¯¼å‡ºå…¨éƒ¨æ•°æ®'
 				},
 				table : {
-					column : 'ÁĞ',
-					operation : '²Ù×÷',
+					column : 'åˆ—',
+					operation : 'æ“ä½œ',
 					buttons : {
-						up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ÉÏÒÆ',
-						upTitle : 'ÉÏÒÆ',
-						down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ÏÂÒÆ',
-						downTitle : 'ÏÂÒÆ'
+						up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ä¸Šç§»',
+						upTitle : 'ä¸Šç§»',
+						down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ä¸‹ç§»',
+						downTitle : 'ä¸‹ç§»'
 					}
 				},
 				buttons : {
-					'export' : '<i class="fa fa-print"></i>&nbsp;&nbsp;Ö´ĞĞµ¼³öEXCELÎÄ¼ş'
+					'export' : '<i class="fa fa-print"></i>&nbsp;&nbsp;æ‰§è¡Œå¯¼å‡ºEXCELæ–‡ä»¶'
 				}
 			},
 			csv : {
-				title : '<i class="fa fa-download"></i>&nbsp;&nbsp;µ¼³öCSVÑ¡Ïî',
+				title : '<i class="fa fa-download"></i>&nbsp;&nbsp;å¯¼å‡ºCSVé€‰é¡¹',
 				exportType : {
-					title : 'µ¼³ö·½Ê½£º',
-					now : 'µ¼³öµ±Ç°Êı¾İ',
-					all : 'µ¼³öÈ«²¿Êı¾İ'
+					title : 'å¯¼å‡ºæ–¹å¼ï¼š',
+					now : 'å¯¼å‡ºå½“å‰æ•°æ®',
+					all : 'å¯¼å‡ºå…¨éƒ¨æ•°æ®'
 				},
 				table : {
-					column : 'ÁĞ',
-					operation : '²Ù×÷',
+					column : 'åˆ—',
+					operation : 'æ“ä½œ',
 					buttons : {
-						up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ÉÏÒÆ',
-						upTitle : 'ÉÏÒÆ',
-						down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ÏÂÒÆ',
-						downTitle : 'ÏÂÒÆ'
+						up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ä¸Šç§»',
+						upTitle : 'ä¸Šç§»',
+						down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ä¸‹ç§»',
+						downTitle : 'ä¸‹ç§»'
 					}
 				},
 				buttons : {
-					'export' : '<i class="fa fa-print"></i>&nbsp;&nbsp;Ö´ĞĞµ¼³öCSVÎÄ¼ş'
+					'export' : '<i class="fa fa-print"></i>&nbsp;&nbsp;æ‰§è¡Œå¯¼å‡ºCSVæ–‡ä»¶'
 				}
 			},
 			pdf : {
-				title : '<i class="fa fa-download"></i>&nbsp;&nbsp;µ¼³öPDFÑ¡Ïî',
+				title : '<i class="fa fa-download"></i>&nbsp;&nbsp;å¯¼å‡ºPDFé€‰é¡¹',
 				exportType : {
-					title : 'µ¼³ö·½Ê½£º',
-					now : 'µ¼³öµ±Ç°Êı¾İ',
-					all : 'µ¼³öÈ«²¿Êı¾İ'
+					title : 'å¯¼å‡ºæ–¹å¼ï¼š',
+					now : 'å¯¼å‡ºå½“å‰æ•°æ®',
+					all : 'å¯¼å‡ºå…¨éƒ¨æ•°æ®'
 				},
 				table : {
-					column : 'ÁĞ',
-					operation : '²Ù×÷',
+					column : 'åˆ—',
+					operation : 'æ“ä½œ',
 					buttons : {
-						up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ÉÏÒÆ',
-						upTitle : 'ÉÏÒÆ',
-						down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ÏÂÒÆ',
-						downTitle : 'ÏÂÒÆ'
+						up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ä¸Šç§»',
+						upTitle : 'ä¸Šç§»',
+						down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ä¸‹ç§»',
+						downTitle : 'ä¸‹ç§»'
 					}
 				},
 				buttons : {
-					'export' : '<i class="fa fa-print"></i>&nbsp;&nbsp;Ö´ĞĞµ¼³öPDFÎÄ¼ş'
+					'export' : '<i class="fa fa-print"></i>&nbsp;&nbsp;æ‰§è¡Œå¯¼å‡ºPDFæ–‡ä»¶'
 				}
 			},
 			txt : {
-				title : '<i class="fa fa-download"></i>&nbsp;&nbsp;µ¼³öTXTÑ¡Ïî',
+				title : '<i class="fa fa-download"></i>&nbsp;&nbsp;å¯¼å‡ºTXTé€‰é¡¹',
 				exportType : {
-					title : 'µ¼³ö·½Ê½£º',
-					now : 'µ¼³öµ±Ç°Êı¾İ',
-					all : 'µ¼³öÈ«²¿Êı¾İ'
+					title : 'å¯¼å‡ºæ–¹å¼ï¼š',
+					now : 'å¯¼å‡ºå½“å‰æ•°æ®',
+					all : 'å¯¼å‡ºå…¨éƒ¨æ•°æ®'
 				},
 				table : {
-					column : 'ÁĞ',
-					operation : '²Ù×÷',
+					column : 'åˆ—',
+					operation : 'æ“ä½œ',
 					buttons : {
-						up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ÉÏÒÆ',
-						upTitle : 'ÉÏÒÆ',
-						down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ÏÂÒÆ',
-						downTitle : 'ÏÂÒÆ'
+						up : '<i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;ä¸Šç§»',
+						upTitle : 'ä¸Šç§»',
+						down : '<i class="fa fa-arrow-circle-down"></i>&nbsp;&nbsp;ä¸‹ç§»',
+						downTitle : 'ä¸‹ç§»'
 					}
 				},
 				buttons : {
-					'export' : '<i class="fa fa-print"></i>&nbsp;&nbsp;Ö´ĞĞµ¼³öTXTÎÄ¼ş'
+					'export' : '<i class="fa fa-print"></i>&nbsp;&nbsp;æ‰§è¡Œå¯¼å‡ºTXTæ–‡ä»¶'
 				}
 			}
 		}

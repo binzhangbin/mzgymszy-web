@@ -1,32 +1,32 @@
 var dtGridColumns = [{
     id : 'id',
-    title : '±àºÅ',
+    title : 'ç¼–å·',
     type : 'number',
     columnClass : 'text-center',
     hideType : 'xs',
 headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'name',
-    title : '×ÊÔ´Ãû³Æ',
+    title : 'èµ„æºåç§°',
     type : 'string',
     columnClass : 'text-center',
 headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'parentName',
-    title : 'ÉÏ¼¶Ãû³Æ',
+    title : 'ä¸Šçº§åç§°',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'sourceKey',
-    title : '×ÊÔ´±êÊ¶',
+    title : 'èµ„æºæ ‡è¯†',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'xs'
 }, {
     id : 'type',
-    title : '×ÊÔ´ÀàĞÍ',
+    title : 'èµ„æºç±»å‹',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
@@ -34,15 +34,15 @@ headerClass : 'dlshouwen-grid-header'
     resolution : function(value, record, column, grid, dataNo, columnNo) {
         if(value==0)
         {
-            return '<span class="label label-sm label-success arrowed arrowed-in">²Ëµ¥</span>';
+            return '<span class="label label-sm label-success arrowed arrowed-in">èœå•</span>';
         }else
         {
-            return '<span class="label label-sm label-info arrowed arrowed-right">°´Å¥</span>';
+            return '<span class="label label-sm label-info arrowed arrowed-right">æŒ‰é’®</span>';
         }
     }
 }, {
     id : 'icon',
-    title : 'Í¼±ê',
+    title : 'å›¾æ ‡',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
@@ -59,14 +59,14 @@ headerClass : 'dlshouwen-grid-header'
     }
 }, {
     id : 'sourceUrl',
-    title : '×ÊÔ´url',
+    title : 'èµ„æºurl',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'xs|sm'
 }, {
     id : 'createTime',
-    title : '´´½¨Ê±¼ä',
+    title : 'åˆ›å»ºæ—¶é—´',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype : 'string',
@@ -76,7 +76,7 @@ headerClass : 'dlshouwen-grid-header'
     hideType : 'xs|sm|md'
 }, {
     id : 'updateTime',
-    title : '¸üĞÂÊ±¼ä',
+    title : 'æ›´æ–°æ—¶é—´',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype : 'string',
@@ -93,7 +93,7 @@ headerClass : 'dlshouwen-grid-header'
     }
 }];
 
-//¶¯Ì¬ÉèÖÃjqGridµÄrowNum
+//åŠ¨æ€è®¾ç½®jqGridçš„rowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -108,7 +108,7 @@ var dtGridOption = {
     gridContainer : 'dtGridContainer',
     toolbarContainer : 'dtGridToolBarContainer',
     tools : 'refresh|print',
-    exportFileName :'×ÊÔ´ĞÅÏ¢',
+    exportFileName :'èµ„æºä¿¡æ¯',
     pageSize : pageSize,
     pageSizeLimit : [10, 20, 30]
 };
@@ -123,7 +123,7 @@ $(function() {
     grid.load();
     $("#btnSearch").click(customSearch);
     
-    //×¢²á»Ø³µ¼üÊÂ¼ş
+    //æ³¨å†Œå›è½¦é”®äº‹ä»¶
     document.onkeypress = function(e){
     var ev = document.all ? window.event : e;
         if(ev.keyCode==13) {
@@ -134,8 +134,8 @@ $(function() {
 });
 
 /**
- * ×Ô¶¨Òå²éÑ¯
- * ÕâÀï²»´«Èë·ÖÒ³ĞÅÏ¢£¬·ÀÖ¹É¾³ı¼ÇÂ¼ºóÖØĞÂ¼ÆËãµÄÒ³Âë±Èµ±Ç°Ò³ÂëĞ¡¶øµ¼ÖÂ¼ÆËãÒì³£
+ * è‡ªå®šä¹‰æŸ¥è¯¢
+ * è¿™é‡Œä¸ä¼ å…¥åˆ†é¡µä¿¡æ¯ï¼Œé˜²æ­¢åˆ é™¤è®°å½•åé‡æ–°è®¡ç®—çš„é¡µç æ¯”å½“å‰é¡µç å°è€Œå¯¼è‡´è®¡ç®—å¼‚å¸¸
  */
 function customSearch() {
     grid.parameters = new Object();

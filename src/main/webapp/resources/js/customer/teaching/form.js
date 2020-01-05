@@ -16,7 +16,7 @@ $(function() {
 	            area : ['500px', '500px'],
 	            maxmin : true,
 	            shift : 4,
-	            title : '<i class="fa fa-file-image-o"></i>&nbsp;Ñ¡ÔñÍ¼Æ¬',
+	            title : '<i class="fa fa-file-image-o"></i>&nbsp;é€‰æ‹©å›¾ç‰‡',
 	            success: function(){
 	                isLayerOpen=true;
 	            },
@@ -26,7 +26,7 @@ $(function() {
 	        });
 		}
     });
-	/*ÎÄµµ²âÊÔ===Start===*/
+	/*æ–‡æ¡£æµ‹è¯•===Start===*/
 	$('.files-upload').bind('focus', function(event) {
 		if(!isLayerOpen){
 			var pictureLayer = layer.open({
@@ -36,7 +36,7 @@ $(function() {
 				area : ['500px', '500px'],
 				maxmin : true,
 				shift : 4,
-				title : '<i class="fa fa-file-o"></i>&nbsp;Ñ¡ÔñÎÄµµ',
+				title : '<i class="fa fa-file-o"></i>&nbsp;é€‰æ‹©æ–‡æ¡£',
 				success: function(){
 					isLayerOpen=true;
 				},
@@ -46,7 +46,7 @@ $(function() {
 			});
 		}
 	});
-	/*ÎÄµµ²âÊÔ===End===*/
+	/*æ–‡æ¡£æµ‹è¯•===End===*/
 	$('.media-upload').bind('focus', function(event) {
 		if(!isLayerOpen){
 			var mediaLayer = layer.open({
@@ -56,7 +56,7 @@ $(function() {
 	            area : ['500px', '500px'],
 	            maxmin : true,
 	            shift : 4,
-	            title : '<i class="fa fa-file-video-o"></i>&nbsp;Ñ¡ÔñÎÄ¼þ',
+	            title : '<i class="fa fa-file-video-o"></i>&nbsp;é€‰æ‹©æ–‡ä»¶',
 	            success: function(){
 	                isLayerOpen=true;
 	            },

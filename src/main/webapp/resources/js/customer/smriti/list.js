@@ -1,56 +1,56 @@
 var dtGridColumns = [{
     id : 'id',
-    title : '±àºÅ',
+    title : 'ç¼–å·',
     type : 'number',
     columnClass : 'text-center',
     hideType : 'xs',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'cXm',
-    title : '´«³ĞÈËĞÕÃû',
+    title : 'ä¼ æ‰¿äººå§“å',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'cXb',
-    title : 'ĞÔ±ğ',
+    title : 'æ€§åˆ«',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     resolution : function(value, record, column, grid, dataNo, columnNo) {
         if (value == 0) {
-            return '<span class="label label-sm label-success arrowed arrowed-righ">ÄĞ</span>';
+            return '<span class="label label-sm label-success arrowed arrowed-righ">ç”·</span>';
         } else {
-            return '<span class="label label-sm label-warning arrowed arrowed-righ">Å®</span>';
+            return '<span class="label label-sm label-warning arrowed arrowed-righ">å¥³</span>';
         }
     }
 }, {
     id : 'cMz',
-    title : 'Ãñ×å',
+    title : 'æ°‘æ—',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'cLxfs',
-    title : 'ÁªÏµ·½Ê½',
+    title : 'è”ç³»æ–¹å¼',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'cLxdz',
-    title : 'ÁªÏµµØÖ·',
+    title : 'è”ç³»åœ°å€',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'cTssy',
-    title : 'ÌØÉ«ÊÖÒÕ',
+    title : 'ç‰¹è‰²æ‰‹è‰º',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }];
 
-//¶¯Ì¬ÉèÖÃjqGridµÄrowNum
+//åŠ¨æ€è®¾ç½®jqGridçš„rowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -65,7 +65,7 @@ var dtGridOption = {
     gridContainer : 'dtGridContainer',
     toolbarContainer : 'dtGridToolBarContainer',
     tools : 'refresh|print|export[excel,csv,pdf,txt]',
-    exportFileName : 'ÓÃ»§ĞÅÏ¢',
+    exportFileName : 'ç”¨æˆ·ä¿¡æ¯',
     pageSize : pageSize,
     pageSizeLimit : [10, 20, 30]
 };
@@ -80,7 +80,7 @@ $(function() {
     grid.load();
     $("#btnSearch").click(customSearch);
     
-    //×¢²á»Ø³µ¼üÊÂ¼ş
+    //æ³¨å†Œå›è½¦é”®äº‹ä»¶
     document.onkeypress = function(e){
     var ev = document.all ? window.event : e;
         if(ev.keyCode==13) {
@@ -91,8 +91,8 @@ $(function() {
 });
 
 /**
- * ×Ô¶¨Òå²éÑ¯
- * ÕâÀï²»´«Èë·ÖÒ³ĞÅÏ¢£¬·ÀÖ¹É¾³ı¼ÇÂ¼ºóÖØĞÂ¼ÆËãµÄÒ³Âë±Èµ±Ç°Ò³ÂëĞ¡¶øµ¼ÖÂ¼ÆËãÒì³£
+ * è‡ªå®šä¹‰æŸ¥è¯¢
+ * è¿™é‡Œä¸ä¼ å…¥åˆ†é¡µä¿¡æ¯ï¼Œé˜²æ­¢åˆ é™¤è®°å½•åé‡æ–°è®¡ç®—çš„é¡µç æ¯”å½“å‰é¡µç å°è€Œå¯¼è‡´è®¡ç®—å¼‚å¸¸
  */
 function customSearch() {
     grid.parameters = new Object();

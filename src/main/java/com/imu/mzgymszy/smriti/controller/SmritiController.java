@@ -66,19 +66,19 @@ public class SmritiController extends BaseController {
 	}
 	
 	/**
-	 * ajax·ÖÒ³¶¯Ì¬¼ÓÔØÄ£Ê½
-	 * @param dtGridPager Pager¶ÔÏó
+	 * ajaxåˆ†é¡µåŠ¨æ€åŠ è½½æ¨¡å¼
+	 * @param dtGridPager Pagerå¯¹è±¡
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/list.html", method = RequestMethod.POST)
 	@ResponseBody
 	public Object list(String gridPager, HttpServletResponse response) throws Exception{
 		Map<String, Object> parameters = null;
-		//1¡¢Ó³ÉäPager¶ÔÏó
+		//1ã€æ˜ å°„Pagerå¯¹è±¡
 		Pager pager = JSON.parseObject(gridPager, Pager.class);
-		//2¡¢ÉèÖÃ²éÑ¯²ÎÊı
+		//2ã€è®¾ç½®æŸ¥è¯¢å‚æ•°
 		parameters = pager.getParameters();
-		//ÉèÖÃ·ÖÒ³£¬pageÀïÃæ°üº¬ÁË·ÖÒ³ĞÅÏ¢
+		//è®¾ç½®åˆ†é¡µï¼Œpageé‡Œé¢åŒ…å«äº†åˆ†é¡µä¿¡æ¯
 		Page<Object> page = PageHelper.startPage(pager.getNowPage(),pager.getPageSize(), "c_id DESC");
 		List<CcrEntity> list = ccrService.queryListByPage(parameters);
 		parameters.clear();
@@ -88,7 +88,7 @@ public class SmritiController extends BaseController {
 		parameters.put("pageCount", page.getPages());
 		parameters.put("recordCount", page.getTotal());
 		parameters.put("startRecord", page.getStartRow());
-		//ÁĞ±íÕ¹Ê¾Êı¾İ
+		//åˆ—è¡¨å±•ç¤ºæ•°æ®
 		parameters.put("exhibitDatas", list);
 		return parameters;
 	}
@@ -120,12 +120,12 @@ public class SmritiController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "Ìí¼Ó³É¹¦");
+				map.put("message", "æ·»åŠ æˆåŠŸ");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "Ìí¼ÓÊ§°Ü");
+				map.put("message", "æ·»åŠ å¤±è´¥");
 			}
 		}catch(ServiceException e)
 		{
@@ -156,7 +156,7 @@ public class SmritiController extends BaseController {
 	        	map.put("success", true);
 	        	map.put("result", path);
 	        }else{
-	        	throw new Exception("Upload Failed£¡£¡£¡");
+	        	throw new Exception("Upload Failedï¼ï¼ï¼");
 	        }
 		}catch(Exception e){
 			map.put("success", false);
@@ -202,12 +202,12 @@ public class SmritiController extends BaseController {
 			{
 				map.put("success", Boolean.TRUE);
 				map.put("data", null);
-				map.put("message", "±à¼­³É¹¦");
+				map.put("message", "ç¼–è¾‘æˆåŠŸ");
 			}else
 			{
 				map.put("success", Boolean.FALSE);
 				map.put("data", null);
-				map.put("message", "±à¼­Ê§°Ü");
+				map.put("message", "ç¼–è¾‘å¤±è´¥");
 			}
 		}catch(Exception e)
 		{
@@ -232,12 +232,12 @@ public class SmritiController extends BaseController {
 			{
 				result.put("success", true);
 				result.put("data", null);
-				result.put("message", "É¾³ı³É¹¦");
+				result.put("message", "åˆ é™¤æˆåŠŸ");
 			}else
 			{
 				result.put("success", false);
 				result.put("data", null);
-				result.put("message", "É¾³ıÊ§°Ü");
+				result.put("message", "åˆ é™¤å¤±è´¥");
 			}
 		}catch(Exception e)
 		{

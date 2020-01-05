@@ -1,13 +1,13 @@
 var dtGridColumns = [{
     id : 'id',
-    title : '±àºÅ',
+    title : 'ç¼–å·',
     type : 'number',
     columnClass : 'text-center',
     hideType : 'xs',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'accountName',
-    title : 'ÕË»§Ãû',
+    title : 'è´¦æˆ·å',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
@@ -16,62 +16,62 @@ var dtGridColumns = [{
     }
 }, {
     id : 'userName',
-    title : 'ĞÕÃû',
+    title : 'å§“å',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header'
 }, {
     id : 'roleName',
-    title : 'ËùÊô½ÇÉ«',
+    title : 'æ‰€å±è§’è‰²',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'xs',
     resolution : function(value, record, column, grid, dataNo, columnNo) {
         if (/*typeof(value) == "undefined" ||*/ "" == value || null == value) {
-            return 'Î´Ö¸¶¨';
+            return 'æœªæŒ‡å®š';
         } else {
             return value;
         }
     }
 }, {
     id : 'deleteStatus',
-    title : 'ÊÇ·ñÉ¾³ı',
+    title : 'æ˜¯å¦åˆ é™¤',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs',
     resolution : function(value, record, column, grid, dataNo, columnNo) {
         if (value == 0) {
-            return '<span class="label label-sm label-success arrowed arrowed-righ">Õı³£</span>';
+            return '<span class="label label-sm label-success arrowed arrowed-righ">æ­£å¸¸</span>';
         } else {
-            return '<span class="label label-sm label-warning arrowed arrowed-righ">ÒÑÉ¾³ı</span>';
+            return '<span class="label label-sm label-warning arrowed arrowed-righ">å·²åˆ é™¤</span>';
         }
     }
 }, {
     id : 'locked',
-    title : 'ÊÇ·ñËø¶¨',
+    title : 'æ˜¯å¦é”å®š',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs',
     resolution : function(value, record, column, grid, dataNo, columnNo) {
         if (value == 0) {
-            return '<span class="label label-sm label-success arrowed arrowed-righ">Õı³£</span>';
+            return '<span class="label label-sm label-success arrowed arrowed-righ">æ­£å¸¸</span>';
         } else {
-            return '<span class="label label-sm label-warning arrowed arrowed-righ">ÒÑÉ¾³ı</span>';
+            return '<span class="label label-sm label-warning arrowed arrowed-righ">å·²åˆ é™¤</span>';
         }
     }
 }, {
     id : 'creatorName',
-    title : '´´½¨Õß',
+    title : 'åˆ›å»ºè€…',
     type : 'string',
     columnClass : 'text-center',
     headerClass : 'dlshouwen-grid-header',
     hideType : 'sm|xs'
 }, {
     id : 'createTime',
-    title : '´´½¨Ê±¼ä',
+    title : 'åˆ›å»ºæ—¶é—´',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype : 'string',
@@ -81,7 +81,7 @@ var dtGridColumns = [{
     hideType : 'sm|xs'
 }, {
     id : 'updateTime',
-    title : '¸üĞÂÊ±¼ä',
+    title : 'æ›´æ–°æ—¶é—´',
     type : 'date',
     format : 'yyyy-MM-dd hh:mm:ss',
     otype : 'string',
@@ -98,7 +98,7 @@ var dtGridColumns = [{
     }
 }];
 
-//¶¯Ì¬ÉèÖÃjqGridµÄrowNum
+//åŠ¨æ€è®¾ç½®jqGridçš„rowNum
 var pageSize = $("#pageSize").val();
 pageSize = pageSize == 0 || pageSize == "" ? sys.pageNum : pageSize;
 
@@ -113,7 +113,7 @@ var dtGridOption = {
     gridContainer : 'dtGridContainer',
     toolbarContainer : 'dtGridToolBarContainer',
     tools : 'refresh|print|export[excel,csv,pdf,txt]',
-    exportFileName : 'ÓÃ»§ĞÅÏ¢',
+    exportFileName : 'ç”¨æˆ·ä¿¡æ¯',
     pageSize : pageSize,
     pageSizeLimit : [10, 20, 30]
 };
@@ -128,7 +128,7 @@ $(function() {
     grid.load();
     $("#btnSearch").click(customSearch);
     
-    //×¢²á»Ø³µ¼üÊÂ¼ş
+    //æ³¨å†Œå›è½¦é”®äº‹ä»¶
     document.onkeypress = function(e){
     var ev = document.all ? window.event : e;
         if(ev.keyCode==13) {
@@ -139,8 +139,8 @@ $(function() {
 });
 
 /**
- * ×Ô¶¨Òå²éÑ¯
- * ÕâÀï²»´«Èë·ÖÒ³ĞÅÏ¢£¬·ÀÖ¹É¾³ı¼ÇÂ¼ºóÖØĞÂ¼ÆËãµÄÒ³Âë±Èµ±Ç°Ò³ÂëĞ¡¶øµ¼ÖÂ¼ÆËãÒì³£
+ * è‡ªå®šä¹‰æŸ¥è¯¢
+ * è¿™é‡Œä¸ä¼ å…¥åˆ†é¡µä¿¡æ¯ï¼Œé˜²æ­¢åˆ é™¤è®°å½•åé‡æ–°è®¡ç®—çš„é¡µç æ¯”å½“å‰é¡µç å°è€Œå¯¼è‡´è®¡ç®—å¼‚å¸¸
  */
 function customSearch() {
     grid.parameters = new Object();
@@ -149,7 +149,7 @@ function customSearch() {
 }
 
 /**
- *ÖØÖÃÃÜÂë
+ *é‡ç½®å¯†ç 
  */
 function resetPWDModel() {
     var rows = grid.getCheckedRecords();
@@ -186,7 +186,7 @@ function resetPWDModel() {
             }
         });
     } else {
-        layer.msg("ÄãÃ»ÓĞÑ¡ÔñĞĞ»òÑ¡ÔñÁË¶àĞĞÊı¾İ", {
+        layer.msg("ä½ æ²¡æœ‰é€‰æ‹©è¡Œæˆ–é€‰æ‹©äº†å¤šè¡Œæ•°æ®", {
             icon : 0
         });
     }
