@@ -207,7 +207,7 @@ public class IndexController extends BaseController {
 			userEntity.setLocked(0);
 			userEntity.setDeleteStatus(0);
 			//通过注册页面注册的用户统一设置为普通用户
-			RoleEntity roleEntity = roleService.findByName("访客用户");
+			RoleEntity roleEntity = roleService.findByName("VIP用户");
 			userEntity.setRole(roleEntity);
 			// 保存用户注册信息
 			userService.insert(userEntity, password);

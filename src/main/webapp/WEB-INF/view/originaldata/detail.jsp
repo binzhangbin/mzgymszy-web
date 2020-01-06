@@ -40,6 +40,9 @@ function showVideo(mYspm){
 			  closeBtn: 1,
 			  skin: 'layui-layer-nobg',
 			  shadeClose: true,
+			  // content:'<video width="320" height="180" controls><source src="x.MOV" type="video/mp4">\n' +
+				// 	  '    测试\n' +
+				// 	  '</video>',
 			  content: '<video src="'+sys.rootPath+'/media/showMedia.html?mYspm='+mYspm+'" autoplay="autoplay">您的浏览器不支持该视频播放。</video>',
 			  success: function(){
 	              isLayerOpen=true;
