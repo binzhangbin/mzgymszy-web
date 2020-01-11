@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mzgymszy-web:war2">
+    <output-path>$PROJECT_DIR$/out/artifacts/mzgymszy_web_war2</output-path>
+    <root id="archive" name="mzgymszy-web_war.war">
+      <element id="artifact" artifact-name="mzgymszy-web:war exploded" />
+    </root>
+  </artifact>
+</component>
